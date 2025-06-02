@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Drawing App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-bg: #f8f9fa;
+            --toolbar-bg: rgba(255, 255, 255, 0.95);
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+            --active-color: #4a6fa5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--primary-bg);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Toolbar Styles */
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 1.2rem;
+            background-color: var(--toolbar-bg);
+            box-shadow: var(--shadow);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            height: 60px;
+        }
+
+        .toolbar-left {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .toolbar-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .tool-btn {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            color: #555;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .tool-btn:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+            color: #333;
+        }
+
+        .tool-btn:active {
+            transform: scale(0.95);
+        }
+
+        .pen-size-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pen-size-label {
+            font-size: 0.9rem;
+            color: #555;
+            white-space: nowrap;
+        }
+
+        .pen-size {
+            -webkit-appearance: none;
+            width: 100px;
+            height: 4px;
+            border-radius: 2px;
+            background: #ddd;
+            outline: none;
+        }
+
+        .pen-size::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--active-color);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .pen-size::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
+        }
+
+        /* Canvas Styles */
+        .canvas-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 60px; /* toolbar height */
+            margin-bottom: 80px; /* color picker height */
+            padding: 1rem;
+            overflow: hidden;
+        }
+
+        canvas {
+            background-color: white;
+            box-shadow: var(--shadow);
+            border-radius: var(--border-radius);
+            touch-action: none;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        /* Color Picker Styles */
+        .color-picker {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--toolbar-bg);
+            box-shadow: var(--shadow);
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            height: 80px;
+            z-index: 100;
+        }
+
+        .color-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .color-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .color-btn.active {
+            border-color: #333;
+            transform: scale(1.1);
+            box-shadow: 0 0 0 2px white, 0 0 0 4px var(--active-color);
+        }
+
+        /* Responsive Adjustments */
+        @media (min-width: 768px) {
+            .tool-btn {
+                font-size: 1.3rem;
+                width: 42px;
+                height: 42px;
+            }
+
+            .color-btn {
+                width: 44px;
+                height: 44px;
+            }
+
+            .pen-size {
+                width: 120px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .toolbar {
+                padding: 0.8rem;
+            }
+
+            .toolbar-left, .toolbar-right {
+                gap: 0.5rem;
+            }
+
+            .pen-size-label {
+                display: none;
+            }
+
+            .color-picker {
+                gap: 0.7rem;
+                padding: 0.8rem;
+            }
+
+            .color-btn {
+                width: 36px;
+                height: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="toolbar">
+        <div class="toolbar-left">
+            <button class="tool-btn" id="undo-btn" title="Undo">
+                <i class="fas fa-undo"></i>
+            </button>
+            <button class="tool-btn" id="redo-btn" title="Redo">
+                <i class="fas fa-redo"></i>
+            </button>
+        </div>
+        <div class="toolbar-right">
+            <div class="pen-size-container">
+                <span class="pen-size-label">Size:</span>
+                <input type="range" min="1" max="50" value="5" class="pen-size" id="pen-size">
+            </div>
+        </div>
+    </div>
+
+    <div class="canvas-container">
+        <canvas id="drawing-canvas"></canvas>
+    </div>
+
+    <div class="color-picker">
+        <div class="color-btn active" style="background-color: #000000;" data-color="#000000"></div>
+        <div class="color-btn" style="background-color: #ff0000;" data-color="#ff0000"></div>
+        <div class="color-btn" style="background-color: #00ff00;" data-color="#00ff00"></div>
+        <div class="color-btn" style="background-color: #0000ff;" data-color="#0000ff"></div>
+        <div class="color-btn" style="background-color: #ffff00;" data-color="#ffff00"></div>
+        <div class="color-btn" style="background-color: #ff00ff;" data-color="#ff00ff"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Canvas setup
+            const canvas = document.getElementById('drawing-canvas');
+            const ctx = canvas.getContext('2d');
+            
+            // UI elements
+            const undoBtn = document.getElementById('undo-btn');
+            const redoBtn = document.getElementById('redo-btn');
+            const penSizeInput = document.getElementById('pen-size');
+            const colorButtons = document.querySelectorAll('.color-btn');
+            
+            // Drawing state
+            let isDrawing = false;
+            let lastX = 0;
+            let lastY = 0;
+            let currentColor = '#48ffbd';
+            let currentSize = 5;
+            
+            // History for undo/redo
+            let drawingHistory = [];
+            let historyIndex = -1;
+            
+            // Initialize canvas
+            function resizeCanvas() {
+                const container = document.querySelector('.canvas-container');
+                canvas.width = container.clientWidth * 0.95;
+                canvas.height = container.clientHeight * 0.95;
+                
+                // Redraw from history if needed
+                if (drawingHistory.length > 0) {
+                    redrawCanvas();
+                }
+            }
+            
+            // Load saved drawing from localStorage
+            function loadDrawing() {
+                const savedDrawing = localStorage.getItem('drawing');
+                if (savedDrawing) {
+                    const img = new Image();
+                    img.onload = function() {
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        ctx.drawImage(img, 0, 0);
+                        saveToHistory();
+                    };
+                    img.src = savedDrawing;
+                }
+            }
+            
+            // Save current canvas state to history
+            function saveToHistory() {
+                // If we're not at the end of history, discard future states
+                if (historyIndex < drawingHistory.length - 1) {
+                    drawingHistory = drawingHistory.slice(0, historyIndex + 1);
+                }
+                
+                // Save current canvas state
+                const imageData = canvas.toDataURL();
+                drawingHistory.push(imageData);
+                historyIndex = drawingHistory.length - 1;
+                
+                // Limit history size (optional)
+                if (drawingHistory.length > 50) {
+                    drawingHistory.shift();
+                    historyIndex--;
+                }
+                
+                updateUndoRedoButtons();
+                
+                // Save to localStorage
+                localStorage.setItem('drawing', imageData);
+            }
+            
+            // Update undo/redo button states
+            function updateUndoRedoButtons() {
+                undoBtn.disabled = historyIndex <= 0;
+                redoBtn.disabled = historyIndex >= drawingHistory.length - 1;
+            }
+            
+            // Redraw canvas from history
+            function redrawCanvas() {
+                if (historyIndex >= 0 && historyIndex < drawingHistory.length) {
+                    const img = new Image();
+                    img.onload = function() {
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        ctx.drawImage(img, 0, 0);
+                    };
+                    img.src = drawingHistory[historyIndex];
+                }
+            }
+            
+            // Undo action
+            function undo() {
+                if (historyIndex > 0) {
+                    historyIndex--;
+                    redrawCanvas();
+                    updateUndoRedoButtons();
+                }
+            }
+            
+            // Redo action
+            function redo() {
+                if (historyIndex < drawingHistory.length - 1) {
+                    historyIndex++;
+                    redrawCanvas();
+                    updateUndoRedoButtons();
+                }
+            }
+            
+            // Drawing functions
+            function startDrawing(e) {
+                isDrawing = true;
+                [lastX, lastY] = getPosition(e);
+            }
+            
+            function draw(e) {
+                if (!isDrawing) return;
+                
+                ctx.strokeStyle = currentColor;
+                ctx.lineWidth = currentSize;
+                ctx.lineCap = 'round';
+                ctx.lineJoin = 'round';
+                
+                const [x, y] = getPosition(e);
+                
+                ctx.beginPath();
+                ctx.moveTo(lastX, lastY);
+                ctx.lineTo(x, y);
+                ctx.stroke();
+                
+                [lastX, lastY] = [x, y];
+            }
+            
+            function stopDrawing() {
+                if (isDrawing) {
+                    isDrawing = false;
+                    saveToHistory();
+                }
+            }
+            
+            // Helper to get position (works for both mouse and touch)
+            function getPosition(e) {
+                const rect = canvas.getBoundingClientRect();
+                const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+                const clientY = e.clientY || (e.touches && e.touches[0].clientY);
+                return [
+                    clientX - rect.left,
+                    clientY - rect.top
+                ];
+            }
+            
+            // Event listeners
+            function setupEventListeners() {
+                // Mouse events
+                canvas.addEventListener('mousedown', startDrawing);
+                canvas.addEventListener('mousemove', draw);
+                canvas.addEventListener('mouseup', stopDrawing);
+                canvas.addEventListener('mouseout', stopDrawing);
+                
+                // Touch events
+                canvas.addEventListener('touchstart', (e) => {
+                    e.preventDefault();
+                    startDrawing(e.touches[0]);
+                });
+                
+                canvas.addEventListener('touchmove', (e) => {
+                    e.preventDefault();
+                    draw(e.touches[0]);
+                });
+                
+                canvas.addEventListener('touchend', stopDrawing);
+                
+                // Toolbar events
+                undoBtn.addEventListener('click', undo);
+                redoBtn.addEventListener('click', redo);
+                penSizeInput.addEventListener('input', () => {
+                    currentSize = penSizeInput.value;
+                });
+                
+                // Color picker events
+                colorButtons.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        colorButtons.forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        currentColor = btn.dataset.color;
+                    });
+                });
+                
+                // Window resize
+                window.addEventListener('resize', () => {
+                    resizeCanvas();
+                    redrawCanvas();
+                });
+            }
+            
+            // Initialize
+            resizeCanvas();
+            setupEventListeners();
+            loadDrawing();
+            saveToHistory(); // Save initial blank state
+            updateUndoRedoButtons();
+        });
+    </script>
+</body>
+</html>

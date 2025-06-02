@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Calculator</title>
+    <style>
+        /* CSS Code */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #3498db; /* Fallback color */
+            background-image: url('app- '); /* Background image */
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            touch-action: none; /* Disable full screen zoom */
+        }
+
+        .calculator {
+            width: 250px; /* Smaller size */
+            background-color: #2c3e50;
+            border-radius: 20px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1);
+            transition: transform 0.5s ease;
+            position: absolute;
+            z-index: 2;
+              
+            cursor: grab;
+        }
+    .calculator:hover{            transform: perspective(1000px) rotateX(5deg) rotateY(0deg) scale(1.05);}
+    
+
+        .display {
+            background-color: #34495e;
+            color: white;
+            padding: 15px;
+            text-align: right;
+            font-size: 20px;
+            border-bottom: 1px solid #2c3e50;
+        }
+
+        #history {
+            font-size: 14px;
+            color: #bdc3c7;
+            min-height: 18px;
+        }
+
+        #result {
+            font-size: 28px;
+            margin-top: 10px;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            padding: 15px;
+        }
+
+        button {
+            background-color: #34495e;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background-color: #1abc9c;
+            transform: translateY(-2px);
+            
+        }
+
+        button:active {
+            transform: translateY(180deg);
+                        transform: perspective(1000px) rotateX(360deg) rotateY(360deg) scale(0.1);
+        }
+
+        .equals {
+            grid-column: span 2;
+            background-color: #e67e22;
+        }
+
+        .equals:hover {
+            background-color: #d35400;
+        }
+
+        .zero {
+            grid-column: span 2;
+        }
+
+        .history-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background-image: url('app-loader.gif');
+            z-index: 1;
+        }
+
+        .history-box {
+            width: auto;
+            background-color: #34495e;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            position: relative;
+            cursor: grab;
+        }
+        .history-box:hover{
+            transform: perspective(1000px) rotateX(1deg) rotateY(1deg) scale(1.03);}
+
+        .history-box h3 {
+            margin: 0 0 8px 0;
+            font-size: 14px;
+        }
+
+        .history-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .history-box ul li {
+            font-size: 12px;
+            margin-bottom: 4px;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: none;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .close-button:hover {
+            background-color: #d35400;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="calculator" id="calculator">
+        <div class="display">
+            <div id="history"></div>
+            <div id="result"></div>
+        </div>
+        <div class="buttons">
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="appendToDisplay('/')">/</button>
+            <button onclick="appendToDisplay('*')">*</button>
+            <button onclick="deleteLast()">D</button>
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button onclick="appendToDisplay('-')">-</button>
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button onclick="appendToDisplay('+')">+</button>
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button onclick="appendToDisplay('0')" class="zero">0</button>
+            <button onclick="calculateResult()" class="equals">=</button>
+        </div>
+    </div>
+
+    <!-- History Container -->
+    <div class="history-container" id="historyContainer"></div>
+
+    <!-- JavaScript Code -->
+    <script>
+        let history = [];
+        let currentInput = '';
+        let historyBoxes = [];
+
+        // Allow negative numbers and decimals at the start
+        function appendToDisplay(value) {
+            const lastChar = currentInput[currentInput.length - 1];
+            const symbols = ['+', '-', '*', '/'];
+
+            // Allow negative numbers at the start
+            if (value === '-' && currentInput === '') {
+                currentInput += value;
+            }
+            // Allow decimal at the start
+            else if (value === '.' && currentInput === '') {
+                currentInput += '0.'; // Add 0 before decimal
+            }
+            // Avoid multiple symbols
+            else if (symbols.includes(lastChar) && symbols.includes(value)) {
+                currentInput = currentInput.slice(0, -1) + value; // Replace last symbol
+            }
+            // Avoid decimal point without a number
+            else if (value === '.' && (lastChar === undefined || symbols.includes(lastChar))) {
+                return; // Do not allow decimal point without a number
+            }
+            else {
+                currentInput += value;
+            }
+
+            document.getElementById('result').innerText = currentInput;
+        }
+
+        function clearDisplay() {
+            currentInput = '';
+            document.getElementById('result').innerText = '';
+            document.getElementById('history').innerText = '';
+        }
+
+        function deleteLast() {
+            currentInput = currentInput.slice(0, -1);
+            document.getElementById('result').innerText = currentInput;
+        }
+
+        function calculateResult() {
+            if (currentInput === '') {
+                document.getElementById('result').innerText = '0'; // Default to 0 if input is empty
+                return;
+            }
+
+            let result;
+            try {
+                // Try to evaluate the input
+                result = eval(currentInput);
+            } catch (error) {
+                // If eval fails, use the input as the result
+                result = currentInput;
+            }
+
+            // Add to history
+            history.push(`${currentInput} = ${result}`);
+            if (history.length > 5) {
+                moveHistoryToBox();
+                history = []; // Clear the current history
+            }
+
+            // Update display
+            document.getElementById('result').innerText = result;
+            document.getElementById('history').innerText = history.join('\n');
+            currentInput = result.toString();
+        }
+
+        // Move history to a new box after 5 calculations
+        function moveHistoryToBox() {
+            const historyContainer = document.getElementById('historyContainer');
+            const newBox = document.createElement('div');
+            newBox.className = 'history-box';
+            newBox.innerHTML = `
+                <ul>
+                    ${history.slice(-5).map(item => `<li>${item}</li>`).join('')}
+                </ul>
+                <button class="close-button" onclick="this.parentElement.remove()">×</button>
+            `;
+            historyContainer.appendChild(newBox);
+            makeDraggable(newBox); // Make the new history box draggable
+        }
+
+        // Make elements draggable and zoomable
+        function makeDraggable(element) {
+            let isDragging = false, isActive = false;
+            let offsetX, offsetY, scale = 1, posX = 0, posY = 0;
+            let initialDist = 0, isPinching = false;
+
+            // Click or Tap to activate
+            element.addEventListener("click", (e) => {
+                isActive = !isActive;
+                element.style.cursor = isActive ? "grab" : "default";
+            });
+
+            // Mouse Dragging (PC)
+            element.addEventListener("mousedown", (e) => {
+                if (!isActive) return;
+                isDragging = true;
+                offsetX = e.clientX - element.offsetLeft;
+                offsetY = e.clientY - element.offsetTop;
+                element.style.cursor = "grabbing";
+            });
+
+            document.addEventListener("mousemove", (e) => {
+                if (isDragging && isActive) {
+                    posX = e.clientX - offsetX;
+                    posY = e.clientY - offsetY;
+                    element.style.left = `${posX}px`;
+                    element.style.top = `${posY}px`;
+                }
+            });
+
+            document.addEventListener("mouseup", () => {
+                isDragging = false;
+                if (isActive) element.style.cursor = "grab";
+            });
+
+            // Touch Dragging (Mobile)
+            element.addEventListener("touchstart", (e) => {
+                if (!isActive) return;
+                if (e.touches.length === 1) { // Single touch for move
+                    isDragging = true;
+                    offsetX = e.touches[0].clientX - element.offsetLeft;
+                    offsetY = e.touches[0].clientY - element.offsetTop;
+                } else if (e.touches.length === 2) { // Two fingers for zoom
+                    isPinching = true;
+                    initialDist = getDistance(e.touches);
+                }
+            });
+
+            element.addEventListener("touchmove", (e) => {
+                if (!isActive) return;
+                if (isDragging && e.touches.length === 1) { // Single touch move
+                    posX = e.touches[0].clientX - offsetX;
+                    posY = e.touches[0].clientY - offsetY;
+                    element.style.left = `${posX}px`;
+                    element.style.top = `${posY}px`;
+                } else if (isPinching && e.touches.length === 2) { // Two-finger zoom
+                    let newDist = getDistance(e.touches);
+                    let zoomFactor = newDist / initialDist;
+                    scale *= zoomFactor;
+                    scale = Math.max(0.5, Math.min(scale, 3));
+                    element.style.transform = `scale(${scale})`;
+                    initialDist = newDist;
+                }
+                e.preventDefault();
+            });
+
+            document.addEventListener("touchend", () => {
+                isDragging = false;
+                isPinching = false;
+            });
+
+            // Mouse Scroll Zoom (PC)
+            element.addEventListener("wheel", (e) => {
+                if (!isActive) return;
+                e.preventDefault();
+                let zoomFactor = e.deltaY > 0 ? 0.9 : 1.1;
+                scale *= zoomFactor;
+                scale = Math.max(0.5, Math.min(scale, 3));
+                element.style.transform = `scale(${scale})`;
+            });
+
+            // Function to calculate distance between two touch points
+            function getDistance(touches) {
+                let dx = touches[0].clientX - touches[1].clientX;
+                let dy = touches[0].clientY - touches[1].clientY;
+                return Math.sqrt(dx * dx + dy * dy);
+            }
+        }
+
+        // Make calculator draggable
+        makeDraggable(calculator);
+    </script>
+</body>
+</html>

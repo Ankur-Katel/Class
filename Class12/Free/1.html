@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+<link rel="icon" href="https://i.ibb.co/v4v4fj58/Logo.png" type="image/png">
+
+    <meta property="og:title" content="">
+
+    <meta property="og:description" content="">
+
+<meta property="og:image" content="https://i.ibb.co/4wLHYHsB/61-HK71-VL0-RL-AC-UF1000-1000-QL80-FMwebp-1.png">
+
+    <meta property="og:image:width" content="1080">
+
+    <meta property="og:image:height" content="1080">
+
+
+    <meta property="og:type" content="website">
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@500&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="../.././css./mcq.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <header>
+        <a  onclick="history.back()" class="back-btn" id="backBtn"><i class="fas fa-arrow-left"></i></a>
+        <div class="header-content">
+            <h1>Class 12 Science</h1>
+            <p>Free Test</p>
+        </div>
+        <label class="theme-switch">
+            <input type="checkbox" id="themeCheckbox">
+            <span class="slider">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </span>
+        </label>
+    </header>
+
+    <div class="quiz-container">
+        <div class="quiz-card" id="quizCard">
+            <div class="timer-container">
+                <i class="fas fa-clock"></i>
+                <span id="time">50:00</span>
+            </div>
+            
+            <div class="question-container" id="questionContainer">
+                <!-- Questions will be inserted here by JavaScript -->
+            </div>
+            
+            <div class="nav-buttons">
+                <button class="nav-btn" id="prevBtn" disabled><i class="fas fa-chevron-left"></i></button>
+                <button class="nav-btn" id="skipBtn"><i class="fas fa-forward"></i></button>
+            </div>
+        </div>
+        
+        <div class="result-container" id="resultContainer">
+            <!-- Result content will be inserted here by JavaScript -->
+        </div>
+    </div>
+    
+    <button class="tools-btn" id="toolsBtn"><i class="fas fa-tools"></i></button>
+    
+    <div class="tools-menu" id="toolsMenu">
+        <button class="tool-btn" id="drawBtn"><i class="fas fa-pencil-alt"></i></button>
+        <button class="tool-btn" id="calcBtn"><i class="fas fa-calculator"></i></button>
+        <a href="https://wa.me/917896703906?text=* Class  Chapter - Chapter 😎*" class="tool-btn" id="calcBtn"><i class="fas fa-comment-dots"></i></a>
+    </div>
+    
+    <div class="ad-overlay" id="adOverlay">
+        <div class="ad-image" id="adImage">
+            <!-- Ad content will be inserted here by JavaScript -->
+        </div>
+    </div>
+    
+    <div class="tool-overlay" id="drawOverlay">
+        <div class="tool-header">
+            <button class="close-tool" id="closeDraw"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="tool-container">
+            <iframe src="draw.html" frameborder="0" style="width:100%;height:100%;"></iframe>
+        </div>
+    </div>
+    
+    <div class="tool-overlay" id="calcOverlay">
+        <div class="tool-header">
+            <button class="close-tool" id="closeCalc"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="tool-container">
+            <iframe src="cal.html" frameborder="0" style="width:100%;height:100%;"></iframe>
+        </div>
+    </div>
+    
+    <div class="copy-message" id="copyMessage">Link copied to clipboard!</div>
+    
+    <footer>
+        <div class="footer-menu">
+            <a href="../Lock12S.html" class="footer-btn">
+                <i class="fas fa-shopping-bag"></i> 
+                <span>Join Now</span>
+            </a>
+            <a href="../Lock12S.html" class="footer-btn">
+                <i class="fas fa-book-open"></i>
+                <span>More Chapters</span>
+            </a>
+            <a href="https://wa.me/917896703906?text=*I Want Some Free Test😅*" class="footer-btn">
+                <i class="fab fa-whatsapp"></i>
+                <span>Daily Tests</span>
+            </a>
+            <a href="whatsapp" class="footer-btn">
+                <i class="fab fa-whatsapp"></i>
+                <span>Whatsapp</span>
+            </a>
+
+        </div>
+    </footer>
+
+     <script>
+        // Quiz data
+        const quizData = [
+  {
+    "question": "The SI unit of electric charge is:",
+    "options": [
+      "Coulomb",
+      "Ampere",
+      "Volt",
+      "Ohm"
+    ],
+    "correct": 0,
+    "marks": 10
+  },
+  {
+    "question": "Which of the following is a scalar quantity?",
+    "options": [
+      "Force",
+      "Displacement",
+      "Speed",
+      "Velocity"
+    ],
+    "correct": 2,
+    "marks": 10
+  },
+  {
+    "question": "The enzyme present in saliva is:",
+    "options": [
+      "Amylase",
+      "Lipase",
+      "Trypsin",
+      "Pepsin"
+    ],
+    "correct": 0,
+    "marks": 10
+  },
+  {
+    "question": "The chemical formula of water is:",
+    "options": [
+      "H2O",
+      "CO2",
+      "NH3",
+      "CH4"
+    ],
+    "correct": 0,
+    "marks": 10
+  },
+  {
+    "question": "The value of sin(90°) is:",
+    "options": [
+      "0",
+      "1",
+      "0.5",
+      "-1"
+    ],
+    "correct": 1,
+    "marks": 10
+  },
+  {
+    "question": "Which of the following is a greenhouse gas?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon dioxide",
+      "Argon"
+    ],
+    "correct": 2,
+    "marks": 10
+  },
+  {
+    "question": "The process of cell division in somatic cells is called:",
+    "options": [
+      "Meiosis",
+      "Mitosis",
+      "Binary fission",
+      "Budding"
+    ],
+    "correct": 1,
+    "marks": 10
+  },
+  {
+    "question": "The SI unit of electric current is:",
+    "options": [
+      "Volt",
+      "Ampere",
+      "Ohm",
+      "Watt"
+    ],
+    "correct": 1,
+    "marks": 10
+  },
+  {
+    "question": "The process of conversion of sugar into alcohol is called:",
+    "options": [
+      "Fermentation",
+      "Photosynthesis",
+      "Respiration",
+      "Transpiration"
+    ],
+    "correct": 0,
+    "marks": 10
+  },
+  {
+    "question": "The value of tan(45°) is:",
+    "options": [
+      "0",
+      "1",
+      "0.5",
+      "∞"
+    ],
+    "correct": 1,
+    "marks": 10
+  },
+  {
+    "question": "Which of the following is a reducing sugar?",
+    "options": [
+      "Sucrose",
+      "Glucose",
+      "Starch",
+      "Cellulose"
+    ],
+    "correct": 1,
+    "marks": 10
+  },
+  {
+    "question": "The process of loss of water from plant leaves is called:",
+    "options": [
+      "Transpiration",
+      "Respiration",
+      "Photosynthesis",
+      "Fermentation"
+    ],
+    "correct": 0,
+    "marks": 10
+  },
+  {
+    "question": "The value of log10(100) is:",
+    "options": [
+      "1",
+      "2",
+      "10",
+      "100"
+    ],
+    "correct": 1,
+    "marks": 10
+  },
+  {
+    "question": "Which of the following is a buffer solution?",
+    "options": [
+      "HCl + NaCl",
+      "CH3COOH + CH3COONa",
+      "NaOH + NaCl",
+      "H2SO4 + Na2SO4"
+    ],
+    "correct": 1,
+    "marks": 10
+  },
+  {
+    "question": "The organelle called the powerhouse of the cell is:",
+    "options": [
+      "Nucleus",
+      "Mitochondria",
+      "Chloroplast",
+      "Ribosome"
+    ],
+    "correct": 1,
+    "marks": 10
+  },
+  {
+    "question": "The value of π (pi) is approximately:",
+    "options": [
+      "3.14",
+      "2.71",
+      "1.41",
+      "1.61"
+    ],
+    "correct": 0,
+    "marks": 10
+  },
+  {
+    "question": "Which of the following is a transition element?",
+    "options": [
+      "Sodium (Na)",
+      "Iron (Fe)",
+      "Calcium (Ca)",
+      "Magnesium (Mg)"
+    ],
+    "correct": 1,
+    "marks": 10
+  },
+  {
+    "question": "The value of ∫(1/x) dx is:",
+    "options": [
+      "ln|x| + C",
+      "x + C",
+      "1/x + C",
+      "e^x + C"
+    ],
+    "correct": 0,
+    "marks": 10
+  },
+  {
+    "question": "Which of the following is NOT a noble gas?",
+    "options": [
+      "Helium",
+      "Neon",
+      "Argon",
+      "Oxygen"
+    ],
+    "correct": 3,
+    "marks": 10
+  },
+  {
+    "question": "The hormone insulin is produced by:",
+    "options": [
+      "Pancreas",
+      "Liver",
+      "Kidney",
+      "Stomach"
+    ],
+    "correct": 0,
+    "marks": 10
+  },
+  {
+    "question": "The value of tan(0°) is:",
+    "options": [
+      "0",
+      "1",
+      "0.5",
+      "∞"
+    ],
+    "correct": 0,
+    "marks": 10
+  },
+  {
+    "question": "Which of the following is a polymer of glucose?",
+    "options": [
+      "Starch",
+      "Protein",
+      "Lipid",
+      "Vitamin"
+    ],
+    "correct": 0,
+    "marks": 10
+  },
+  {
+    "question": "The process of conversion of light energy into chemical energy is:",
+    "options": [
+      "Photosynthesis",
+      "Respiration",
+      "Transpiration",
+      "Fermentation"
+    ],
+    "correct": 0,
+    "marks": 10
+  },
+  {
+    "question": "The value of sin(30°) is:",
+    "options": [
+      "0.5",
+      "0.866",
+      "1",
+      "0"
+    ],
+    "correct": 0,
+    "marks": 10
+  },
+  {
+    "question": "Which of the following is a function of the kidney?",
+    "options": [
+      "Blood filtration",
+      "Digestion",
+      "Respiration",
+      "Hormone secretion"
+    ],
+    "correct": 0,
+    "marks": 10
+  },
+  {
+    "question": "The value of cos(60°) is:",
+    "options": [
+      "0.5",
+      "0.866",
+      "1",
+      "0"
+    ],
+    "correct": 0,
+    "marks": 10
+  },
+  {
+    "question": "Which of the following is a strong acid?",
+    "options": [
+      "CH3COOH",
+      "HCl",
+      "H2CO3",
+      "H3PO4"
+    ],
+    "correct": 1,
+    "marks": 10
+  },
+  {
+    "question": "The process of charging a conductor by bringing it near another charged body is called:",
+    "options": [
+      "Induction",
+      "Conduction",
+      "Radiation",
+      "Convection"
+    ],
+    "correct": 0,
+    "marks": 10
+  },
+  {
+    "question": "The value of ∫(x^2) dx is:",
+    "options": [
+      "(x^3)/3 + C",
+      "x^2 + C",
+      "2x + C",
+      "(x^3)/2 + C"
+    ],
+    "correct": 0,
+    "marks": 10
+  },
+  {
+    "question": "Which of the following is NOT a property of metals?",
+    "options": [
+      "Malleability",
+      "Ductility",
+      "Brittleness",
+      "Conductivity"
+    ],
+    "correct": 2,
+    "marks": 10
+  },
+  {
+    "question": "The value of log2(8) is:",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "8"
+    ],
+    "correct": 1,
+    "marks": 10
+  },
+  {
+    "question": "Which of the following is a metalloid?",
+    "options": [
+      "Sodium",
+      "Iron",
+      "Silicon",
+      "Calcium"
+    ],
+    "correct": 2,
+    "marks": 10
+  },
+  {
+    "question": "The process of converting a liquid into a gas at its boiling point is called:",
+    "options": [
+      "Evaporation",
+      "Boiling",
+      "Condensation",
+      "Sublimation"
+    ],
+    "correct": 1,
+    "marks": 10
+  },
+  {
+    "question": "The value of √2 is approximately:",
+    "options": [
+      "1.41",
+      "1.73",
+      "2.23",
+      "1.61"
+    ],
+    "correct": 0,
+    "marks": 10
+  },
+  {
+    "question": "Which of the following is a Lewis acid?",
+    "options": [
+      "NH3",
+      "BF3",
+      "H2O",
+      "CH4"
+    ],
+    "correct": 1,
+    "marks": 10
+  },
+  {
+    "question": "The value of cos(0°) is:",
+    "options": [
+      "0",
+      "1",
+      "0.5",
+      "-1"
+    ],
+    "correct": 1,
+    "marks": 10
+  },
+  {
+    "question": "Which of the following is NOT a type of chemical bond?",
+    "options": [
+      "Ionic",
+      "Covalent",
+      "Metallic",
+      "Magnetic"
+    ],
+    "correct": 3,
+    "marks": 10
+  },
+
+  {
+    "question": "Which of the following is a reducing agent?",
+    "options": [
+      "KMnO4",
+      "NaBH4",
+      "H2SO4",
+      "HNO3"
+    ],
+    "correct": 1,
+    "marks": 10
+  },
+  {
+    "question": "The value of tan(60°) is:",
+    "options": [
+      "0",
+      "1",
+      "√3",
+      "1/√3"
+    ],
+    "correct": 2,
+    "marks": 10
+  },
+  {
+    "question": "The process of converting a solid directly into a gas is called:",
+    "options": [
+      "Sublimation",
+      "Evaporation",
+      "Condensation",
+      "Melting"
+    ],
+    "correct": 0,
+    "marks": 10
+  }
+];
+
+
+        // DOM elements
+        const backBtn = document.getElementById('backBtn');
+        const themeCheckbox = document.getElementById('themeCheckbox');
+        const quizCard = document.getElementById('quizCard');
+        const questionContainer = document.getElementById('questionContainer');
+        const prevBtn = document.getElementById('prevBtn');
+        const skipBtn = document.getElementById('skipBtn');
+        const timeDisplay = document.getElementById('time');
+        const toolsBtn = document.getElementById('toolsBtn');
+        const toolsMenu = document.getElementById('toolsMenu');
+        const drawBtn = document.getElementById('drawBtn');
+        const calcBtn = document.getElementById('calcBtn');
+        const adOverlay = document.getElementById('adOverlay');
+        const adImage = document.getElementById('adImage');
+        const closeAd = document.getElementById('closeAd');
+        const adCountdown = document.getElementById('adCountdown');
+        const drawOverlay = document.getElementById('drawOverlay');
+        const calcOverlay = document.getElementById('calcOverlay');
+        const closeDraw = document.getElementById('closeDraw');
+        const closeCalc = document.getElementById('closeCalc');
+        const resultContainer = document.getElementById('resultContainer');
+        const copyMessage = document.getElementById('copyMessage');
+        
+        // Quiz state
+        let currentQuestion = 0;
+        let score = 0;
+        let totalMarks = 0;
+        let skippedQuestions = 0;
+        let userAnswers = Array(quizData.length).fill(null);
+        let timer;
+        let timeLeft = 3000;
+        let quizCompleted = false;
+        let timerPaused = false;
+        let toolsMenuOpen = false;
+        let isSpeaking = false;
+        
+        // Initialize the quiz
+        function initQuiz() {
+            const savedProgress = localStorage.getItem('{{Id}}');
+            if (savedProgress) {
+                const progress = JSON.parse(savedProgress);
+                if (!progress.completed) {
+                    currentQuestion = progress.currentQuestion;
+                    score = progress.score;
+                    skippedQuestions = progress.skippedQuestions;
+                    userAnswers = progress.userAnswers;
+                    timeLeft = progress.timeLeft;
+                    
+                    if (userAnswers.every(answer => answer !== null)) {
+                        completeQuiz();
+                        return;
+                    }
+                } else {
+                    showResult(progress);
+                    return;
+                }
+            }
+            
+            totalMarks = quizData.reduce((sum, question) => sum + question.marks, 0);
+            loadQuestion(currentQuestion);
+            startTimer();
+        }
+        
+        function saveProgress() {
+            const progress = {
+                currentQuestion: currentQuestion,
+                score: score,
+                skippedQuestions: skippedQuestions,
+                userAnswers: userAnswers,
+                timeLeft: timeLeft,
+                completed: quizCompleted,
+                timestamp: new Date().toISOString()
+            };
+            localStorage.setItem('{{Id}}', JSON.stringify(progress));
+        }
+        
+        function loadQuestion(index) {
+            questionContainer.innerHTML = '';
+            
+            const question = quizData[index];
+            const questionSlide = document.createElement('div');
+            questionSlide.className = `question-slide ${index === currentQuestion ? 'active' : ''}`;
+            
+            const questionHTML = `
+                <div class="question">Q${index + 1}. ${question.question}</div>
+                <button class="speak-btn" onclick="speakQuestion(${index})"><i class="fas fa-volume-up"></i></button>
+                <div class="options">
+                    ${question.options.map((option, i) => `
+                        <div class="option" onclick="selectOption(${i}, ${index})" data-option="${i}">
+                            <span class="option-label">${String.fromCharCode(65 + i)}</span>
+                            <span class="option-text">${option}</span>
+                            <span class="option-status">
+                                ${i === question.correct ? '<i class="fas fa-check"></i>' : '<i class="fas fa-times"></i>'}
+                            </span>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+            
+            questionSlide.innerHTML = questionHTML;
+            questionContainer.appendChild(questionSlide);
+            
+            prevBtn.disabled = index === 0;
+            
+            if (userAnswers[index] !== null && userAnswers[index] !== -1) {
+                const optionEl = questionSlide.querySelector(`.option[data-option="${userAnswers[index]}"]`);
+                if (optionEl) {
+                    optionEl.classList.add(question.correct === userAnswers[index] ? 'correct' : 'wrong');
+                }
+            }
+            
+            saveProgress();
+        }
+        
+        function selectOption(optionIndex, questionIndex) {
+            if (userAnswers[questionIndex] !== null || isSpeaking) return;
+            
+            const question = quizData[questionIndex];
+            const questionSlide = document.querySelector('.question-slide.active');
+            const optionEl = questionSlide.querySelector(`.option[data-option="${optionIndex}"]`);
+            
+            userAnswers[questionIndex] = optionIndex;
+            
+            if (optionIndex === question.correct) {
+                optionEl.classList.add('correct');
+                score += question.marks;
+                speakFeedback("Correct! Well done!");
+            } else {
+                optionEl.classList.add('wrong');
+                const correctOption = questionSlide.querySelector(`.option[data-option="${question.correct}"]`);
+                correctOption.classList.add('correct');
+                speakFeedback("Wrong answer. The correct answer is " + question.options[question.correct]);
+            }
+            
+            saveProgress();
+        }
+        
+        function speakFeedback(text) {
+            isSpeaking = true;
+            const utterance = new SpeechSynthesisUtterance(text);
+            
+            utterance.onend = function() {
+                isSpeaking = false;
+                if (currentQuestion < quizData.length - 1) {
+                    goToQuestion(currentQuestion + 1);
+                } else {
+                    completeQuiz();
+                }
+            };
+            
+            window.speechSynthesis.speak(utterance);
+        }
+        
+        function speakQuestion(index) {
+            const question = quizData[index];
+            let speechText = `Question ${index + 1}. ${question.question}. Options are. `;
+            
+            question.options.forEach((option, i) => {
+                speechText += `${String.fromCharCode(65 + i)}. ${option}. `;
+            });
+            
+            const utterance = new SpeechSynthesisUtterance(speechText);
+            window.speechSynthesis.speak(utterance);
+        }
+        
+        function goToQuestion(index) {
+            const currentSlide = document.querySelector('.question-slide.active');
+            currentSlide.classList.remove('active');
+            currentSlide.classList.add(index > currentQuestion ? 'next' : 'prev');
+            
+            currentQuestion = index;
+            loadQuestion(index);
+        }
+        
+        function startTimer() {
+            clearInterval(timer);
+            timer = setInterval(() => {
+                if (!timerPaused) {
+                    timeLeft--;
+                    updateTimerDisplay();
+                    
+                    if (timeLeft <= 0) {
+                        clearInterval(timer);
+                        timeDisplay.textContent = "00:00";
+                        if (!quizCompleted) {
+                            completeQuiz();
+                        }
+                    }
+                }
+            }, 1000);
+        }
+        
+        function updateTimerDisplay() {
+            const minutes = Math.floor(Math.abs(timeLeft) / 60);
+            const seconds = Math.abs(timeLeft) % 60;
+            const sign = timeLeft < 0 ? "-" : "";
+            timeDisplay.textContent = `${sign}${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (timeLeft < 0) {
+                timeDisplay.style.color = 'var(--wrong-color)';
+            }
+        }
+        
+        function completeQuiz() {
+            clearInterval(timer);
+            quizCompleted = true;
+            
+            skippedQuestions = userAnswers.filter(answer => answer === null || answer === -1).length;
+            
+            const result = {
+                completed: true,
+                score: score,
+                totalMarks: quizData.length * 10,
+                totalQuestions: quizData.length,
+                skippedQuestions: skippedQuestions,
+                timeLeft: timeLeft,
+                userAnswers: userAnswers,
+                timestamp: new Date().toISOString()
+            };
+            
+            localStorage.setItem('{{Id}}', JSON.stringify(result));
+            showResult(result);
+            
+            speakResult(result);
+        }
+        
+        function speakResult(result) {
+            const correctCount = result.score / 10;
+            const timeUsed = 60 - result.timeLeft;
+            const minutes = Math.floor(timeUsed / 60);
+            const seconds = timeUsed % 60;
+            const overtime = timeLeft < 0;
+            
+            let timeText = overtime ? 
+                `You used ${minutes} minutes and ${seconds} seconds overtime.` : 
+                `You completed in ${minutes} minutes and ${seconds} seconds.`;
+                
+            const speechText = `Quiz completed! You scored ${result.score} out of ${result.totalMarks}. 
+                You got ${correctCount} questions correct out of ${result.totalQuestions}. 
+                ${result.skippedQuestions > 0 ? `You skipped ${result.skippedQuestions} questions.` : ''}
+                ${timeText}`;
+            
+            const utterance = new SpeechSynthesisUtterance(speechText);
+            window.speechSynthesis.speak(utterance);
+        }
+        
+        function showResult(result) {
+            quizCard.style.display = 'none';
+            resultContainer.style.display = 'flex';
+            
+            const timeUsed = 60 - result.timeLeft;
+            const minutes = Math.floor(Math.abs(timeUsed) / 60);
+            const seconds = Math.abs(timeUsed) % 60;
+            const overtime = timeLeft < 0;
+            
+
+
+
+            let resultHTML = `
+                <button class="try-again-btn" onclick="tryAgain()">Try Again</button>
+                <h2>Quiz Completed!</h2>
+                <div class="result-stats">
+                    <div class="stat-box">
+                        <h3>Marks Obtained</h3>
+                        <p>${result.score}/${result.totalMarks}</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>Correct</h3>
+                        <p>${result.score / 10}/${result.totalQuestions}</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>Skipped</h3>
+                        <p>${result.skippedQuestions}</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>Time Used</h3>
+                        <p>${overtime ? '-' : ''}${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')} ${overtime ? '(Overtime)' : ''}</p>
+                    </div>
+                </div>
+                <div class="result-questions">
+            `;
+            
+            resultHTML += `
+                <div>
+                <div class="result-actions">
+                    <button class="action-btn" onclick="shareResult('facebook')"><i class="fab fa-facebook-f"></i></button>
+                    <button class="action-btn" onclick="shareResult('twitter')"><i class="fab fa-twitter"></i></button>
+                    <button class="action-btn" onclick="shareResult('whatsapp')"><i class="fab fa-whatsapp"></i></button>
+                    <button class="action-btn" onclick="copyQuizLink()"><i class="fas fa-link"></i></button>
+                </div><br>
+            `;
+
+
+            quizData.forEach((question, index) => {
+                const userAnswer = result.userAnswers[index];
+                const isCorrect = userAnswer !== null && userAnswer !== -1 && userAnswer === question.correct;
+                const isSkipped = userAnswer === null || userAnswer === -1;
+                
+                resultHTML += `
+                    <div class="result-question">
+                        <div class="question">Q${index + 1}. ${question.question}</div>
+                        ${isSkipped ? `
+                            <div class="user-answer skipped">
+                                <i class="fas fa-forward"></i>
+                                <span>Skipped (0/${question.marks} marks)</span>
+                            </div>
+                        ` : `
+                            <div class="user-answer ${isCorrect ? 'correct' : 'wrong'}">
+                                <i class="fas ${isCorrect ? 'fa-check' : 'fa-times'}"></i>
+                                <span>Your answer: ${String.fromCharCode(65 + userAnswer)}. ${question.options[userAnswer]} (${isCorrect ? question.marks : 0}/${question.marks} marks)</span>
+                            </div>
+                        `}
+                        <div class="correct-answer">
+                            <i class="fas fa-check"></i>
+                            Correct answer: ${String.fromCharCode(65 + question.correct)}. ${question.options[question.correct]}
+                        </div>
+                    </div>
+                `;
+            });
+            
+
+            
+            resultContainer.innerHTML = resultHTML;
+        }
+        
+        function shareResult(platform) {
+            const shareText = ` *🙄 I scored ${score}/${quizData.length * 10} marks in the Class {{Tip}} 😅!* `;
+            let url = '';
+              
+            switch(platform) {
+                case 'facebook':
+                    url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href.split('?')[0])}`;
+                    break;
+                case 'twitter':
+                    url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(window.location.href.split('?')[0])}`;
+                    break;
+                case 'whatsapp':
+                    url = `https://wa.me/?text=${encodeURIComponent(shareText + ' ' + window.location.href.split('?')[0])}`;
+                    break;
+            }
+            
+            window.open(url, '_blank', 'width=600,height=400');
+        }
+        
+        function copyQuizLink() {
+            const url = window.location.href.split('?')[0];
+            
+            copyMessage.classList.add('show');
+            setTimeout(() => {
+                copyMessage.classList.remove('show');
+            }, 2000);
+            
+            navigator.clipboard.writeText(url).catch(() => {
+                const textArea = document.createElement('textarea');
+                textArea.value = url;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+            });
+        }
+        
+        function tryAgain() {
+            localStorage.removeItem('{{Id}}');
+            
+            currentQuestion = 0;
+            score = 0;
+            skippedQuestions = 0;
+            userAnswers = Array(quizData.length).fill(null);
+            timeLeft = 3000;
+            quizCompleted = false;
+            
+            quizCard.style.display = 'block';
+            resultContainer.style.display = 'none';
+            timeDisplay.style.color = '';
+            
+            loadQuestion(currentQuestion);
+            startTimer();
+        }
+        
+        
+        function toggleToolsMenu() {
+            toolsMenuOpen = !toolsMenuOpen;
+            if (toolsMenuOpen) {
+                toolsMenu.classList.add('active');
+                toolsBtn.innerHTML = '<i class="fas fa-times"></i>';
+                toolsBtn.style.transform = 'rotate(45deg)';
+            } else {
+                toolsMenu.classList.remove('active');
+                toolsBtn.innerHTML = '<i class="fas fa-tools"></i>';
+                toolsBtn.style.transform = 'rotate(0)';
+            }
+        }
+        
+        
+        backBtn.addEventListener('click', () => {
+            history.back();
+        });
+        
+        themeCheckbox.addEventListener('change', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', themeCheckbox.checked);
+        });
+        
+        prevBtn.addEventListener('click', () => {
+            showAd(() => {
+                goToQuestion(currentQuestion - 1);
+            });
+        });
+        
+        skipBtn.addEventListener('click', () => {
+            showAd(() => {
+                if (currentQuestion < quizData.length - 1) {
+                    skippedQuestions++;
+                    userAnswers[currentQuestion] = -1;
+                    saveProgress();
+                    goToQuestion(currentQuestion + 1);
+                } else {
+                    userAnswers[currentQuestion] = -1;
+                    completeQuiz();
+                }
+            });
+        });
+        
+        toolsBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleToolsMenu();
+        });
+        
+        drawBtn.addEventListener('click', () => {
+            toggleToolsMenu();
+            showAd(() => {
+                drawOverlay.classList.add('active');
+            });
+        });
+        
+        calcBtn.addEventListener('click', () => {
+            toggleToolsMenu();
+            showAd(() => {
+                calcOverlay.classList.add('active');
+            });
+        });
+        
+        closeDraw.addEventListener('click', () => {
+            drawOverlay.classList.remove('active');
+        });
+        
+        closeCalc.addEventListener('click', () => {
+            calcOverlay.classList.remove('active');
+        });
+        
+        document.addEventListener('click', () => {
+            if (toolsMenuOpen) {
+                toggleToolsMenu();
+            }
+        });
+        
+        toolsMenu.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+        
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+            themeCheckbox.checked = true;
+        }
+        
+        initQuiz();
+        
+        window.addEventListener('beforeunload', () => {
+            if (!quizCompleted) {
+                saveProgress();
+            }
+        });
+    </script>
+
+    <script src="../../JS/class12adds.js"></script>
+    <script src="../../JS/Clickdot.js"></script>
+</body>
+</html>

@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 12 Science Tests</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --accent-color: #f72585;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --success-color: #4cc9f0;
+            --warning-color: #f8961e;
+            --danger-color: #ef233c;
+            --math-color: #ff9f1c;
+            --neet-color: #6a1b9a;
+            --jee-color: #ff6d00;
+            --carousel-1: #3a86ff;
+            --carousel-2: #8338ec;
+            --carousel-3: #ff006e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f7fa;
+            color: var(--dark-color);
+            line-height: 1.6;
+            touch-action: pan-y;
+        }
+
+        .hidden-heading {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 0;
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .back-button {
+            position: absolute;
+            left: 20px;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: transform 0.3s;
+            text-decoration: none;
+        }
+
+        .back-button:hover {
+            transform: translateX(-5px);
+        }
+
+        .page-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        /* Top Carousel Section */
+        .carousel-container {
+            width: 100%;
+            margin: 0 auto 30px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: 100%;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            padding: 25px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .carousel-slide:nth-child(1) {
+            background: linear-gradient(135deg, var(--carousel-1), #2667cc);
+        }
+
+        .carousel-slide:nth-child(2) {
+            background: linear-gradient(135deg, var(--carousel-2), #6a28d9);
+        }
+
+        .carousel-slide:nth-child(3) {
+            background: linear-gradient(135deg, var(--carousel-3), #cc0059);
+        }
+
+        .carousel-slide i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: rgb(0 255 67);
+        }
+        .carousel-slide1 i {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            color: rgb(0 255 67);
+        }
+        .carousel-slide h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-slide p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            max-width: 80%;
+            opacity: 0.9;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-btn {
+color:white;
+            text-decoration: none;
+
+        }
+
+
+        .carousel-slide:nth-child(1) .carousel-btn {
+            color: var(--carousel-1);
+color:white;
+        }
+
+        .carousel-slide:nth-child(2) .carousel-btn {
+            color: var(--carousel-2);
+color:white;
+        }
+
+        .carousel-slide:nth-child(3) .carousel-btn {
+            color: var(--carousel-3);
+color:white;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 3px;
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            right: 0;
+        }
+
+        .carousel-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: rgb(255 255 255 / 27%);
+            margin: 0 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .carousel-dot.active {
+            background: white;
+            transform: scale(1.3);
+        }
+
+        /* Special Test Section */
+        .special-test {
+            background: linear-gradient(135deg, #4361ee, #3a0ca3);
+            color: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(67, 97, 238, 0.3);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .special-test.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .special-test::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            animation: rotate 15s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .special-test h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .special-test p {
+            margin-bottom: 15px;
+            position: relative;
+            opacity: 0.9;
+        }
+
+        .special-test .live-badge {
+            background-color: var(--danger-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+            animation: pulse 2s infinite;
+        }
+
+        .special-test-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border: none;
+            font-size: 1rem;
+            position: relative;
+            min-width: 150px;
+            text-align: center;
+        }
+
+        .special-test-btn:hover {
+            background-color: #d11668;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(247, 37, 133, 0.4);
+        }
+
+        /* Test Boxes Grid */
+        .tests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        /* Test Box Styles */
+        .test-box {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .test-box.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .test-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .test-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .test-box h3 i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .test-box p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .test-box .next-test {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            margin-top: 5px;
+            font-weight: 500;
+        }
+
+        .live-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--danger-color);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+
+        .special-tag {
+            display: inline-block;
+            margin-top: 10px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Section Title Styles */
+        .section-title {
+            font-size: 1.5rem;
+            margin: 30px 0 20px;
+            color: var(--primary-color);
+            text-align: center;
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .section-title.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title i {
+            margin-right: 10px;
+        }
+
+        /* Revision Tests Section */
+        .revision-tests {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .revision-box {
+            background: white;
+            border-radius: 12px;
+            padding: 25px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            cursor: pointer;
+        }
+
+        .revision-box.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .revision-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .revision-box i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .revision-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .physics {
+            border-top: 4px solid #4361ee;
+        }
+
+        .physics i {
+            color: #4361ee;
+        }
+
+        .chemistry {
+            border-top: 4px solid #3f37c9;
+        }
+
+        .chemistry i {
+            color: #3f37c9;
+        }
+
+        .biology {
+            border-top: 4px solid #7209b7;
+        }
+
+        .biology i {
+            color: #7209b7;
+        }
+
+        .math {
+            border-top: 4px solid var(--math-color);
+        }
+
+        .math i {
+            color: var(--math-color);
+        }
+
+        /* Iframe Styles */
+        .test-iframe-container {
+            width: 100%;
+            margin: 30px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .test-iframe {
+            width: 100%;
+            border: none;
+            height: 90%;
+            transition: height 0.3s ease;
+        }
+
+        /* Notify Button */
+        .notify-btn {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 40px auto;
+            padding: 15px 25px;
+            background-color: #25D366;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            text-decoration: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .notify-btn.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .notify-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+            background-color: #128C7E;
+        }
+
+        .notify-btn i {
+            margin-right: 10px;
+        }
+
+        /* Competitive Exam Boxes */
+        .competitive-exams {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .exam-box {
+            background: white;
+            border-radius: 12px;
+            padding: 25px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .exam-box.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .exam-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .exam-box h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .exam-box h3 i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .exam-box p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .exam-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .neet-box {
+            border-top: 4px solid var(--neet-color);
+        }
+
+        .neet-box h3 i {
+            color: var(--neet-color);
+        }
+
+        .neet-btn {
+            background-color: var(--neet-color);
+            color: white;
+        }
+
+        .neet-btn:hover {
+            background-color: #5a148a;
+        }
+
+        .jee-box {
+            border-top: 4px solid var(--jee-color);
+        }
+
+        .jee-box h3 i {
+            color: var(--jee-color);
+        }
+
+        .jee-btn {
+            background-color: var(--jee-color);
+            color: white;
+        }
+
+        .jee-btn:hover {
+            background-color: #e65c00;
+        }
+
+        /* Upcoming Tests */
+        .upcoming-tests {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .upcoming-box {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateX(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            cursor: pointer;
+        }
+
+        .upcoming-box.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .upcoming-box h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .upcoming-box h3 i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .upcoming-box p {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        /* Download PDF Section */
+        .download-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .download-box {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .download-box.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .download-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .download-box i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .download-box h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .download-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            border: none;
+            font-size: 0.9rem;
+        }
+
+        .download-btn i {
+            font-size: 1rem;
+            color: white;
+            margin-right: 8px;
+            margin-bottom: 0;
+        }
+
+        .download-btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 1.5rem;
+                margin-left: 40px;
+            }
+
+            .tests-grid, .revision-tests, .upcoming-tests, .download-section, .competitive-exams {
+                grid-template-columns: 1fr;
+            }
+
+            .test-iframe {
+                min-height: 300px;
+            }
+
+            .carousel-slide {
+                padding: 15px 0px;
+            }
+
+            .carousel-slide h3 {
+                font-size: 1.3rem;
+            }
+
+            .carousel-slide p {
+                font-size: 0.9rem;
+                max-width: 90%;
+            }
+
+            .carousel-btn {
+                padding: 1px 2px;
+                width: 100%;
+margin-bottom: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 1.3rem;
+            }
+
+            .test-box, .revision-box, .upcoming-box, .download-box, .exam-box {
+                padding: 15px;
+            }
+
+            .special-test h2 {
+                font-size: 1.3rem;
+            }
+
+            .carousel-slide i {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hidden Heading for SEO -->
+        <h1 class="hidden-heading">Hidden Test</h1>
+
+        <!-- Header Section -->
+        <header>
+            <a href="#" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <h2 class="page-title">Class 12 Science Tests</h2>
+        </header>
+
+        <!-- Top Carousel Section -->
+        <div class="carousel-container">
+            <div class="carousel" id="carousel">
+                <div class="carousel-slide">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Quick Revision Tests</h3>
+                    <p>Daily 20-minute tests for quick revision of key concepts</p>
+                    <a href="https://example.com/quick-revision" class="carousel-btn">
+                        <i class="fas fa-play" style="font-size: 1rem;"></i> Start Now
+                    </a>
+                </div>
+                <div class="carousel-slide">
+                    <i class="fas fa-medal"></i>
+                    <h3>Topper's Strategy</h3>
+                    <p>Learn from last year's top scorers and their techniques</p>
+                    <a href="https://example.com/topper-strategy" class="carousel-btn">
+                        <i class="fas fa-play"  style="font-size: 1rem;"></i> Learn More
+                    </a>
+                </div>
+                <div class="carousel-slide">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Performance Analysis</h3>
+                    <p>Detailed analysis of your test performance with insights</p>
+                    <a href="https://example.com/performance-analysis" class="carousel-btn">
+                        <i class="fas fa-play" style="font-size: 1rem;"></i> View Analysis
+                    </a>
+                </div>
+            </div>
+            <div class="carousel-dots" id="carouselDots">
+                <!-- Dots will be added by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Special Test Section -->
+        <div class="special-test" id="specialTest">
+            <span class="live-badge" id="monthlyBadge">LIVE</span>
+            <h2><i class="fas fa-calendar-alt"></i> Full Syllabus Monthly Test</h2>
+            <p>Comprehensive test covering all subjects with detailed solutions</p>
+            <button class="special-test-btn" id="monthlyTestBtn" onclick="loadTest('monthly')">
+                <i class="fas fa-play"></i> Start Test
+            </button>
+        </div>
+
+        <!-- Main Tests Section -->
+        <h2 class="section-title" id="dailyTestsTitle"><i class="fas fa-calendar-day"></i> Daily Tests</h2>
+        <div class="tests-grid" id="dailyTests">
+            <!-- Test boxes will be generated by JavaScript -->
+        </div>
+
+        <!-- Iframe Container -->
+        <div class="test-iframe-container" id="testIframeContainer">
+            <iframe class="test-iframe" id="testIframe" src="" frameborder="0"></iframe>
+        </div>
+
+        <!-- Revision Tests Section -->
+        <h2 class="section-title" id="revisionTestsTitle"><i class="fas fa-redo"></i> Revision Tests</h2>
+        <div class="revision-tests" id="revisionTests">
+            <div class="revision-box physics" onclick="loadTest('physics')">
+                <i class="fas fa-atom"></i>
+                <h3>Physics Revision Test</h3>
+                <p>Comprehensive revision for all physics topics</p>
+            </div>
+            <div class="revision-box chemistry" onclick="loadTest('chemistry')">
+                <i class="fas fa-flask"></i>
+                <h3>Chemistry Revision Test</h3>
+                <p>Covering organic, inorganic and physical chemistry</p>
+            </div>
+            <div class="revision-box biology" onclick="loadTest('biology')">
+                <i class="fas fa-dna"></i>
+                <h3>Biology Revision Test</h3>
+                <p>Complete biology syllabus revision</p>
+            </div>
+            <div class="revision-box math" onclick="loadTest('math')">
+                <i class="fas fa-square-root-alt"></i>
+                <h3>Mathematics Revision Test</h3>
+                <p>All chapters with practice problems</p>
+            </div>
+        </div>
+
+        <!-- Download PDF Section -->
+        <h2 class="section-title" id="downloadTitle"><i class="fas fa-file-download"></i> Download Study Material</h2>
+        <div class="download-section">
+            <a href="whatsapp" class="download-box" download>
+                <i class="fas fa-file-pdf"></i>
+                <h3>Complete Syllabus Notes</h3>
+                <p>All subjects PDF file Daily One By One</p>
+                <div class="download-btn">
+                    <i class="fas fa-download"></i> Download PDF
+                </div>
+            </a>
+            <a href="whatsapp" class="download-box" download>
+                <i class="fas fa-book"></i>
+                <h3>New Question Papers</h3>
+                <p>Solved papers</p>
+                <div class="download-btn">
+                    <i class="fas fa-download"></i> Download PDF
+                </div>
+            </a>
+        </div>
+
+        <!-- Competitive Exams Section -->
+        <h2 class="section-title" id="competitiveTitle"><i class="fas fa-trophy"></i> Competitive Exam Series</h2>
+        <div class="competitive-exams">
+            <a href="../Lock12S.html" class="exam-box neet-box">
+                <h3><i class="fas fa-medkit"></i> Crack NEET Using NEET Series</h3>
+                <p>Comprehensive test series for NEET preparation with detailed solutions</p>
+                <div class="exam-btn neet-btn">Start Series</div>
+            </a>
+            <a href="https://example.com/jee-series" class="exam-box jee-box">
+                <h3><i class="fas fa-calculator"></i> JEE Main & Advanced Series</h3>
+                <p>Complete test series for JEE preparation with advanced problems</p>
+                <div class="exam-btn jee-btn">Start Series</div>
+            </a>
+        </div>
+
+        <!-- More Tests Section -->
+        <h2 class="section-title" id="upcomingTitle"><i class="fas fa-calendar-plus"></i> More Tests Upcoming</h2>
+        <div class="upcoming-tests" id="upcomingTests">
+            <div class="upcoming-box" onclick="loadTest('full-syllabus')">
+                <h3><i class="fas fa-star"></i> Full Syllabus Test</h3>
+                <p>Complete syllabus mock test coming next month</p>
+            </div>
+            <div class="upcoming-box" onclick="loadTest('competitive')">
+                <h3><i class="fas fa-trophy"></i> Competitive Test Series</h3>
+                <p>JEE/NEET preparation tests</p>
+            </div>
+            <div class="upcoming-box" onclick="loadTest('doubt-session')">
+                <h3><i class="fas fa-chalkboard-teacher"></i> Special Doubt Session</h3>
+                <p>Live doubt solving sessions every Friday</p>
+            </div>
+            <div class="upcoming-box" onclick="loadTest('speed-test')">
+                <h3><i class="fas fa-clock"></i> Speed Test Challenge</h3>
+                <p>Timed tests to improve speed</p>
+            </div>
+        </div>
+
+        <!-- Notify Button -->
+        <a href="https://wa.me/919999999999?text=I%20want%20test%20notifications" class="notify-btn" id="notifyBtn">
+            <i class="fab fa-whatsapp"></i> Notify Me
+        </a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize carousel
+            initCarousel();
+
+            // Get current date and day
+            const currentDate = new Date();
+            const today = currentDate.getDay(); // 0-6 (Sunday-Saturday)
+            const dateOfMonth = currentDate.getDate(); // 1-31
+            
+            // Check if it's the 1st of the month for monthly test
+            const isFirstOfMonth = dateOfMonth === 1;
+            
+            // Days array with next test dates
+            const days = [
+                { 
+                    name: 'Sunday', 
+                    label: 'Weekly Test', 
+                    tag: 'Don\'t miss this test',
+                    nextTest: 'Next: Tomorrow',
+                    url: 'sunday',
+                    icon: 'fas fa-calendar-week'
+                },
+                { 
+                    name: 'Monday', 
+                    label: 'Monday Test', 
+                    tag: '',
+                    nextTest: today === 1 ? 'Live Now' : `Next: ${getNextWeekday(1)}`,
+                    url: 'monday',
+                    icon: 'fas fa-calendar-day'
+                },
+                { 
+                    name: 'Tuesday', 
+                    label: 'Tuesday Test', 
+                    tag: '',
+                    nextTest: today === 2 ? 'Live Now' : `Next: ${getNextWeekday(2)}`,
+                    url: 'tuesday',
+                    icon: 'fas fa-calendar-day'
+                },
+                { 
+                    name: 'Wednesday', 
+                    label: 'Wednesday Test', 
+                    tag: '',
+                    nextTest: today === 3 ? 'Live Now' : `Next: ${getNextWeekday(3)}`,
+                    url: 'wednesday',
+                    icon: 'fas fa-calendar-day'
+                },
+                { 
+                    name: 'Thursday', 
+                    label: 'Thursday Test', 
+                    tag: '',
+                    nextTest: today === 4 ? 'Live Now' : `Next: ${getNextWeekday(4)}`,
+                    url: 'thursday',
+                    icon: 'fas fa-calendar-day'
+                },
+                { 
+                    name: 'Friday', 
+                    label: 'Friday Test', 
+                    tag: '',
+                    nextTest: today === 5 ? 'Live Now' : `Next: ${getNextWeekday(5)}`,
+                    url: 'friday',
+                    icon: 'fas fa-calendar-day'
+                },
+                { 
+                    name: 'Saturday', 
+                    label: 'Saturday Test', 
+                    tag: '',
+                    nextTest: today === 6 ? 'Live Now' : `Next: ${getNextWeekday(6)}`,
+                    url: 'saturday',
+                    icon: 'fas fa-calendar-day'
+                }
+            ];
+
+            // Show/hide monthly test based on date
+            const monthlyBadge = document.getElementById('monthlyBadge');
+            const monthlyTestBtn = document.getElementById('monthlyTestBtn');
+            
+            if (!isFirstOfMonth) {
+                monthlyBadge.style.display = 'none';
+                monthlyTestBtn.style.display = 'none';
+                document.getElementById('specialTest').style.background = '#e9ecef';
+                document.getElementById('specialTest').style.color = '#495057';
+                document.getElementById('specialTest').querySelector('h2').innerHTML = '<i class="fas fa-calendar-alt"></i> Monthly Test (Available on 1st)';
+            }
+
+            // Generate test boxes
+            const dailyTestsContainer = document.getElementById('dailyTests');
+            
+            days.forEach((day, index) => {
+                const testBox = document.createElement('div');
+                testBox.className = `test-box ${index === today ? '' : 'disabled'}`;
+                testBox.onclick = function() {
+                    loadTest(day.url);
+                };
+                
+                testBox.innerHTML = `
+                    ${index === today ? '<span class="live-badge">LIVE</span>' : ''}
+                    <h3><i class="${day.icon}"></i> ${day.label}</h3>
+                    <p>${day.name}'s special test covering important topics</p>
+                    <p class="next-test">${day.nextTest}</p>
+                    ${day.tag ? '<span class="special-tag">' + day.tag + '</span>' : ''}
+                `;
+                
+                dailyTestsContainer.appendChild(testBox);
+            });
+
+            // Function to initialize carousel
+            function initCarousel() {
+                const carousel = document.getElementById('carousel');
+                const slides = document.querySelectorAll('.carousel-slide');
+                const dotsContainer = document.getElementById('carouselDots');
+                
+                let currentIndex = 0;
+                let startX = 0;
+                let isDragging = false;
+                
+                // Create dots
+                slides.forEach((slide, index) => {
+                    const dot = document.createElement('div');
+                    dot.className = 'carousel-dot';
+                    if(index === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => {
+                        goToSlide(index);
+                    });
+                    dotsContainer.appendChild(dot);
+                });
+                
+                // Touch events for mobile
+                carousel.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                    isDragging = true;
+                });
+                
+                carousel.addEventListener('touchmove', (e) => {
+                    if (!isDragging) return;
+                    const x = e.touches[0].clientX;
+                    const diff = startX - x;
+                    if (Math.abs(diff) > 50) {
+                        if (diff > 0) {
+                            nextSlide();
+                        } else {
+                            prevSlide();
+                        }
+                        isDragging = false;
+                    }
+                });
+                
+                carousel.addEventListener('touchend', () => {
+                    isDragging = false;
+                });
+                
+                // Auto slide
+                let slideInterval = setInterval(nextSlide, 5000);
+                
+                function nextSlide() {
+                    currentIndex = (currentIndex + 1) % slides.length;
+                    goToSlide(currentIndex);
+                }
+                
+                function prevSlide() {
+                    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                    goToSlide(currentIndex);
+                }
+                
+                function goToSlide(index) {
+                    currentIndex = index;
+                    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+                    
+                    // Update dots
+                    document.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+                        dot.classList.toggle('active', i === currentIndex);
+                    });
+                    
+                    // Reset timer
+                    clearInterval(slideInterval);
+                    slideInterval = setInterval(nextSlide, 5000);
+                }
+            }
+
+            // Function to get next weekday date
+            function getNextWeekday(weekday) {
+                const today = new Date();
+                const resultDate = new Date(today);
+                
+                // Calculate days until next weekday
+                const daysUntilNext = (weekday - today.getDay() + 7) % 7;
+                daysUntilNext === 0 ? resultDate.setDate(today.getDate() + 7) : resultDate.setDate(today.getDate() + daysUntilNext);
+                
+                // Format as "Day, Date Month" (e.g., "Monday, 15 May")
+                return resultDate.toLocaleDateString('en-US', { weekday: 'long', day: 'numeric', month: 'short' });
+            }
+
+            // Function to load test in iframe
+            function loadTest(testType) {
+                // For carousel items, PDF downloads, and competitive exams - don't use iframe
+                const directLinks = [
+                    'quick-revision', 'topper-strategy', 'performance-analysis',
+                    'complete-notes', 'previous-papers', 'neet-series', 'jee-series'
+                ];
+                
+                if (directLinks.includes(testType)) {
+                    return; // These are handled by direct links in the HTML
+                }
+                
+                const iframeContainer = document.getElementById('testIframeContainer');
+                const iframe = document.getElementById('testIframe');
+                
+                // Test URLs with parameters
+                const testUrls = {
+                    'monday': 'file:///D:/!!!AAEBook/Temp.html',
+                    'tuesday': 'https://example.com/tests?day=tuesday&subject=science&class=12',
+                    'wednesday': 'https://example.com/tests?day=wednesday&subject=science&class=12',
+                    'thursday': 'https://example.com/tests?day=thursday&subject=science&class=12',
+                    'friday': 'https://example.com/tests?day=friday&subject=science&class=12',
+                    'saturday': 'https://example.com/tests?day=saturday&subject=science&class=12',
+                    'sunday': 'https://example.com/tests?day=sunday&subject=science&class=12',
+                    'physics': 'file:///D:/!!!AAEBook/Temp.html',
+                    'chemistry': 'https://example.com/tests?subject=chemistry&type=revision',
+                    'biology': 'https://example.com/tests?subject=biology&type=revision',
+                    'math': 'https://example.com/tests?subject=math&type=revision',
+                    'monthly': 'https://example.com/tests?type=monthly&date=1',
+                    'full-syllabus': 'https://example.com/tests?type=full-syllabus',
+                    'competitive': 'https://example.com/tests?type=competitive',
+                    'doubt-session': 'https://example.com/tests?type=doubt-session',
+                    'speed-test': 'https://example.com/tests?type=speed-test'
+                };
+                
+                iframe.src = testUrls[testType] || 'https://example.com/tests';
+                iframeContainer.style.display = 'block';
+                
+                // Scroll to iframe
+                iframeContainer.scrollIntoView({ behavior: 'smooth' });
+                
+                // Adjust iframe height based on content
+                iframe.onload = function() {
+                    iframe.style.height = '790px';
+                };
+            }
+
+            // Intersection Observer for scroll animations
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all elements that should animate
+            document.querySelectorAll('.special-test, .test-box, .section-title, .revision-box, .upcoming-box, .download-box, .exam-box, .notify-btn').forEach(element => {
+                observer.observe(element);
+            });
+
+            // Additional observer for upcoming boxes with staggered animation
+            const upcomingObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                        }, index * 100);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.upcoming-box').forEach(box => {
+                upcomingObserver.observe(box);
+            });
+        });
+    </script>
+</body>
+</html>

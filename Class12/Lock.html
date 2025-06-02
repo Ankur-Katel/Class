@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 12 PCMB - NEET & JEE</title>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@500&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="../Css./Lock.css">
+    <style>
+    </style>
+</head>
+<body>
+    <header id="main-header">
+        <div class="theme-toggle-container">
+            <label class="toggle-switch">
+                <input type="checkbox" id="themeToggle">
+                <span class="slider"></span>
+            </label>
+            <span id="themeLabel"></span>
+        </div>
+        <div class="header-title">Class 12 Science</div>
+        <button id="backButton" class="back-button hidden"><i class="fas fa-arrow-left"></i> Back</button>
+    </header>
+
+    <!-- Popup Notification -->
+    <div id="popupNotification" class="popup-notification hidden">
+        <i class="fas fa-check-circle"></i>
+        <span>Working For this Chapter</span>
+    </div>
+
+    <div id="main-content" style="width:90%;">
+        <!-- Free Content Box -->
+        <div class="free-content-box">
+            <div class="free-content-image"></div>
+            <div class="free-content-body">
+                <div class="free-content-title">
+                    <i class="fas fa-gift"></i>
+                    Free Assets
+                    <span class="free-badge">FREE</span>
+                </div>
+                <div class="free-content-text">
+                    <span class="strike-text">₹499</span> Get access to our free introductory materials and sample chapters.
+                </div>
+                <a href="./Free/1.html" class="free-content-link">
+                    <i class="fas fa-external-link-alt"></i> Access Free Content
+                </a>
+            </div>
+        </div>
+        </div>
+    <div id="main-content">
+        <!-- Subject Cards -->
+        <div class="subject-cards">
+            <div class="subject-card" id="physics-card">
+                <div class="subject-card-image landscape" style="background-image: url('https://i.ibb.co/G4K06PWv/P.png')"></div>
+                <div class="subject-card-content">
+                    <div class="subject-card-price" id="physics-price">Just ₹499</div>
+                    <div class="subject-card-status" id="physics-status">
+                        <i class="fas fa-shopping-cart"></i> Shop Now
+                    </div>
+                </div>
+            </div>
+
+            <div class="subject-card" id="chemistry-card">
+                <div class="subject-card-image landscape" style="background-image: url('https://i.ibb.co/zhbQrJQv/C.png')"></div>
+                <div class="subject-card-content">
+                    <div class="subject-card-price" id="chemistry-price">Just ₹499</div>
+                    <div class="subject-card-status" id="chemistry-status">
+                        <i class="fas fa-shopping-cart"></i> Shop Now
+                    </div>
+                </div>
+            </div>
+
+            <div class="subject-card" id="maths-card">
+                <div class="subject-card-image landscape" style="background-image: url('https://i.ibb.co/Y7Yxhz8v/M.png')"></div>
+                <div class="subject-card-content">
+                    <div class="subject-card-price" id="maths-price">Just ₹499</div>
+                    <div class="subject-card-status" id="maths-status">
+                        <i class="fas fa-shopping-cart"></i> Shop Now
+                    </div>
+                </div>
+            </div>
+
+            <div class="subject-card" id="biology-card">
+                <div class="subject-card-image landscape" style="background-image: url('https://i.ibb.co/tMBw3hWk/B.png')"></div>
+                <div class="subject-card-content">
+                    <div class="subject-card-price" id="biology-price">Just ₹499</div>
+                    <div class="subject-card-status" id="biology-status">
+                        <i class="fas fa-shopping-cart"></i> Shop Now
+                    </div>
+                </div>
+            </div>
+
+            <div class="subject-card" id="neet-card">
+                <div class="subject-card-image landscape" style="background-image: url('https://i.ibb.co/0jq3YVY/neet.jpg')"></div>
+                <div class="subject-card-content">
+                    <div class="subject-card-price" id="neet-price">₹999</div>
+                    <div class="subject-card-status" id="neet-status">
+                        <i class="fas fa-shopping-cart"></i> Shop Now
+                    </div>
+                </div>
+            </div>
+
+            <div class="subject-card" id="jee-card">
+                <div class="subject-card-image landscape" style="background-image: url('https://i.ibb.co/3Yf6vx3/jee.jpg')"></div>
+                <div class="subject-card-content">
+                    <div class="subject-card-price" id="jee-price">₹999</div>
+                    <div class="subject-card-status" id="jee-status">
+                        <i class="fas fa-shopping-cart"></i> Shop Now
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hidden Passwords -->
+        <div class="password-display">
+            <div class="password-title">Current Passwords (valid for 1 hour):</div>
+            <div id="current-passwords"></div>
+        </div>
+
+        <!-- Subject Sections -->
+        <div class="subject-section scroll-target" id="physics">
+            <div class="subject-title-container">
+                <div class="subject-title"><i class="fas fa-atom"></i> Physics</div>
+                <button id="physics-action" class="subject-status-button locked">
+                    <i class="fas fa-eye"></i> View
+                </button>
+            </div>
+            <div class="chapter-buttons" id="physics-buttons"></div>
+        </div>
+
+        <div class="subject-section scroll-target" id="chemistry">
+            <div class="subject-title-container">
+                <div class="subject-title"><i class="fas fa-flask"></i> Chemistry</div>
+                <button id="chemistry-action" class="subject-status-button locked">
+                    <i class="fas fa-eye"></i> View
+                </button>
+            </div>
+            <div class="chapter-buttons" id="chemistry-buttons"></div>
+        </div>
+
+        <div class="subject-section scroll-target" id="maths">
+            <div class="subject-title-container">
+                <div class="subject-title"><i class="fas fa-square-root-alt"></i> Mathematics</div>
+                <button id="maths-action" class="subject-status-button locked">
+                    <i class="fas fa-eye"></i> View
+                </button>
+            </div>
+            <div class="chapter-buttons" id="maths-buttons"></div>
+        </div>
+
+        <div class="subject-section scroll-target" id="biology">
+            <div class="subject-title-container">
+                <div class="subject-title"><i class="fas fa-dna"></i> Biology</div>
+                <button id="biology-action" class="subject-status-button locked">
+                    <i class="fas fa-eye"></i> View
+                </button>
+            </div>
+            <div class="chapter-buttons" id="biology-buttons"></div>
+        </div>
+
+        <div class="subject-section scroll-target" id="neet">
+            <div class="subject-title-container">
+                <div class="subject-title"><i class="fas fa-medal"></i> NEET Preparation</div>
+                <button id="neet-action" class="subject-status-button locked">
+                    <i class="fas fa-eye"></i> View
+                </button>
+            </div>
+            <div class="chapter-buttons" id="neet-buttons"></div>
+        </div>
+
+        <div class="subject-section scroll-target" id="jee">
+            <div class="subject-title-container">
+                <div class="subject-title"><i class="fas fa-rocket"></i> JEE Preparation</div>
+                <button id="jee-action" class="subject-status-button locked">
+                    <i class="fas fa-eye"></i> View
+                </button>
+            </div>
+            <div class="chapter-buttons" id="jee-buttons"></div>
+        </div>
+    </div>
+
+    <iframe id="contentFrame" class="hidden"></iframe>
+
+    <audio id="clickSound" src="https://assets.codepen.io/605876/click.mp3"></audio>
+
+    <script>
+        // DOM elements
+        const themeToggle = document.getElementById('themeToggle');
+        const themeLabel = document.getElementById('themeLabel');
+        const backButton = document.getElementById('backButton');
+        const mainHeader = document.getElementById('main-header');
+        const mainContent = document.getElementById('main-content');
+        const contentFrame = document.getElementById('contentFrame');
+        const clickSound = document.getElementById('clickSound');
+        const currentPasswordsEl = document.getElementById('current-passwords');
+        const popupNotification = document.getElementById('popupNotification');
+        
+        // Check URL parameters and hash
+        const urlParams = new URLSearchParams(window.location.search);
+        const passwordParam = urlParams.get('P');
+        const subjectParam = window.location.hash.substring(1); // Remove # from hash
+        
+        // Subject passwords configuration
+        const subjectPasswords = {
+            physics: {
+                formula: (d, t, m, y) => d + t + y + m * t,
+                chapters: ['Electric Charges and Fields', 'Electrostatic Potential and Capacitance', 'Current Electricity', 'Moving Charges and Magnetism', 'Magnetism and Matter', 'Electromagnetic Induction', 'Alternating Current', 'Electromagnetic Waves', 'Ray Optics and Optical Instruments', 'Wave Optics', 'Dual Nature of Matter and Radiation', 'Atoms', 'Nuclei', 'Semiconductor Electronics', 'More Tests'],
+                prefix: 'physics',
+                price: 'Just ₹49-₹149',
+                icon: 'atom'
+            },
+            chemistry: {
+                formula: (d, t, m, y) => d * t + y - m,
+                chapters: ['Solutions', 'Electrochemistry', 'Chemical Kinetics', 'Surface Chemistry', 'The p-Block Elements', 'The p-Block Elements (Contd.)', 'The d- and f-Block Elements', 'The Coordination Compounds', 'Haloalkanes and Haloarenes', 'Alcohols, Phenols and Ethers', 'Aldehydes, Ketones and Carboxylic Acids', 'Organic Compounds Containing Nitrogen', 'Biomolecules', 'Polymers', 'Chemistry in Everyday Life', 'More Tests'],
+                prefix: 'chemistry',
+                price: 'Just ₹49-₹149',
+                icon: 'flask'
+            },
+            maths: {
+                formula: (d, t, m, y) => y + d - m * t,
+                chapters: ['Relations and Functions', 'Inverse Trigonometric Functions', 'Matrices', 'Determinants', 'Continuity and Differentiability', 'Application of Derivatives', 'Integrals', 'Application of Integrals', 'Differential Equations', 'Vector Algebra', 'Three Dimensional Geometry', 'Linear Programming', 'Probability', 'More Tests'],
+                prefix: 'maths',
+                price: 'Just ₹49-₹149',
+                icon: 'square-root-alt'
+            },
+            biology: {
+                formula: (d, t, m, y) => y - t + d + m,
+                chapters: ['Sexual Reproduction in Flowering Plants', 'Human Reproduction', 'Reproductive Health', 'Principles of Inheritance and Variation', 'Molecular Basis of Inheritance', 'Evolution', 'Human Health and Disease', 'Strategies for Enhancement in Food Production', 'Microbes in Human Welfare', 'Biotechnology: Principles and Processes', 'Biotechnology and Its Applications', 'Organisms and Populations', 'Ecosystem', 'Biodiversity and Conservation', 'Environmental Issues', 'More Tests'],
+                prefix: 'biology',
+                price: 'Just ₹49-₹149',
+                icon: 'dna'
+            },
+            neet: {
+                formula: (d, t, m, y) => d * t + m * y,
+                chapters: ['NEET Physics', 'NEET Chemistry', 'NEET Biology', 'NEET Series 1', 'NEET Series 2', 'More Tests'],
+                prefix: 'neet',
+                price: 'Just ₹99-₹299',
+                icon: 'medal'
+            },
+            jee: {
+                formula: (d, t, m, y) => d + t * m + y,
+                chapters: ['JEE Physics', 'JEE Chemistry', 'JEE Mathematics', 'JEE Series 1', 'JEE Series 2', 'More Tests'],
+                prefix: 'jee',
+                price: 'Just ₹99-₹299',
+                icon: 'rocket'
+            }
+        };
+
+        // Card order mapping for #1 to #6
+        const cardOrder = ['physics', 'chemistry', 'maths', 'biology', 'neet', 'jee'];
+
+        // Show popup notification
+        function showPopup() {
+            popupNotification.classList.remove('hidden');
+            setTimeout(() => {
+                popupNotification.classList.add('hidden');
+            }, 3000);
+        }
+
+        // Initialize theme
+        function initTheme() {
+            const darkMode = localStorage.getItem('darkMode') === 'true';
+            themeToggle.checked = darkMode;
+            updateTheme(darkMode);
+        }
+        
+        // Update theme
+        function updateTheme(isDark) {
+            document.body.classList.toggle('dark-mode', isDark);
+            themeLabel.textContent = isDark ? ' ' : ' ';
+            localStorage.setItem('darkMode', isDark);
+        }
+        
+        // Theme toggle event
+        themeToggle.addEventListener('change', function() {
+            const isDark = this.checked;
+            updateTheme(isDark);
+            playClickSound();
+        });
+        
+        // Play click sound
+        function playClickSound() {
+            clickSound.currentTime = 0;
+            clickSound.play().catch(e => console.log("Sound play prevented:", e));
+        }
+        
+        // Calculate current date components
+        function getDateComponents() {
+            const now = new Date();
+            return {
+                d: now.getDate(),
+                t: now.getHours(),
+                m: now.getMonth() + 1,
+                y: now.getFullYear()
+            };
+        }
+        
+        // Calculate current passwords for all subjects
+        function calculateCurrentPasswords() {
+            const { d, t, m, y } = getDateComponents();
+            const passwords = {};
+            
+            for (const [subject, config] of Object.entries(subjectPasswords)) {
+                passwords[subject] = config.formula(d, t, m, y);
+            }
+            
+            return passwords;
+        }
+        
+        // Display current passwords (hidden now)
+        function displayCurrentPasswords() {
+            const passwords = calculateCurrentPasswords();
+            currentPasswordsEl.innerHTML = '';
+            
+            for (const [subject, password] of Object.entries(passwords)) {
+                const item = document.createElement('div');
+                item.className = 'password-item';
+                item.innerHTML = `<strong>${subject.charAt(0).toUpperCase() + subject.slice(1)}:</strong> ${password}`;
+                currentPasswordsEl.appendChild(item);
+            }
+        }
+        
+        // Check if subject is purchased
+        function isSubjectPurchased(subject) {
+            const passwordKey = `HS_${subject}`;
+            const currentPasswords = calculateCurrentPasswords();
+            const currentPassword = currentPasswords[subject];
+            
+            // Check if any password in URL matches (comma-separated)
+            if (passwordParam) {
+                const passwordList = passwordParam.split(',');
+                if (passwordList.includes(currentPassword.toString())) {
+                    localStorage.setItem(passwordKey, 'true');
+                    return true;
+                }
+            }
+            
+            // Then check localStorage
+            return localStorage.getItem(passwordKey) === 'true';
+        }
+        
+        // Update subject card UI
+        function updateSubjectCard(subject) {
+            const isPurchased = isSubjectPurchased(subject);
+            const card = document.getElementById(`${subject}-card`);
+            const priceEl = document.getElementById(`${subject}-price`);
+            const statusEl = document.getElementById(`${subject}-status`);
+            const actionBtn = document.getElementById(`${subject}-action`);
+            
+            if (isPurchased) {
+                card.classList.add('purchased');
+                card.classList.remove('locked');
+                priceEl.textContent = 'Continue Your😎';
+                priceEl.classList.add('purchased');
+                priceEl.classList.remove('locked');
+                statusEl.innerHTML = '<i class="fas fa-play"></i> Start';
+                statusEl.classList.add('purchased');
+                statusEl.classList.remove('locked');
+                actionBtn.innerHTML = '<i class="fas fa-play"></i> Start Now';
+                actionBtn.classList.add('purchased');
+                actionBtn.classList.remove('locked');
+            } else {
+                card.classList.add('locked');
+                card.classList.remove('purchased');
+                priceEl.textContent = subjectPasswords[subject].price;
+                priceEl.classList.add('locked');
+                priceEl.classList.remove('purchased');
+                statusEl.innerHTML = '<i class="fas fa-info-circle"></i> Know More';
+                statusEl.classList.add('locked');
+                statusEl.classList.remove('purchased');
+                actionBtn.innerHTML = '<i class="fas fa-eye"></i> View';
+                actionBtn.classList.add('locked');
+                actionBtn.classList.remove('purchased');
+            }
+        }
+        
+        // Generate chapter buttons for a subject
+        function generateSubjectButtons(subject) {
+            const container = document.getElementById(`${subject}-buttons`);
+            const isPurchased = isSubjectPurchased(subject);
+            const chapters = subjectPasswords[subject].chapters;
+            const prefix = subjectPasswords[subject].prefix;
+            const icon = subjectPasswords[subject].icon;
+            
+            container.innerHTML = '';
+            
+            chapters.forEach((chapter, index) => {
+                const button = document.createElement('button');
+                button.className = `chapter-button ${isPurchased ? 'purchased' : 'locked'}`;
+                
+                const iconSpan = document.createElement('span');
+                iconSpan.innerHTML = `<i class="fas fa-${icon}"></i> ${chapter}`;
+                button.appendChild(iconSpan);
+                
+                const badge = document.createElement('span');
+                badge.className = `status-badge ${isPurchased ? 'purchased-badge' : 'locked-badge'}`;
+                badge.textContent = isPurchased ? 'FREE' : 'LOCK';
+                
+                button.appendChild(badge);
+                
+                if (isPurchased) {
+                    button.onclick = () => {
+                        showPopup();
+                        setTimeout(() => {
+                            openIframe(`./1${prefix}/chapter${index+1}`);
+                        }, 1000);
+                    };
+                } else {
+                    button.onclick = () => window.location.href = `BuyNow.html`;
+                }
+                
+                container.appendChild(button);
+            });
+        }
+        
+        // Setup subject card click handlers
+        function setupSubjectCards() {
+            Object.keys(subjectPasswords).forEach(subject => {
+                const card = document.getElementById(`${subject}-card`);
+                const actionBtn = document.getElementById(`${subject}-action`);
+                
+                card.addEventListener('click', (e) => {
+                    // Don't navigate if clicking on the action button
+                    if (e.target.closest('.subject-status-button')) return;
+                    
+                    if (isSubjectPurchased(subject)) {
+                        // Scroll to subject section
+                        window.location.hash = subject;
+                        document.getElementById(subject).scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                        window.location.href = `BuyNow.html`;
+                    }
+                });
+                
+                actionBtn.addEventListener('click', () => {
+                    if (isSubjectPurchased(subject)) {
+                        // Already purchased - do nothing
+                        return;
+                    } else {
+                        window.location.href = `BuyNow.html`;
+                    }
+                });
+            });
+        }
+        
+        // Open iframe with content
+        function openIframe(page) {
+            contentFrame.src = `${page}.html`;
+            contentFrame.classList.remove('hidden');
+            mainHeader.classList.add('hidden');
+            mainContent.classList.add('hidden');
+            backButton.classList.remove('hidden');
+        }
+        
+        // Back button functionality
+        backButton.addEventListener('click', function() {
+            contentFrame.classList.add('hidden');
+            mainHeader.classList.remove('hidden');
+            mainContent.classList.remove('hidden');
+            backButton.classList.add('hidden');
+        });
+        
+        // Scroll to subject if hash is present
+        function scrollToSubject() {
+            if (subjectParam) {
+                // Check if it's a number (1-6)
+                const cardIndex = parseInt(subjectParam);
+                if (!isNaN(cardIndex) && cardIndex >= 1 && cardIndex <= 6) {
+                    const subject = cardOrder[cardIndex - 1];
+                    const element = document.getElementById(subject);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                    return;
+                }
+                
+                // Check if it's a subject name
+                if (subjectPasswords[subjectParam]) {
+                    const element = document.getElementById(subjectParam);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            }
+        }
+        
+        // Initialize page
+        function initPage() {
+            initTheme();
+            displayCurrentPasswords();
+            
+            // Initialize all subjects
+            Object.keys(subjectPasswords).forEach(subject => {
+                updateSubjectCard(subject);
+                generateSubjectButtons(subject);
+            });
+            
+            setupSubjectCards();
+            scrollToSubject();
+        }
+        
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', initPage);
+    </script>
+</body>
+</html>
