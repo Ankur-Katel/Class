@@ -1,5 +1,6 @@
-function createClickDot(x, y) {
-    const colors = ['#FF5252', '#4CAF50', '#2196F3', '#FFC107', '#9C27B0',  '#4361ee', '#4895ef', '#3f37c9', '#4cc9f0', '#f72585', '#b5179e', '#7209b7', '#560bad', '#3a0ca3', '#5f0f40',
+
+        document.addEventListener('click', function(e) {
+            const colors = ['#3b82f6', '#8b5cf6', '#ec4899', '#10b981', '#f59e0b','#FF5252', '#4CAF50', '#2196F3', '#FFC107', '#9C27B0',  '#4361ee', '#4895ef', '#3f37c9', '#4cc9f0', '#f72585', '#b5179e', '#7209b7', '#560bad', '#3a0ca3', '#5f0f40',
   '#9a031e', '#fb8b24', '#e36414', '#0f4c5c', '#1b9aaa', '#62bbc1', '#b2f7ef', '#d9faff', '#3a86ff', '#8338ec',
   '#ff006e', '#ffbe0b', '#fb5607', '#023e8a', '#0077b6', '#0096c7', '#00b4d8', '#48cae4', '#90e0ef', '#ade8f4',
   '#caf0f8', '#f15bb5', '#fee440', '#00bbf9', '#00f5d4', '#9d4edd', '#7b2cbf', '#5a189a', '#3c096c', '#240046',
@@ -24,25 +25,18 @@ function createClickDot(x, y) {
   '#ffca3a', '#8ac926', '#1982c4', '#6a4c93', '#d0f4de', '#a9def9', '#e4c1f9', '#c1fba4', '#fff1e6', '#c8b6ff',
   '#ffd6ff', '#fffffc', '#fdfcdc', '#feca57', '#ff9f43', '#ff6b6b', '#48dbfb', '#1dd1a1', '#feca57', '#ff6b6b',
   '#48dbfb', '#1dd1a1', '#a29bfe', '#dfe6e9', '#636e72', '#2d3436', '#ffeaa7', '#fd79a8', '#fab1a0', '#ff7675'];
-    const dot = document.createElement('div');
-    dot.className = 'click-dot';
-    dot.style.left = `${x}px`;
-    dot.style.top = `${y}px`;
-    dot.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-    document.body.appendChild(dot);
-    
-    setTimeout(() => {
-        dot.remove();
-    }, 1000);
-}
-
-// Event listener for click effects
-document.addEventListener('click', (e) => {
-    createClickDot(e.clientX, e.clientY);
-});
-
-
-
-
-
-
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            const dot = document.createElement('div');
+            dot.className = 'click-dot';
+            dot.style.background = `radial-gradient(circle, ${randomColor} 0%, rgba(59,130,246,0) 70%)`;
+            dot.style.left = `${e.clientX}px`;
+            dot.style.top = `${e.clientY}px`;
+            document.body.appendChild(dot);
+            setTimeout(() => dot.remove(), 800);
+            
+            // Play click sound
+            const clickSound = new Audio('https://assets.codepen.io/605876/click.mp3');
+            clickSound.volume = 0.5;
+            clickSound.play().catch(e => console.log("Audio play failed:", e));
+        });

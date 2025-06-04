@@ -9,7 +9,7 @@ const adImages = [
 let adCallback = null;
 let adCountdownInterval = null;
 const urlParams = new URLSearchParams(window.location.search);
-const adFree = urlParams.get('Ankur') === 'true';
+const adFree = urlParams.get('1') === '2';
 const singleAd = urlParams.get('ad') === '1';
 
 function showAd(callback) {
