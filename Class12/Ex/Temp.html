@@ -27,7 +27,6 @@
 
 
     <link rel="stylesheet" href="../../Css/mcq.css">
-    <link rel="stylesheet" href="../../Css/D.css">
     <style>
 
     </style>
@@ -75,7 +74,7 @@
     <div class="tools-menu" id="toolsMenu">
         <button class="tool-btn" id="drawBtn"><i class="fas fa-pencil-alt"></i></button>
         <button class="tool-btn" id="calcBtn"><i class="fas fa-calculator"></i></button>
-        <a href="#" class="tool-btn" id="calcBtn" data-msg="* Class {{Tip}} Chapter - Chapter {{Go}}😎*"><i class="fas fa-comment-dots"></i></a>
+        <a href="https://wa.me/917896703906?text=* Class {{Tip}} Chapter - Chapter {{Go}}😎*" class="tool-btn" id="calcBtn"><i class="fas fa-comment-dots"></i></a>
     </div>
     
     <div class="ad-overlay" id="adOverlay">
@@ -115,11 +114,11 @@
                 <span>More Chapters</span>
             </a>
             <a href="../Ex/noti.html" class="footer-btn">
-                <i class="fas fa-bolt"></i>
-                <span>Tests</span>
+                <i class="fas fa-book-open"></i>
+                <span>More Chapters</span>
             </a>
             <a href="../Ex/blockadds.html" class="footer-btn">
-                <i class="fas fa-atom"></i>
+                <i class="fas fa-ad"></i>
                 <span>Block Adds</span>
             </a>
 
@@ -129,28 +128,6 @@
      <script>
         // Quiz data
         const quizData = [
-  {
-    "question": "The SI unit of electric charge is:",
-    "options": [
-      "Coulomb",
-      "Ampere",
-      "Volt",
-      "Ohm"
-    ],
-    "correct": 0,
-    "marks": 10
-  },
-  {
-    "question": "The SI unit of electric charge is:",
-    "options": [
-      "Coulomb",
-      "Ampere",
-      "Volt",
-      "Ohm"
-    ],
-    "correct": 0,
-    "marks": 10
-  },
   {
     "question": "The SI unit of electric charge is:",
     "options": [
@@ -361,7 +338,7 @@
             const minutes = Math.floor(Math.abs(timeLeft) / 60);
             const seconds = Math.abs(timeLeft) % 60;
             const sign = timeLeft < 0 ? "-" : "";
-            timeDisplay.textContent = `${sign}${minutes.toString().padStart(0, '0')}:${seconds.toString().padStart(0, '0')}`;
+            timeDisplay.textContent = `${sign}${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
             
             if (timeLeft < 0) {
                 timeDisplay.style.color = 'var(--wrong-color)';
@@ -393,13 +370,13 @@
         
         function speakResult(result) {
             const correctCount = result.score / 10;
-            const timeUsed = 3000 - result.timeLeft;
+            const timeUsed = 60 - result.timeLeft;
             const minutes = Math.floor(timeUsed / 60);
             const seconds = timeUsed % 60;
             const overtime = timeLeft < 0;
             
             let timeText = overtime ? 
-                `You unused ${minutes} minutes and ${seconds} seconds overtime.` : 
+                `You used ${minutes} minutes and ${seconds} seconds overtime.` : 
                 `You completed in ${minutes} minutes and ${seconds} seconds.`;
                 
             const speechText = `Quiz completed! You scored ${result.score} out of ${result.totalMarks}. 
@@ -415,7 +392,7 @@
             quizCard.style.display = 'none';
             resultContainer.style.display = 'flex';
             
-            const timeUsed = 3000 - result.timeLeft;
+            const timeUsed = 60 - result.timeLeft;
             const minutes = Math.floor(Math.abs(timeUsed) / 60);
             const seconds = Math.abs(timeUsed) % 60;
             const overtime = timeLeft < 0;
@@ -441,7 +418,7 @@
                     </div>
                     <div class="stat-box">
                         <h3>Time Used</h3>
-                        <p>${overtime ? '-' : ''}${minutes.toString().padStart(0, '0')}:${seconds.toString().padStart(0, '0')} ${overtime ? '(Overtime)' : ''}</p>
+                        <p>${overtime ? '-' : ''}${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')} ${overtime ? '(Overtime)' : ''}</p>
                     </div>
                 </div>
                 <div class="result-questions">
@@ -496,13 +473,13 @@
               
             switch(platform) {
                 case 'facebook':
-                    url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareText)}&url='https://averiq.netlify.app/class12/All'`;
+                    url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href.split('?')[0])}`;
                     break;
                 case 'twitter':
-                    url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url='https://averiq.netlify.app/class12/All'`;
+                    url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(window.location.href.split('?')[0])}`;
                     break;
                 case 'whatsapp':
-                    url = `https://wa.me/?text=${encodeURIComponent(shareText + ' ' + 'https://averiq.netlify.app/class12/All')}`;
+                    url = `https://wa.me/?text=${encodeURIComponent(shareText + ' ' + window.location.href.split('?')[0])}`;
                     break;
             }
             
@@ -510,7 +487,7 @@
         }
         
         function copyQuizLink() {
-            const url = 'https://averiq.netlify.app/Class12/All';
+            const url = window.location.href.split('?')[0];
             
             copyMessage.classList.add('show');
             setTimeout(() => {
@@ -640,7 +617,5 @@
 
     <script src="../../JS/class12adds.js"></script>
     <script src="../../JS/Clickdot.js"></script>
-    <script src="../../JS/D.js"></script>
-    <script src="../../JS/PhoneN.js"></script>
 </body>
 </html>

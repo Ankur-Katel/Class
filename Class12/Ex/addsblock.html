@@ -6,22 +6,7 @@
     <title>Premium Ad-Free Experience</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-
-<link rel="icon" href="https://i.ibb.co/NdNNKMZJ/logox.png" type="image/png">
-
-    <meta property="og:title" content="{{Titlle}}">
-
-    <meta property="og:description" content="{{F}}">
-
-<meta property="og:image" content="meta">
-
-    <meta property="og:image:width" content="1080">
-
-    <meta property="og:image:height" content="1080">
-
-    <meta property="og:type" content="website">
 
     <link rel="stylesheet" href="../../Css/AddsBlock.css">
     <link rel="stylesheet" href="../../Css/D.css">
@@ -52,7 +37,7 @@
             </div>
             
             <div class="section">
-                <h2><i class="fas fa-book-open"></i> PCMB Subjects</h2>
+                <h2><i class="fas fa-book-open"></i> PCMB & NEET , JEE</h2>
                 <p style="margin-bottom: 15px; color: var(--gray); font-size: 0.9rem;">Select individual subjects to unlock ad-free content</p>
                 
                 <div class="subject-option" id="physics-option" onclick="toggleSubject('physics')">
@@ -68,9 +53,6 @@
                     </label>
                 </div>
                 
-
-
-
                 <div class="subject-option" id="chemistry-option" onclick="toggleSubject('chemistry')">
                     <input type="checkbox" id="chemistry" name="subject" value="Chemistry">
                     <label class="subject-label">
@@ -84,8 +66,6 @@
                     </label>
                 </div>
                 
-
-
                 <div class="subject-option" id="math-option" onclick="toggleSubject('math')">
                     <input type="checkbox" id="math" name="subject" value="Math">
                     <label class="subject-label">
@@ -98,9 +78,6 @@
                         </span>
                     </label>
                 </div>
-
-
-
                 
                 <div class="subject-option" id="biology-option" onclick="toggleSubject('biology')">
                     <input type="checkbox" id="biology" name="subject" value="Biology">
@@ -130,7 +107,6 @@
                 </div>
 
 
-
                 <div class="subject-option" id="jee-option" onclick="toggleSubject('jee')">
                     <input type="checkbox" id="jee" name="subject" value="Jee">
                     <label class="subject-label">
@@ -149,14 +125,14 @@
                 
                 <div style="text-align: center; margin: 15px 0; color: var(--gray); font-size: 0.9rem;">
                     <i class="fas fa-tag" style="margin-right: 5px;"></i> 
-                    <span id="discount-message">Select 2+ For Best discount</span>
+                    <span id="discount-message">Select 2+ subjects for discount</span>
                 </div>
             </div>
             
             <div class="section">
                 <h2><i class="fas fa-user"></i> Your Details</h2>
                 <div class="form-group">
-                    <label for="name">Full Name</label>
+                    <label for="name">Full Name <small style="color: var(--gray);">(Minimum 3 characters)</small></label>
                     <input type="text" id="name" placeholder="Enter your full name" required minlength="3">
                 </div>
                 
@@ -411,18 +387,20 @@
                     <div class="selected-option">
                         <span><i class="fas fa-crown" style="margin-right: 8px; color: var(--primary);"></i> Disable All Ads for Lifetime</span>
                         <span class="price-container">
-                            <span class="original-price">₹594</span>
-                            <span class="current-price">₹30</span>
+                            <span class="original-price">₹99</span>
+                            <span class="current-price">₹19</span>
                         </span>
                     </div>
                 `;
-                totalPrice = 30;
-                originalPrice = 594;
+                totalPrice = 19;
+                originalPrice = 99;
             } else {
                 selectedSubjects.forEach(subject => {
                     const icon = subject.name === 'Physics' ? 'fa-atom' : 
                                  subject.name === 'Chemistry' ? 'fa-flask' :
-                                 subject.name === 'Math' ? 'fa-square-root-alt' : 'fa-dna';
+                                 subject.name === 'Math' ? 'fa-square-root-alt' :
+                                 subject.name === 'Biology' ?  'fa-dna' :
+                                 subject.name === 'Neet' ? 'fa-medkit' : 'fa-rocket';
                     
                     optionsDisplay.innerHTML += `
                         <div class="selected-option">
@@ -478,15 +456,17 @@
                 selectedIdsText = selectedSubjects.map(sub => {
                     return sub.name === 'Physics' ? '1' :
                            sub.name === 'Chemistry' ? '2' :
-                           sub.name === 'Math' ? '3' : '4';
+                           sub.name === 'Math' ? '3' :
+                           sub.name === 'Biology' ? '4' :
+                           sub.name === 'Neet' ? '5' : '6'
                 }).join(',');
             }
             
-            const note = `Class 12 Ads Block | Student: ${name} | Phone: ${phone} | Subjects: ${selectedOptionsText} | Phone: ${phone} | Subjects: ${selectedOptionsText} |Amount: ₹${totalPrice} | Selected IDs: ${selectedIdsText} | Reference: ${refParam || 'N/A'}`;
+            const TextNote = `Class 12 Ads Block | Student: ${name} | Phone: ${phone} | Subjects: ${selectedOptionsText} | Phone: ${phone} | Subjects: ${selectedOptionsText} |Amount: ₹${totalPrice} | Selected IDs: ${selectedIdsText} | Reference: ${refParam || 'N/A'}`;
             
             // Create UPI payment link
-            const upiLink = `upi://pay?pa=senddetailsfororder@okaxis&pn=Block%20Ads&am=${totalPrice}&cu=INR&tn=${encodeURIComponent(note)}`;
-            |
+            const upiLink = `upi://pay?pa=education@upi&pn=${encodeURIComponent(name)}&am=${totalPrice}&cu=INR&tn=${encodeURIComponent(textNote)}`;
+            
             // Open UPI link after a short delay
             setTimeout(() => {
                 window.location.href = upiLink;

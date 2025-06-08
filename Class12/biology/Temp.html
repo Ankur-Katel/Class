@@ -11,11 +11,11 @@
 
     <meta property="og:description" content="{{F}}">
 
-<meta property="og:image" content="https://i.ibb.co/4wLHYHsB/61-HK71-VL0-RL-AC-UF1000-1000-QL80-FMwebp-1.png">
+<meta property="og:image" content="https://i.ibb.co/5gGhGTCv/F.png">
 
-    <meta property="og:image:width" content="1080">
+    <meta property="og:image:width" content="2560">
 
-    <meta property="og:image:height" content="1080">
+    <meta property="og:image:height" content="1355">
 
 
     <meta property="og:type" content="website">
@@ -25,8 +25,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@500&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../../Css/D.css">
+
     <link rel="stylesheet" href="../../Css/mcq.css">
+    <link rel="stylesheet" href="../../Css/D.css">
     <style>
 
     </style>
@@ -35,8 +36,8 @@
     <header>
         <a  class="back-btn" onclick="history.back()"><i class="fas fa-arrow-left"></i></a>
         <div class="header-content">
-            <h1>Class 12 {{Tip}}</h1>
-            <p>{{Go}}</p>
+            <h1>Class 12 Science</h1>
+            <p>Free Test</p>
         </div>
         <label class="theme-switch">
             <input type="checkbox" id="themeCheckbox">
@@ -74,7 +75,7 @@
     <div class="tools-menu" id="toolsMenu">
         <button class="tool-btn" id="drawBtn"><i class="fas fa-pencil-alt"></i></button>
         <button class="tool-btn" id="calcBtn"><i class="fas fa-calculator"></i></button>
-        <a href="https://wa.me/917896703906?text=* Class {{Tip}} Chapter - Chapter {{Go}}😎*" class="tool-btn" id="calcBtn"><i class="fas fa-comment-dots"></i></a>
+        <a href="#" class="tool-btn" id="calcBtn" data-msg="* Class {{Tip}} Chapter - Chapter {{Go}}😎*"><i class="fas fa-comment-dots"></i></a>
     </div>
     
     <div class="ad-overlay" id="adOverlay">
@@ -106,21 +107,22 @@
     <footer>
         <div class="footer-menu">
             <a href="../All.html" class="footer-btn">
-                <i class="fas fa-home"></i>
-                <span>Home</span>
+                <i class="fas fa-door-open"></i>
+                <span>Join Now</span>
             </a>
-            <a href="../All.html#physics" class="footer-btn">
-                <i class="fas fa-book-open"></i>
-                <span>More Chapters</span>
-            </a>
-            <a href="../Ex/noti.html" class="footer-btn">
+            <a href="#" id="calcBtn" data-msg="*Class 12 Science AveriQ Series More Free Test😎*" class="footer-btn">
                 <i class="fas fa-bolt"></i>
-                <span>More Chapters</span>
+                <span>Tests</span>
             </a>
-            <a href="../Ex/blockadds.html" class="footer-btn">
-                <i class="fas fa-ad"></i>
-                <span>Block Adds</span>
+            <a href="https://whatsapp.com/channel/0029VaAxrMK3WHTaOACifa3U" class="footer-btn">
+                <i class="fas fa-whatsapp" style="color:green;"></i>
+                <span>Channel</span>
             </a>
+            <a href="./{{Go}}" class="footer-btn">
+                <i class="fas fa-forward"></i>
+                <span>Next</span>
+            </a>
+
 
         </div>
     </footer>
@@ -128,6 +130,28 @@
      <script>
         // Quiz data
         const quizData = [
+  {
+    "question": "The SI unit of electric charge is:",
+    "options": [
+      "Coulomb",
+      "Ampere",
+      "Volt",
+      "Ohm"
+    ],
+    "correct": 0,
+    "marks": 10
+  },
+  {
+    "question": "The SI unit of electric charge is:",
+    "options": [
+      "Coulomb",
+      "Ampere",
+      "Volt",
+      "Ohm"
+    ],
+    "correct": 0,
+    "marks": 10
+  },
   {
     "question": "The SI unit of electric charge is:",
     "options": [
@@ -338,7 +362,7 @@
             const minutes = Math.floor(Math.abs(timeLeft) / 60);
             const seconds = Math.abs(timeLeft) % 60;
             const sign = timeLeft < 0 ? "-" : "";
-            timeDisplay.textContent = `${sign}${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            timeDisplay.textContent = `${sign}${minutes.toString().padStart(0, '0')}:${seconds.toString().padStart(0, '0')}`;
             
             if (timeLeft < 0) {
                 timeDisplay.style.color = 'var(--wrong-color)';
@@ -370,13 +394,13 @@
         
         function speakResult(result) {
             const correctCount = result.score / 10;
-            const timeUsed = 60 - result.timeLeft;
+            const timeUsed = 3000 - result.timeLeft;
             const minutes = Math.floor(timeUsed / 60);
             const seconds = timeUsed % 60;
             const overtime = timeLeft < 0;
             
             let timeText = overtime ? 
-                `You used ${minutes} minutes and ${seconds} seconds overtime.` : 
+                `You unused ${minutes} minutes and ${seconds} seconds overtime.` : 
                 `You completed in ${minutes} minutes and ${seconds} seconds.`;
                 
             const speechText = `Quiz completed! You scored ${result.score} out of ${result.totalMarks}. 
@@ -392,7 +416,7 @@
             quizCard.style.display = 'none';
             resultContainer.style.display = 'flex';
             
-            const timeUsed = 60 - result.timeLeft;
+            const timeUsed = 3000 - result.timeLeft;
             const minutes = Math.floor(Math.abs(timeUsed) / 60);
             const seconds = Math.abs(timeUsed) % 60;
             const overtime = timeLeft < 0;
@@ -418,7 +442,7 @@
                     </div>
                     <div class="stat-box">
                         <h3>Time Used</h3>
-                        <p>${overtime ? '-' : ''}${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')} ${overtime ? '(Overtime)' : ''}</p>
+                        <p>${overtime ? '-' : ''}${minutes.toString().padStart(0, '0')}:${seconds.toString().padStart(0, '0')} ${overtime ? '(Overtime)' : ''}</p>
                     </div>
                 </div>
                 <div class="result-questions">
@@ -617,5 +641,7 @@
 
     <script src="../../JS/class12adds.js"></script>
     <script src="../../JS/Clickdot.js"></script>
+    <script src="../../JS/D.js"></script>
+    <script src="../../JS/PhoneN.js"></script>
 </body>
 </html>
