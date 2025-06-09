@@ -39,13 +39,13 @@ document.addEventListener('keydown', (e) => {
         (e.ctrlKey && e.key === 'U') // Ctrl+U (View Source)
     ) {
         e.preventDefault();
-        window.open("https://your-website.com/no-inspect", "_blank");
+        window.open("https://averiq.netlify.app", "_blank");
     }
 });
 document.addEventListener('keydown', function(e) {
     if (e.key === 'F12' || e.keyCode === 123) {
         e.preventDefault();
-        window.open("https://your-website.com", "_blank"); // F12 press par naya tab khulega
+        window.open("https://averiq.netlify.app", "_blank"); // F12 press par naya tab khulega
         alert("Developer tools are disabled!");
     }
 });

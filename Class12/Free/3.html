@@ -124,7 +124,7 @@
                 <i class="fab fa-whatsapp"></i>
                 <span>Channel</span>
             </a>
-            <a href="./{{Go}}" class="footer-btn">
+            <a href="./4" class="footer-btn">
                 <i class="fas fa-forward"></i>
                 <span>Next</span>
             </a>
@@ -137,7 +137,7 @@
         // Quiz data
         const quizData = 
 
-{{Mcq}}
+[   {     "question": "What is the SI unit of length?",     "options": [       "Meter",       "Kilogram",       "Second",       "Ampere"     ],     "correct": 0,     "marks": 10   },   {     "question": "Which gas do plants use for photosynthesis?",     "options": [       "Oxygen",       "Carbon dioxide",       "Nitrogen",       "Hydrogen"     ],     "correct": 1,     "marks": 10   },   {     "question": "What is the value of 2 + 2?",     "options": [       "2",       "4",       "6",       "8"     ],     "correct": 1,     "marks": 10   },   {     "question": "Which of these is a metal?",     "options": [       "Wood",       "Iron",       "Plastic",       "Glass"     ],     "correct": 1,     "marks": 10   },   {     "question": "What is the formula of water?",     "options": [       "H2O",       "CO2",       "O2",       "H2"     ],     "correct": 0,     "marks": 10   },   {     "question": "Which organ pumps blood in the human body?",     "options": [       "Liver",       "Heart",       "Kidney",       "Lung"     ],     "correct": 1,     "marks": 10   },   {     "question": "What is the value of 5 × 3?",     "options": [       "8",       "15",       "10",       "20"     ],     "correct": 1,     "marks": 10   },   {     "question": "Which of these is a conductor of electricity?",     "options": [       "Wood",       "Plastic",       "Copper",       "Rubber"     ],     "correct": 2,     "marks": 10   },   {     "question": "Which gas do humans breathe out?",     "options": [       "Oxygen",       "Carbon dioxide",       "Nitrogen",       "Hydrogen"     ],     "correct": 1,     "marks": 10   },   {     "question": "What is the value of 10 ÷ 2?",     "options": [       "2",       "5",       "10",       "20"     ],     "correct": 1,     "marks": 10   },   {     "question": "Which of these is a plant?",     "options": [       "Dog",       "Rose",       "Fish",       "Frog"     ],     "correct": 1,     "marks": 10   },   {     "question": "What is the formula of oxygen gas?",     "options": [       "O2",       "CO2",       "H2O",       "N2"     ],     "correct": 0,     "marks": 10   },   {     "question": "Which of these is a mammal?",     "options": [       "Snake",       "Fish",       "Cow",       "Frog"     ],     "correct": 2,     "marks": 10   },   {     "question": "What is the value of 7 + 8?",     "options": [       "13",       "14",       "15",       "16"     ],     "correct": 2,     "marks": 10   },   {     "question": "Which of these is a non-metal?",     "options": [       "Iron",       "Copper",       "Carbon",       "Gold"     ],     "correct": 2,     "marks": 10   },   {     "question": "What is the formula of carbon dioxide?",     "options": [       "CO2",       "H2O",       "O2",       "N2"     ],     "correct": 0,     "marks": 10   },   {     "question": "Which organ helps us breathe?",     "options": [       "Heart",       "Lung",       "Liver",       "Kidney"     ],     "correct": 1,     "marks": 10   },   {     "question": "What is the value of 6 × 4?",     "options": [       "10",       "12",       "18",       "24"     ],     "correct": 3,     "marks": 10   },   {     "question": "Which of these is a bird?",     "options": [       "Dog",       "Cat",       "Crow",       "Fish"     ],     "correct": 2,     "marks": 10   },   {     "question": "What is the formula of common salt?",     "options": [       "NaCl",       "H2O",       "CO2",       "O2"     ],     "correct": 0,     "marks": 10   },   {     "question": "Which gas do humans breathe in?",     "options": [       "Oxygen",       "Carbon dioxide",       "Nitrogen",       "Hydrogen"     ],     "correct": 0,     "marks": 10   },   {     "question": "What is the value of 9 – 3?",     "options": [       "6",       "12",       "3",       "9"     ],     "correct": 0,     "marks": 10   },   {     "question": "Which of these is a fruit?",     "options": [       "Carrot",       "Potato",       "Apple",       "Onion"     ],     "correct": 2,     "marks": 10   },   {     "question": "What is the formula of methane?",     "options": [       "CH4",       "CO2",       "H2O",       "O2"     ],     "correct": 0,     "marks": 10   },   {     "question": "Which of these is a reptile?",     "options": [       "Dog",       "Lizard",       "Fish",       "Crow"     ],     "correct": 1,     "marks": 10   },   {     "question": "What is the value of 12 ÷ 4?",     "options": [       "2",       "3",       "4",       "6"     ],     "correct": 1,     "marks": 10   },   {     "question": "Which of these is a liquid at room temperature?",     "options": [       "Iron",       "Water",       "Wood",       "Stone"     ],     "correct": 1,     "marks": 10   },   {     "question": "What is the formula of hydrogen gas?",     "options": [       "H2",       "O2",       "CO2",       "H2O"     ],     "correct": 0,     "marks": 10   },   {     "question": "Which of these is an insect?",     "options": [       "Snake",       "Ant",       "Fish",       "Frog"     ],     "correct": 1,     "marks": 10   },   {     "question": "What is the value of 5 + 6?",     "options": [       "9",       "10",       "11",       "12"     ],     "correct": 2,     "marks": 10   } ]
 
 
 ;
@@ -173,7 +173,7 @@
         let skippedQuestions = 0;
         let userAnswers = Array(quizData.length).fill(null);
         let timer;
-        let timeLeft = 3000;
+        let timeLeft = 1800;
         let quizCompleted = false;
         let timerPaused = false;
         let toolsMenuOpen = false;
@@ -181,7 +181,7 @@
         
         // Initialize the quiz
         function initQuiz() {
-            const savedProgress = localStorage.getItem('{{Id}}');
+            const savedProgress = localStorage.getItem('FreeTest3');
             if (savedProgress) {
                 const progress = JSON.parse(savedProgress);
                 if (!progress.completed) {
@@ -216,7 +216,7 @@
                 completed: quizCompleted,
                 timestamp: new Date().toISOString()
             };
-            localStorage.setItem('{{Id}}', JSON.stringify(progress));
+            localStorage.setItem('FreeTest3', JSON.stringify(progress));
         }
         
         function loadQuestion(index) {
@@ -363,7 +363,7 @@
                 timestamp: new Date().toISOString()
             };
             
-            localStorage.setItem('{{Id}}', JSON.stringify(result));
+            localStorage.setItem('FreeTest3', JSON.stringify(result));
             showResult(result);
             
             speakResult(result);
@@ -371,7 +371,7 @@
         
         function speakResult(result) {
             const correctCount = result.score / 10;
-            const timeUsed = 3000 - result.timeLeft;
+            const timeUsed = 1800 - result.timeLeft;
             const minutes = Math.floor(timeUsed / 60);
             const seconds = timeUsed % 60;
             const overtime = timeLeft < 0;
@@ -393,7 +393,7 @@
             quizCard.style.display = 'none';
             resultContainer.style.display = 'flex';
             
-            const timeUsed = 3000 - result.timeLeft;
+            const timeUsed = 1800 - result.timeLeft;
             const minutes = Math.floor(Math.abs(timeUsed) / 60);
             const seconds = Math.abs(timeUsed) % 60;
             const overtime = timeLeft < 0;
@@ -510,13 +510,13 @@
         }
         
         function tryAgain() {
-            localStorage.removeItem('{{Id}}');
+            localStorage.removeItem('FreeTest3');
             
             currentQuestion = 0;
             score = 0;
             skippedQuestions = 0;
             userAnswers = Array(quizData.length).fill(null);
-            timeLeft = 3000;
+            timeLeft = 1800;
             quizCompleted = false;
             
             quizCard.style.display = 'block';

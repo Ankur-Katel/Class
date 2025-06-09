@@ -2,7 +2,7 @@
 const adImages = [
     {
         image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-        link: "https://www.example2.com"
+        link: "../All.html"
     }
 ];
 

@@ -1,2626 +1,513 @@
 <!DOCTYPE html>
-<html lang="en" class="light">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class 12 PCMB MCQ eBook</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Class 12 PCMB - NEET & JEE</title>
+    
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@500&display=swap" rel="stylesheet">
 
 
+    <link rel="stylesheet" href="../Css/All.css">
+    <link rel="stylesheet" href="../Css/D.css">
+    <script src="../../JS/D.js"></script>
     <style>
     </style>
-
-
-    <link rel="stylesheet" href="/Css/Join.css">
-    <link rel="stylesheet" href="/Css/D.css">
 </head>
-<body class="light">
-    <!-- Click Dot Effect -->
-    <script>
-        document.addEventListener('click', function(e) {
-            const colors = ['#3b82f6', '#8b5cf6', '#ec4899', '#10b981', '#f59e0b'];
-            const randomColor = colors[Math.floor(Math.random() * colors.length)];
-            
-            const dot = document.createElement('div');
-            dot.className = 'click-dot';
-            dot.style.background = `radial-gradient(circle, ${randomColor} 0%, rgba(59,130,246,0) 70%)`;
-            dot.style.left = `${e.clientX}px`;
-            dot.style.top = `${e.clientY}px`;
-            document.body.appendChild(dot);
-            setTimeout(() => dot.remove(), 800);
-            
-            // Play click sound
-            const clickSound = new Audio('https://assets.codepen.io/605876/click.mp3');
-            clickSound.volume = 0.5;
-            clickSound.play().catch(e => console.log("Audio play failed:", e));
-        });
-    </script>
-
-    <!-- Chat Icon -->
-    <div class="chat-icon" onclick="window.open('./Ex/Chat.html', '_blank')">
-        <i class="fas fa-comment-dots"></i>
-    </div>
-
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="flex items-center">
-                    <div class="back-icon" onclick="window.history.back()">
-                        <i class="fas fa-arrow-left text-xl"></i>
-                    </div>
-                    <i class="fas fa-book text-2xl mr-2"></i>
-                    <h1 class="header-title">
-                        Class 12 PCMB Series
-                    </h1>
-                </div>
-                <div class="theme-switch-wrapper">
-                    <label class="theme-switch">
-                        <input type="checkbox" id="themeToggle">
-                        <span class="slider">
-                            <i class="fas fa-sun icon sun"></i>
-                            <i class="fas fa-moon icon moon"></i>
-                        </span>
-                    </label>
-                </div>
-            </div>
+<body>
+    <header id="main-header">
+        <div class="theme-toggle-container">
+            <label class="toggle-switch">
+                <input type="checkbox" id="themeToggle">
+                <span class="slider"></span>
+            </label>
+            <span id="themeLabel"></span>
         </div>
+        <div class="header-title">Class 12 Science</div>
+        <button id="backButton" class="back-button hidden"><i class="fas fa-arrow-left"></i> Back</button>
     </header>
 
+    <!-- Popup Notification -->
+    <div id="popupNotification" class="popup-notification hidden">
+        <i class="fas fa-check-circle"></i>
+        <span>Working For this Chapter</span>
+    </div>
 
-
-
-
-
-
-    <!-- Chapters Grid -->
-    <section id="chapters" class="py-12 bg-gray-100">
-        <div class="container chapters-container">
-            <h2 class="section-title">
-                All Chapters Covered
-            <div class="parent-trust-divider">
-                <div class="divider-line"></div>
-                <i class="fas fa-book-open"></i>
-                <div class="divider-line"></div>
-            </div>
-
-
-<br>
-PHYSICS
-                <i class="fas fa-atom"></i>
-            </h2>
-            <div class="chapters-grid">
-                <div class="chapter-card" style="animation-delay: 0.1s" onclick="selectSubjectFromChapter('physics')">
-                    Electric Charges
+    <div id="main-content" style="width:90%;">
+        <!-- Free Content Box -->
+        <div class="free-content-box">
+<div class="subject-card-image landscape" style="background-image: url('https://i.ibb.co/5gGhGTCv/F.png')"></div>
+            <div class="free-content-body">
+                <div class="free-content-title">
+                    <i class="fas fa-gift"></i>
+                    Free Assets
+                    <span class="free-badge">FREE</span>
                 </div>
-                <div class="chapter-card" style="animation-delay: 0.2s" onclick="selectSubjectFromChapter('physics')">
-Electric Charges and Fields
-</div>
-
-                <div class="chapter-card" style="animation-delay: 0.3s" onclick="selectSubjectFromChapter('physics')">
-Electrostatic Potential and Capacitance
-</div>
-
-                <div class="chapter-card" style="animation-delay: 0.4s" onclick="selectSubjectFromChapter('physics')">
-Current Electricity
-</div>
-
-                <div class="chapter-card" style="animation-delay: 0.5s" onclick="selectSubjectFromChapter('physics')">
-Moving Charges and Magnetism
-</div>
-
-                <div class="chapter-card" style="animation-delay: 0.6s" onclick="selectSubjectFromChapter('physics')">
-Magnetism and Matter
-</div>
-
-                <div class="chapter-card" style="animation-delay: 0.7s" onclick="selectSubjectFromChapter('physics')">
-Electromagnetic Induction
-</div>
-
-                <div class="chapter-card" style="animation-delay: 0.8s" onclick="selectSubjectFromChapter('physics')">
-Alternating Current
-</div>
-
-                <div class="chapter-card" style="animation-delay: 0.9s" onclick="selectSubjectFromChapter('physics')">
-Electromagnetic Waves
-</div>
-
-                <div class="chapter-card" style="animation-delay: 1s" onclick="selectSubjectFromChapter('physics')">
-Ray Optics and Optical Instruments
-</div>
-
-                <div class="chapter-card" style="animation-delay: 1.1s" onclick="selectSubjectFromChapter('physics')">
-Wave Optics
-</div>
-
-                <div class="chapter-card" style="animation-delay: 1.2s" onclick="selectSubjectFromChapter('physics')">
-Dual Nature of Matter and Radiation
-</div>
-
-                <div class="chapter-card" style="animation-delay: 1.3s" onclick="selectSubjectFromChapter('physics')">
-Atoms
-</div>
-
-                <div class="chapter-card" style="animation-delay: 1.4s" onclick="selectSubjectFromChapter('physics')">
-Nuclei
-</div>
-
-                <div class="chapter-card" style="animation-delay: 1.5s" onclick="selectSubjectFromChapter('physics')">
-Semiconductor Electronics
-</div>
-
-</div>
-
-
-
-<h2 class="section-title">
-<br>
-CHEMISTRY
-                <i class="fas fa-flask"></i>
-            </h2>
-        <div class="chapters-grid">
-                   <div class="chapter-card1" style="animation-delay: 1.6s" onclick="selectSubjectFromChapter('chemistry')">
-                    Electric Charges and Fields
-                   </div>
-                <div class="chapter-card" style="animation-delay: 1.6s"  onclick="selectSubjectFromChapter('chemistry')">
-Solutions
+                <div class="free-content-text">
+                    <span class="strike-text">₹499</span> Get access to our free introductory materials and sample chapters.
                 </div>
-
-                <div class="chapter-card" style="animation-delay: 1.7s"  onclick="selectSubjectFromChapter('chemistry')">
-Electrochemistry
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 1.8s"  onclick="selectSubjectFromChapter('chemistry')">
-Chemical Kinetics
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 1.9s"  onclick="selectSubjectFromChapter('chemistry')">
-Surface Chemistry
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 1.10s"  onclick="selectSubjectFromChapter('chemistry')">
-The p-Block Elements
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 1.11s"  onclick="selectSubjectFromChapter('chemistry')">
-The p-Block Elements (Contd.)
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 1.12s"  onclick="selectSubjectFromChapter('chemistry')">
-The d- and f-Block Elements
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 1.13s"  onclick="selectSubjectFromChapter('chemistry')">
-The Coordination Compounds
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 1.14s"  onclick="selectSubjectFromChapter('chemistry')">
-Haloalkanes and Haloarenes
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 1.15s"  onclick="selectSubjectFromChapter('chemistry')">
-Alcohols, Phenols and Ethers
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 1.16s"  onclick="selectSubjectFromChapter('chemistry')">
-Aldehydes, Ketones and Carboxylic Acids
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 1.17s"  onclick="selectSubjectFromChapter('chemistry')">
-Organic Compounds Containing Nitrogen
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 1.18s"  onclick="selectSubjectFromChapter('chemistry')">
-Biomolecules
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 1.19s"  onclick="selectSubjectFromChapter('chemistry')">
-Polymers
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 1.20s"  onclick="selectSubjectFromChapter('chemistry')">
-Chemistry in Everyday Life
-                </div>
-</div>
-
-
-
-            <h2 class="section-title">
-<br>
-MATHAMATIC
-                <i class="fas fa-square-root-alt"></i>
-            </h2>
-        <div class="chapters-grid">
-               <div class="chapter-card" style="animation-delay: 1.3s"  onclick="selectSubjectFromChapter('maths')">
-Relations and Functions
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 1.4s"  onclick="selectSubjectFromChapter('maths')">
-Inverse Trigonometric Functions
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 1.5s"  onclick="selectSubjectFromChapter('maths')">
-Matrices
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 2.79s"  onclick="selectSubjectFromChapter('maths')">
-Determinants
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 2.710s"  onclick="selectSubjectFromChapter('maths')">
-Continuity and Differentiability
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 2.711s"  onclick="selectSubjectFromChapter('maths')">
-Application of Derivatives
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 2.712s"  onclick="selectSubjectFromChapter('maths')">
-Integrals
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 2.713s"  onclick="selectSubjectFromChapter('maths')">
-Application of Integrals
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 2.714s"  onclick="selectSubjectFromChapter('maths')">
-Differential Equations
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 2.715s"  onclick="selectSubjectFromChapter('maths')">
-Vector Algebra
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 2.716s"  onclick="selectSubjectFromChapter('maths')">
-Three Dimensional Geometry
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 2.717s"  onclick="selectSubjectFromChapter('maths')">
-Linear Programming
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 2.718s"  onclick="selectSubjectFromChapter('maths')">
-Probability
-                </div>
-</div>
-
-
-
-            <h2 class="section-title">
-<br>
-BIOLOGY
-                <i class="fas fa-dna"></i>
-            </h2>
-        <div class="chapters-grid">
-                <div class="chapter-card" style="animation-delay: 2.46s"  onclick="selectSubjectFromChapter('biology')">
-Sexual Reproduction in Flowering Plants
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 2.47s"  onclick="selectSubjectFromChapter('biology')">
-Human Reproduction
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 2.48s"  onclick="selectSubjectFromChapter('biology')">
-Reproductive Health
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 2.49s"  onclick="selectSubjectFromChapter('biology')">
-Principles of Inheritance and Variation
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 2.410s"  onclick="selectSubjectFromChapter('biology')">
-Molecular Basis of Inheritance
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 2.411s"  onclick="selectSubjectFromChapter('biology')">
-Evolution
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 2.412s"  onclick="selectSubjectFromChapter('biology')">
-Human Health and Disease
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 2.413s"  onclick="selectSubjectFromChapter('biology')">
-Strategies for Enhancement in Food Production
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 2.414s"  onclick="selectSubjectFromChapter('biology')">
-Microbes in Human Welfare
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 2.415s"  onclick="selectSubjectFromChapter('biology')">
-Biotechnology: Principles and Processes
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 2.416s"  onclick="selectSubjectFromChapter('biology')">
-Biotechnology and Its Applications
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 2.417s"  onclick="selectSubjectFromChapter('biology')">
-Organisms and Populations
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 2.418s"  onclick="selectSubjectFromChapter('biology')">
-Ecosystem
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 2.419s"  onclick="selectSubjectFromChapter('biology')">
-Biodiversity and Conservation
-                </div>
-
-                <div class="chapter-card" style="animation-delay: 2.420s"  onclick="selectSubjectFromChapter('biology')">
-Environmental Issues
-                </div>
-</div>
-
-
-
-            <h2 class="section-title">
-<br>
-NEET
-                <i class="fas fa-medkit"></i>
-            </h2>
-            <h2 class="section-title">
-<br>
-JEE
-                <i class="fas fa-rocket"></i>
-            </h2>
-
-
-        				</div>
-
-
-
-
-
-
-    </section>
-
-
-
-
-
-    <!-- Benefits Section -->
-    <section class="py-12">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 relative">
-                What You Get
-            <div class="parent-trust-divider">
-                <div class="divider-line"></div>
-                <i class="fas fa-question-circle text-pink"></i>
-                <div class="divider-line"></div>
-            </div>
-                <i class="fas fa-gift title-icon"></i>
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="flex items-start space-x-4 fade-in" data-delay="100">
-                    <i class="fas fa-check-circle text-2xl text-green-500 mt-1"></i>
-                    <div>
-                        <h3 class="font-bold"> MCQs</h3>
-                        <p class="af">⚔ 50% MCQ As New Bord System</p>
-                    </div>
-                </div>
-                <div class="flex items-start space-x-4 fade-in" data-delay="200">
-                    <i class="fas fa-bolt text-2xl text-yellow-500 mt-1"></i>
-                    <div>
-                        <h3 class="font-bold">Quick Revision</h3>
-                        <p class="af">Chapter-wise summary and formula sheets</p>
-                    </div>
-                </div>
-                <div class="flex items-start space-x-4 fade-in" data-delay="300">
-                    <i class="fas fa-chart-line text-2xl text-blue-500 mt-1"></i>
-                    <div>
-                        <h3 class="font-bold">Performance Tracking</h3>
-                        <p class="af">Monitor your progress with analytics</p>
-                    </div>
-                </div>
-                <div class="flex items-start space-x-4 fade-in" data-delay="400">
-                    <i class="fas fa-mobile-alt text-2xl text-purple-500 mt-1"></i>
-                    <div>
-                        <h3 class="font-bold">Mobile Friendly</h3>
-                        <p class="af">Study anywhere, anytime on any device</p>
-                    </div>
-                </div>
-                <div class="flex items-start space-x-4 fade-in" data-delay="100">
-                    <i class="fas fa-file-pdf text-2xl text-red-500 mt-1"></i>
-                    <div>
-                        <h3 class="font-bold">Printable PDFs</h3>
-                        <p class="af">Download and print for offline study</p>
-                    </div>
-                </div>
-                <div class="flex items-start space-x-4 fade-in" data-delay="200">
-                    <i class="fas fa-clock text-2xl text-indigo-500 mt-1"></i>
-                    <div>
-                        <h3 class="font-bold">Timed Tests</h3>
-                        <p class="af">Simulate real exam conditions</p>
-                    </div>
-                </div>
-                <div class="flex items-start space-x-4 fade-in" data-delay="300">
-                    <i class="fas fa-question-circle text-2xl text-pink-500 mt-1"></i>
-                    <div>
-                        <h3 class="font-bold">Detailed Solutions</h3>
-                        <p class="af">Step-by-step explanations for all questions</p>
-                    </div>
-                </div>
-                <div class="flex items-start space-x-4 fade-in" data-delay="400">
-                    <i class="fas fa-headset text-2xl text-teal-500 mt-1"></i>
-                    <div>
-                        <h3 class="font-bold">24/7 Support</h3>
-                        <p class="af">Get help whenever you need it</p>
-                    </div>
-                </div>
-               <div class="flex items-start space-x-4 fade-in" data-delay="100">
-                    <i class="fas fa-calendar-alt text-2xl text-green-500 mt-1"></i>
-                    <div>
-                        <h3 class="font-bold">Monthly Test</h3>
-                        <p class="af">Comprehensive test covering all subjects with detailed solutions</p>
-                    </div>
-                </div>
-               <div class="flex items-start space-x-4 fade-in" data-delay="100">
-                    <i class="fas fa-calendar-week text-2xl text-yellow-500 mt-1"></i>
-                    <div>
-                        <h3 class="font-bold">Weekly Test</h3>
-                        <p class="af">Sunday's special test covering important topics</p>
-                    </div>
-                </div>
-
-
-
-               <div class="flex items-start space-x-4 fade-in" data-delay="100">
-                    <i class="fas fa-calendar-plus text-2xl text-red-500 mt-1"></i>
-                    <div>
-                        <h3 class="font-bold">Daily Test</h3>
-                        <p class="af">Monday's - Saturday's MCQs & test covering important topics</p>
-                    </div>
-                </div>
-
-
-               <div class="flex items-start space-x-4 fade-in" data-delay="100">
-                    <i class="fas fa-star text-2xl text-green-500 mt-1"></i>
-                    <div>
-                        <h3 class="font-bold">More</h3>
-                        <p class="af">Comprehensive question bank covering all concepts</p>
-                    </div>
-                </div>
-
-
-               <div class="flex items-start space-x-4 fade-in" data-delay="100">
-                    <i class="fas fa-star text-2xl text-green-500 mt-1"></i>
-                    <div>
-                        <h3 class="font-bold">More</h3>
-                        <p class="af">Comprehensive question bank covering all concepts</p>
-                    </div>
-                </div>
-
-
-
+                <a href="./Free/1.html" class="free-content-link">
+                    <i class="fas fa-external-link-alt"></i> Access Free Content
+                </a>
             </div>
         </div>
-    </section>
-
-
-
-
-
-
-
-
-    <!-- Banner Image -->
-    <section class="py-8">
-        <div class="container">
-            <div class="banner-image">
-                <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                     alt="PCMB eBook Banner">
+        </div>
+    <div id="main-content">
+        <!-- Subject Cards -->
+        <div class="subject-cards">
+            <div class="subject-card" id="physics-card">
+                <div class="subject-card-image landscape" style="background-image: url('https://i.ibb.co/Fqs32p4V/P.png')"></div>
+                <div class="subject-card-content">
+                    <div class="subject-card-price" id="physics-price">Just ₹499</div>
+                    <div class="subject-card-status" id="physics-status">
+                        <i class="fas fa-shopping-cart"></i> Join Now
+                    </div>
+                </div>
             </div>
-            <div class="features-grid">
-                <div class="feature-card glow-border fade-in" data-delay="100">
-                    <h3><i class="fas fa-check-circle text-blue-500 mr-2"></i> NCERT Aligned</h3>
-                    <p>Perfectly matches NCERT syllabus</p>
+
+            <div class="subject-card" id="chemistry-card">
+                <div class="subject-card-image landscape" style="background-image: url('https://i.ibb.co/WWp1rkFz/C.png')"></div>
+                <div class="subject-card-content">
+                    <div class="subject-card-price" id="chemistry-price">Just ₹499</div>
+                    <div class="subject-card-status" id="chemistry-status">
+                        <i class="fas fa-shopping-cart"></i> Join Now
+                    </div>
                 </div>
-                <div class="feature-card glow-border fade-in" data-delay="200">
-                    <h3><i class="fas fa-bolt text-yellow-500 mr-2"></i> Exam Ready</h3>
-                    <p>Practice for NEET, JEE, Boards</p>
+            </div>
+
+            <div class="subject-card" id="maths-card">
+                <div class="subject-card-image landscape" style="background-image: url('https://i.ibb.co/ksP7DKy0/M.png')"></div>
+                <div class="subject-card-content">
+                    <div class="subject-card-price" id="maths-price">Just ₹499</div>
+                    <div class="subject-card-status" id="maths-status">
+                        <i class="fas fa-shopping-cart"></i> Join Now
+                    </div>
                 </div>
-                <div class="feature-card glow-border fade-in" data-delay="300">
-                    <h3><i class="fas fa-rocket text-purple-500 mr-2"></i> Instant Access</h3>
-                    <p>Get your eBook immediately</p>
+            </div>
+
+            <div class="subject-card" id="biology-card">
+                <div class="subject-card-image landscape" style="background-image: url('https://i.ibb.co/q3xS5qnn/B.png')"></div>
+                <div class="subject-card-content">
+                    <div class="subject-card-price" id="biology-price">Just ₹499</div>
+                    <div class="subject-card-status" id="biology-status">
+                        <i class="fas fa-shopping-cart"></i> Join Now
+                    </div>
+                </div>
+            </div>
+
+            <div class="subject-card" id="neet-card">
+                <div class="subject-card-image landscape" style="background-image: url('https://i.ibb.co/F4QmQnsw/Neet.png')"></div>
+                <div class="subject-card-content">
+                    <div class="subject-card-price" id="neet-price">Just ₹999</div>
+                    <div class="subject-card-status" id="neet-status">
+                        <i class="fas fa-shopping-cart"></i> Join Now
+                    </div>
+                </div>
+            </div>
+
+            <div class="subject-card" id="jee-card">
+                <div class="subject-card-image landscape" style="background-image: url('https://i.ibb.co/v6gLYJX8/Jee.png')"></div>
+                <div class="subject-card-content">
+                    <div class="subject-card-price" id="jee-price">Just ₹999</div>
+                    <div class="subject-card-status" id="jee-status">
+                        <i class="fas fa-shopping-cart"></i> Join Now
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Subjects Selection -->
-    <section class="py-12">
-        <div class="container">
-            <h2 class="section-title">
-                Select Your Subjects
-                <i class="fas fa-layer-group title-icon"></i>
-            </h2>
-            
-            <div class="select-all-container">
-                <button id="selectAllBtn" class="select-all-btn">
-                    <i class="fas fa-check-square"></i> Select All
+        <!-- Hidden Passwords -->
+        <div class="password-display">
+            <div class="password-title">po</div>
+            <div id="current-passwords"></div>
+        </div>
+
+        <!-- Subject Sections -->
+        <div class="subject-section scroll-target" id="physics">
+            <div class="subject-title-container">
+                <div class="subject-title"><i class="fas fa-atom"></i> Physics</div>
+                <button id="physics-action" class="subject-status-button locked">
+                    <i class="fas fa-eye"></i> View
                 </button>
             </div>
-            
-            <div class="subjects-grid">
-                <div class="subject-card" data-subject="physics" data-price="149">
-                    <span class="tap-text">Tap to select</span>
-                    <i class="fas fa-check-circle selected-icon"></i>
-                    <h3><i class="fas fa-atom"></i> Physics</h3>
-                    <p>Complete Class 12 Physics With Fun</p>
-                    <div class="price">
-                        <span class="original-price">₹299</span>
-                        <span>₹49-₹149</span>
-                    </div>
-                </div>
-                
-                <div class="subject-card" data-subject="chemistry" data-price="149">
-                    <span class="tap-text">Tap to select</span>
-                    <i class="fas fa-check-circle selected-icon"></i>
-                    <h3><i class="fas fa-flask"></i> Chemistry</h3>
-                    <p>Complete Class 12 Chemistry With Fun</p>
-                    <div class="price">
-                        <span class="original-price">₹299</span>
-                        <span>₹49-₹149</span>
-                    </div>
-                </div>
-                
-                <div class="subject-card" data-subject="maths" data-price="149">
-                    <span class="tap-text">Tap to select</span>
-                    <i class="fas fa-check-circle selected-icon"></i>
-                    <h3><i class="fas fa-square-root-alt"></i> Mathematics</h3>
-                    <p>Complete Class 12 Maths With Fun</p>
-                    <div class="price">
-                        <span class="original-price">₹299</span>
-                        <span>₹49-₹149</span>
-                    </div>
-                </div>
-                
-                <div class="subject-card" data-subject="biology" data-price="149">
-                    <span class="tap-text">Tap to select</span>
-                    <i class="fas fa-check-circle selected-icon"></i>
-                    <h3><i class="fas fa-dna"></i> Biology</h3>
-                    <p>Complete Class 12 Biology With Fun</p>
-                    <div class="price">
-                        <span class="original-price">₹299</span>
-                        <span>₹49-₹149</span>
-                    </div>
-                </div>
-
-
-                <div class="subject-card" data-subject="neet" data-price="201">
-                    <span class="tap-text">Tap to select</span>
-                    <i class="fas fa-check-circle selected-icon"></i>
-                    <h3><i class="fas fa-medkit"></i> Neet</h3>
-                    <p>Complete Neet With Fun</p>
-                    <div class="price">
-                        <span class="original-price">₹299</span>
-                        <span>₹99-₹201</span>
-                    </div>
-                </div>
-
-                <div class="subject-card" data-subject="jee" data-price="202">
-                    <span class="tap-text">Tap to select</span>
-                    <i class="fas fa-check-circle selected-icon"></i>
-                    <h3><i class="fas fa-rocket"></i> Jee</h3>
-                    <p>Complete Jee With Fun </p>
-                    <div class="price">
-                        <span class="original-price">₹599</span>
-                        <span>₹99-₹202</span>
-                    </div>
-                </div>
-
-            </div>
+            <div class="chapter-buttons" id="physics-buttons"></div>
         </div>
-    </section>
 
-
-    <!-- Focused For Section -->
-    <section class="py-12">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-8 relative">
-                Focused For
-                <i class="fas fa-bullseye title-icon"></i>
-            </h2>
-            <div class="pill-scroll-container">
-                <div class="pill-scroll">
-                    <span class="whitespace-nowrap px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full font-medium mx-2 text-lg inline-flex items-center">
-                        <i class="fas fa-graduation-cap mr-2"></i> Class 12
-                    </span>
-                    <span class="whitespace-nowrap px-4 py-2 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full font-medium mx-2 text-lg inline-flex items-center">
-                        <i class="fas fa-school mr-2"></i> CBSE
-                    </span>
-                    <span class="whitespace-nowrap px-4 py-2 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full font-medium mx-2 text-lg inline-flex items-center">
-                        <i class="fas fa-book mr-2"></i> SEBA
-                    </span>
-                    <span class="whitespace-nowrap px-4 py-2 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-full font-medium mx-2 text-lg inline-flex items-center">
-                        <i class="fas fa-stethoscope mr-2"></i> NEET
-                    </span>
-                    <span class="whitespace-nowrap px-4 py-2 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-full font-medium mx-2 text-lg inline-flex items-center">
-                        <i class="fas fa-atom mr-2"></i> JEE
-                    </span>
-                    <span class="whitespace-nowrap px-4 py-2 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 rounded-full font-medium mx-2 text-lg inline-flex items-center">
-                        <i class="fas fa-clipboard-list mr-2"></i> Boards
-                    </span>
-                    <span class="whitespace-nowrap px-4 py-2 bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-200 rounded-full font-medium mx-2 text-lg inline-flex items-center">
-                        <i class="fas fa-flask mr-2"></i> IIT
-                    </span>
-                    <span class="whitespace-nowrap px-4 py-2 bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 rounded-full font-medium mx-2 text-lg inline-flex items-center">
-                        <i class="fas fa-hospital mr-2"></i> AIIMS
-                    </span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Coupon & Shop Section -->
-    <section id="shop" class="py-12 bg-gray-800">
-        <div class="container">
-            <div class="shop-container">
-                <h2 class="section-title" style="color: white;">
-                    Complete Your Purchase
-                    <i class="fas fa-shopping-cart title-icon"></i>
-                </h2>
-                
-                <div class="shop-box">
-
-                    <div class="quick-select-container">
-                        <div class="quick-select-item" data-subject="physics" onclick="toggleSubjectFromQuickSelect('physics')">
-                            <h4>Physics</h4>
-                            <div class="price">₹49-₹149</div>
-                        </div>
-                        <div class="quick-select-item" data-subject="chemistry" onclick="toggleSubjectFromQuickSelect('chemistry')">
-                            <h4>Chemistry</h4>
-                            <div class="price">₹49-₹149</div>
-                        </div>
-                        <div class="quick-select-item" data-subject="maths" onclick="toggleSubjectFromQuickSelect('maths')">
-                            <h4>Maths</h4>
-                            <div class="price">₹49-₹149</div>
-                        </div>
-                        <div class="quick-select-item" data-subject="biology" onclick="toggleSubjectFromQuickSelect('biology')">
-                            <h4>Biology</h4>
-                            <div class="price">₹49-₹149</div>
-                        </div>
-                        <div class="quick-select-item" data-subject="neet" onclick="toggleSubjectFromQuickSelect('neet')">
-                            <h4>Neet</h4>
-                            <div class="price">₹99-₹201</div>
-                        </div>
-                        <div class="quick-select-item" data-subject="jee" onclick="toggleSubjectFromQuickSelect('jee')">
-                            <h4>Jee</h4>
-                            <div class="price">₹99-₹202</div>
-                        </div>
-                    </div>
-
-
-                                        <div class="input-group">
-                        <label for="name">Your Name</label>
-                        <div class="input-wrapper">
-                            <input type="text" id="name" placeholder="Enter your name" required>
-                            <i class="fas fa-user input-icon"></i>
-                        </div>
-                    </div>
-                    <div class="input-group">
-                        <label for="phone">Your Phone Number</label>
-                        <div class="input-wrapper">
-                            <input type="tel" id="phone" placeholder="10-digit mobile number" pattern="[0-9]{10}" minlength="10" maxlength="10" required>
-                            <i class="fas fa-mobile-alt input-icon"></i>
-                        </div>
-                        <div id="phoneError" class="error-message hidden">
-                            <i class="fas fa-exclamation-circle"></i> Please enter a valid phone number
-                        </div>
-                    </div>
-                    
-                    <div class="input-group">
-                        <label for="coupon">Coupon Code (Optional)</label>
-                        <div class="coupon-row">
-                            <input type="text" id="coupon" placeholder="Enter coupon code">
-                            <button id="applyCoupon" class="apply-btn">
-                                <i class="fas fa-check-circle"></i> Apply
-                            </button>
-                        </div>
-                        <div id="couponMessage" class="hidden"></div>
-                    </div>
-                    
-                    <div class="price-summary">
-                        <span class="font-medium">Total Price:</span>
-                        <div class="flex items-center">
-                            <span id="originalPrice" class="original-price">₹0</span>
-                            <span id="finalPrice" class="final-price">₹0</span>
-                            <span id="discountBadge" class="discount-badge hidden">Extra SAVED ₹0</span>
-                        </div>
-                    </div>
-<br>
-                <div class="action-buttons">
-                    <button id="shopNow" class="action-btn"><span id="discountBadge" class="discount-badge hidden">Extra SAVED ₹0</span>
-                        Buy Now
-                    </button>
-                </div>
-                </div>
-            </div>
-
-
-                <div class="action-buttons">
-                    <button id="tryFree" class="action-btn try-btn">
-                        Try for Free
-                    </button></div>
-        </div>
-    </section>
-
-
-    <!-- Order Summary Modal -->
-    <div id="orderModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Order Summary</h3>
-                <button id="closeOrderModal" class="close-btn">
-                    <i class="fas fa-times"></i>
+        <div class="subject-section scroll-target" id="chemistry">
+            <div class="subject-title-container">
+                <div class="subject-title"><i class="fas fa-flask"></i> Chemistry</div>
+                <button id="chemistry-action" class="subject-status-button locked">
+                    <i class="fas fa-eye"></i> View
                 </button>
             </div>
-            <div class="modal-body">
-                <div id="orderItems">
-                    <!-- Order items will be added here dynamically -->
-                </div>
-                
-                <div class="order-summary">
-                    <div class="order-row">
-                        <span>Subtotal:</span>
-                        <span id="orderSubtotal">₹0</span>
-                    </div>
-                    <div class="order-row">
-                        <span>Discount:</span>
-                        <span id="orderDiscount">-₹0</span>
-                    </div>
-                    <div class="order-row order-total">
-                        <span>Total:</span>
-                        <span>
-                            <span id="orderOriginalPrice" class="order-original-price">₹0</span>
-                            <span id="orderFinalPrice" class="order-final-price">₹0</span>
-                        </span>
-                    </div>
-                </div>
+            <div class="chapter-buttons" id="chemistry-buttons"></div>
+        </div>
+
+        <div class="subject-section scroll-target" id="maths">
+            <div class="subject-title-container">
+                <div class="subject-title"><i class="fas fa-square-root-alt"></i> Mathematics</div>
+                <button id="maths-action" class="subject-status-button locked">
+                    <i class="fas fa-eye"></i> View
+                </button>
             </div>
-            <div class="modal-footer">
-                <button id="cancelOrder" class="modal-btn modal-cancel">Cancel</button>
-                <button id="confirmOrder" class="modal-btn modal-confirm">Confirm & Pay</button>
+            <div class="chapter-buttons" id="maths-buttons"></div>
+        </div>
+
+        <div class="subject-section scroll-target" id="biology">
+            <div class="subject-title-container">
+                <div class="subject-title"><i class="fas fa-dna"></i> Biology</div>
+                <button id="biology-action" class="subject-status-button locked">
+                    <i class="fas fa-eye"></i> View
+                </button>
             </div>
+            <div class="chapter-buttons" id="biology-buttons"></div>
+        </div>
+
+        <div class="subject-section scroll-target" id="neet">
+            <div class="subject-title-container">
+                <div class="subject-title"><i class="fas fa-medal"></i> NEET Preparation</div>
+                <button id="neet-action" class="subject-status-button locked">
+                    <i class="fas fa-eye"></i> View
+                </button>
+            </div>
+            <div class="chapter-buttons" id="neet-buttons"></div>
+        </div>
+
+        <div class="subject-section scroll-target" id="jee">
+            <div class="subject-title-container">
+                <div class="subject-title"><i class="fas fa-rocket"></i> JEE Preparation</div>
+                <button id="jee-action" class="subject-status-button locked">
+                    <i class="fas fa-eye"></i> View
+                </button>
+            </div>
+            <div class="chapter-buttons" id="jee-buttons"></div>
         </div>
     </div>
 
-    <!-- Payment Loader Modal -->
-    <div id="paymentLoaderModal" class="modal">
-        <div class="modal-content">
-            <div class="payment-loader">
-                <div class="loader"></div>
-                <h3>Processing Payment</h3>
-                <p class="payment-message">
-                    Waiting for payment confirmation...<br>
-                    If you have completed the payment, please wait for our response.
-                </p>
-            </div>
-        </div>
-    </div>
+    <iframe id="contentFrame" class="hidden"></iframe>
 
+    <audio id="clickSound" src="https://assets.codepen.io/605876/click.mp3"></audio>
 
-
-<section class="ima-images-section">
-        <h2 class="ima-section-title">More..</h2>
-        <div class="ima-images-grid" id="imagesContainer">
-            <!-- Image boxes will be added here by JavaScript -->
-
-               <div class="ima-image-box visible">
-                    <img src="https://i.ibb.co/HLLJmRHC/A-boy-dark-study.png" >
-                    <div class="ima-image-content">
-                        <div class="ima-image-title">Girl</div>
-                        <div class="ima-image-desc">nice to meet you</div>
-                    </div>
-                </div>
-               <div class="ima-image-box visible" style="height:80%;">
-                    <img src="https://i.ibb.co/Wv11CLpK/Choice-Mcq.png">
-                    <div class="ima-image-content">
-                        <div class="ima-image-title">Read & Eat Like Burger🍔</div>
-                        <div class="ima-image-desc">nice to meet you</div>
-                    </div>
-                </div>
-               <div class="ima-image-box visible" style="height:100%;">
-                    <img src="https://i.ibb.co/XfRPhpYN/Books.png">
-                    <div class="ima-image-content">
-                        <div class="ima-image-title">Read & Eat Like Burger🍔</div>
-                        <div class="ima-image-desc">nice to meet you</div>
-                    </div>
-                </div>
-               <div class="ima-image-box visible">
-                    <img src="https://i.ibb.co/Q7D5SHxk/50-000.png">
-                </div>
-
-            </div>
-    </section>
-
-
-
-
-    <!-- Trusted by Parents - Final Design -->
-<section class="py-12 parent-trust-section">
-    <div class="container">
-        <div class="parent-trust-header">
-            <span class="parent-trust-badge">PARENT APPROVED</span>
-            <h2 class="parent-trust-title">Trusted by <span>Educators</span> & <span>Parents</span></h2>
-            <div class="parent-trust-divider">
-                <div class="divider-line"></div>
-                <i class="fas fa-hand-holding-heart"></i>
-                <div class="divider-line"></div>
-            </div>
-        </div>
-        
-        <div class="parent-trust-grid">
-
-
-
-
-
-
-            <div class="parent-trust-card">
-                <div class="trust-card-inner">
-                    <div class="trust-quote-mark">“</div>
-                    <p class="trust-text">मेरे बेटे को पढ़ाई में consistency नहीं थी, लेकिन इस course के daily routine से उसमें daily padhne की आदत बन गई है। हम parents के लिए इससे बड़ा संतोष और क्या हो सकता है।</p>
-                    <div class="trust-author">
-                        <div class="trust-author-badge">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <div class="trust-author-info">
-                            <div class="trust-author-name">Mrs. Kavita Sharma</div>
-                            <div class="trust-author-verified">
-                                <i class="fas fa-check-circle"></i> Verified Parent
-                            </div>
-                           </div>
-                           </div>
-                          </div>
-         </div>
-
-            <div class="parent-trust-card">
-                <div class="trust-card-inner">
-                    <div class="trust-quote-mark">“</div>
-                    <p class="trust-text">As a teacher, I’ve noticed students showing more discipline in self-study. The regular tests and new pattern-based MCQs are clearly helping them get aligned with the board expectations.</p>
-                    <div class="trust-author">
-                        <div class="trust-author-badge">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <div class="trust-author-info">
-                            <div class="trust-author-name">Dr. Neeraj Bansal</div>
-                            <div class="trust-author-verified">
-                                <i class="fas fa-check-circle"></i> Verified Parent
-                            </div>
-                           </div>
-                           </div>
-                          </div>
-         </div>
-
-            <div class="parent-trust-card">
-                <div class="trust-card-inner">
-                    <div class="trust-quote-mark">“</div>
-                    <p class="trust-text">पहले मेरे बच्चे को revision करना boring लगता था, लेकिन अब रोज़ quiz जैसा daily test होता है, तो वो खुद से excited रहता है। ये बदलाव parents को साफ दिखता है।</p>
-                    <div class="trust-author">
-                        <div class="trust-author-badge">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <div class="trust-author-info">
-                            <div class="trust-author-name">Mr. Rajeev Tandon</div>
-                            <div class="trust-author-verified">
-                                <i class="fas fa-check-circle"></i> Verified Parent
-                            </div>
-                           </div>
-                           </div>
-                          </div>
-         </div>
-
-            <div class="parent-trust-card">
-                <div class="trust-card-inner">
-                    <div class="trust-quote-mark">“</div>
-                    <p class="trust-text">Being a senior Biology teacher, I find this format very well tailored for the new 2025 board pattern. The 50% MCQ approach ensures that students are exam-ready from Day 1.</p>
-                    <div class="trust-author">
-                        <div class="trust-author-badge">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <div class="trust-author-info">
-                            <div class="trust-author-name">Prof. Shalini Mehta</div>
-                            <div class="trust-author-verified">
-                                <i class="fas fa-check-circle"></i> Verified Parent
-                            </div>
-                           </div>
-                           </div>
-                          </div>
-         </div>
-
-            <div class="parent-trust-card">
-                <div class="trust-card-inner">
-                    <div class="trust-quote-mark">“</div>
-                    <p class="trust-text">मुझे पहले लगता था कि online test routine काम नहीं करता, लेकिन इस program ने मेरा विश्वास बदल दिया। मेरी बेटी अब बिना बोले test time पे बैठ जाती है।</p>
-                    <div class="trust-author">
-                        <div class="trust-author-badge">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <div class="trust-author-info">
-                            <div class="trust-author-name">Ms. Anjali Verma</div>
-                            <div class="trust-author-verified">
-                                <i class="fas fa-check-circle"></i> Verified Parent
-                            </div>
-                           </div>
-                           </div>
-                          </div>
-         </div>
-
-            <div class="parent-trust-card">
-                <div class="trust-card-inner">
-                    <div class="trust-quote-mark">“</div>
-                    <p class="trust-text">This system rewards consistency — and as a parent, that’s what we want. Even the monthly prize for top scorers creates healthy competition and motivation.</p>
-                    <div class="trust-author">
-                        <div class="trust-author-badge">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <div class="trust-author-info">
-                            <div class="trust-author-name">Mrs. Sunita Yadav</div>
-                            <div class="trust-author-verified">
-                                <i class="fas fa-check-circle"></i> Verified Parent
-                            </div>
-                           </div>
-                           </div>
-                          </div>
-         </div>
-
-            <div class="parent-trust-card">
-                <div class="trust-card-inner">
-                    <div class="trust-quote-mark">“</div>
-                    <p class="trust-text">মই এটা অভিভাৱক হিচাপে ক'ব বিচাৰোঁ — এই কোর্সৰ বাবে মোৰ পুত্ৰই হ’ব লগা দিশত মনোযোগ দিবলৈ শিকিছে। আগতে যি মনোযোগ নাছিল, এতিয়া আছে।</p>
-                    <div class="trust-author">
-                        <div class="trust-author-badge">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <div class="trust-author-info">
-                            <div class="trust-author-name">Mr. Bhupen Kalita</div>
-                            <div class="trust-author-verified">
-                                <i class="fas fa-check-circle"></i> Verified Parent
-                            </div>
-                           </div>
-                           </div>
-                          </div>
-         </div>
-
-            <div class="parent-trust-card">
-                <div class="trust-card-inner">
-                    <div class="trust-quote-mark">“</div>
-                    <p class="trust-text">I teach Chemistry, and I must say, the chapter-wise MCQ structure is very effective. It mirrors the new pattern and helps students retain application-level concepts.</p>
-                    <div class="trust-author">
-                        <div class="trust-author-badge">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <div class="trust-author-info">
-                            <div class="trust-author-name">Dr. Ramesh Nair</div>
-                            <div class="trust-author-verified">
-                                <i class="fas fa-check-circle"></i> Verified Parent
-                            </div>
-                           </div>
-                           </div>
-                          </div>
-         </div>
-
-            <div class="parent-trust-card">
-                <div class="trust-card-inner">
-                    <div class="trust-quote-mark">“</div>
-                    <p class="trust-text">मेरा बेटा खुद से test schedule फॉलो कर रहा है और हर महीने का target लेता है। हमें लगता है कि अब उसे तैयारी में seriousness आ गई है।</p>
-                    <div class="trust-author">
-                        <div class="trust-author-badge">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <div class="trust-author-info">
-                            <div class="trust-author-name">Mrs. Ritu Malhotra</div>
-                            <div class="trust-author-verified">
-                                <i class="fas fa-check-circle"></i> Verified Parent
-                            </div>
-                           </div>
-                           </div>
-                          </div>
-         </div>
-
-            <div class="parent-trust-card">
-                <div class="trust-card-inner">
-                    <div class="trust-quote-mark">“</div>
-                    <p class="trust-text">As a physics teacher with 20+ years of experience, I can say this pattern-based system has been designed keeping in mind real exam scenarios. It’s not generic — it’s very focused.</p>
-                    <div class="trust-author">
-                        <div class="trust-author-badge">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <div class="trust-author-info">
-                            <div class="trust-author-name">Prof. Abhay Singh</div>
-                            <div class="trust-author-verified">
-                                <i class="fas fa-check-circle"></i> Verified Parent
-                            </div>
-                           </div>
-                           </div>
-                          </div>
-         </div>
-
-            <div class="parent-trust-card">
-                <div class="trust-card-inner">
-                    <div class="trust-quote-mark">“</div>
-                    <p class="trust-text">पहले हमे बच्चे के marks देखकर डर लगता था कि कहीं पीछे न रह जाए, लेकिन अब हर हफ्ते improvement दिख रहा है। इससे बड़ा भरोसा और क्या हो सकता है?</p>
-                    <div class="trust-author">
-                        <div class="trust-author-badge">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <div class="trust-author-info">
-                            <div class="trust-author-name">Mr. Manoj Rawat</div>
-                            <div class="trust-author-verified">
-                                <i class="fas fa-check-circle"></i> Verified Parent
-                            </div>
-                           </div>
-                           </div>
-                          </div>
-         </div>
-
-            <div class="parent-trust-card">
-                <div class="trust-card-inner">
-                    <div class="trust-quote-mark">“</div>
-                    <p class="trust-text">Being a Mathematics teacher, I’ve recommended this approach to multiple students. The idea of daily tests and focused monthly evaluation builds confidence over time.</p>
-                    <div class="trust-author">
-                        <div class="trust-author-badge">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <div class="trust-author-info">
-                            <div class="trust-author-name">Dr. Nidhi Sharma</div>
-                            <div class="trust-author-verified">
-                                <i class="fas fa-check-circle"></i> Verified Parent
-                            </div>
-                           </div>
-                           </div>
-                          </div>
-         </div>
-
-            <div class="parent-trust-card">
-                <div class="trust-card-inner">
-                    <div class="trust-quote-mark">“</div>
-                    <p class="trust-text">আমি এটা পিতৃ হিচাপে ক'ব পাৰোঁ — আগতে মোৰ ল’ৰা অধ্যয়নত গম্ভীৰতা নাছিল। এতিয়া প্ৰতিদিনে টেষ্ট দিবলৈ বহে, আৰু এইটোৱেই সঠিক দিশ।</p>
-                    <div class="trust-author">
-                        <div class="trust-author-badge">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <div class="trust-author-info">
-                            <div class="trust-author-name">Mr. Sanjay Hazarika</div>
-                            <div class="trust-author-verified">
-                                <i class="fas fa-check-circle"></i> Verified Parent
-                            </div>
-                           </div>
-                           </div>
-                          </div>
-         </div>
-
-            <div class="parent-trust-card">
-                <div class="trust-card-inner">
-                    <div class="trust-quote-mark">“</div>
-                    <p class="trust-text">Parent होने के नाते मैं देख पा रहा हूँ कि पहले जहाँ बच्चा stress में रहता था, अब उसे रोज़ का टेस्ट एक गेम जैसा लगता है। खुद से तैयारी करने की आदत बन गई है।</p>
-                    <div class="trust-author">
-                        <div class="trust-author-badge">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <div class="trust-author-info">
-                            <div class="trust-author-name">Mrs. Meena Arora</div>
-                            <div class="trust-author-verified">
-                                <i class="fas fa-check-circle"></i> Verified Parent
-                            </div>
-                           </div>
-                           </div>
-                          </div>
-         </div>
-
-            <div class="parent-trust-card">
-                <div class="trust-card-inner">
-                    <div class="trust-quote-mark">“</div>
-                    <p class="trust-text">From a teacher’s perspective, the fact that MCQs are 50% in the module gives students solid practice for both boards and entrance exams without overwhelming them.</p>
-                    <div class="trust-author">
-                        <div class="trust-author-badge">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <div class="trust-author-info">
-                            <div class="trust-author-name">Dr. Prashant Joshi</div>
-                            <div class="trust-author-verified">
-                                <i class="fas fa-check-circle"></i> Verified Parent
-                            </div>
-                           </div>
-                           </div>
-                          </div>
-         </div>
-
-            <div class="parent-trust-card">
-                <div class="trust-card-inner">
-                    <div class="trust-quote-mark">“</div>
-                    <p class="trust-text">मुझे लगा था बच्चे प्रेशर में आएंगे, लेकिन daily test और monthly rewards ने उन्हें disciplined और motivated बना दिया है। इससे better कुछ नहीं।</p>
-                    <div class="trust-author">
-                        <div class="trust-author-badge">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <div class="trust-author-info">
-                            <div class="trust-author-name">Prof. Ruchi Deshmukh</div>
-                            <div class="trust-author-verified">
-                                <i class="fas fa-check-circle"></i> Verified Parent
-                            </div>
-                           </div>
-                           </div>
-                          </div>
-         </div>
-
-            <div class="parent-trust-card">
-                <div class="trust-card-inner">
-                    <div class="trust-quote-mark">“</div>
-                    <p class="trust-text">Being a science faculty, I can tell the modules are topic-wise well curated and match the board’s evolving question structure. This is the need of the hour.</p>
-                    <div class="trust-author">
-                        <div class="trust-author-badge">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <div class="trust-author-info">
-                            <div class="trust-author-name">Mrs. Kamalpreet Kaur</div>
-                            <div class="trust-author-verified">
-                                <i class="fas fa-check-circle"></i> Verified Parent
-                            </div>
-                           </div>
-                           </div>
-                          </div>
-         </div>
-
-            <div class="parent-trust-card">
-                <div class="trust-card-inner">
-                    <div class="trust-quote-mark">“</div>
-                    <p class="trust-text">अब marks नहीं, progress दिखता है। हर महीने का test report हमें बताता है कि बच्चा कहाँ अच्छा कर रहा है और कहाँ उसे और practice की ज़रूरत है।</p>
-                    <div class="trust-author">
-                        <div class="trust-author-badge">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <div class="trust-author-info">
-                            <div class="trust-author-name">Dr. Biplab Gogoi</div>
-                            <div class="trust-author-verified">
-                                <i class="fas fa-check-circle"></i> Verified Parent
-                            </div>
-                           </div>
-                           </div>
-                          </div>
-         </div>
-
-            <div class="parent-trust-card">
-                <div class="trust-card-inner">
-                    <div class="trust-quote-mark">“</div>
-                    <p class="trust-text">মই শিক্ষক হিচাপে ক'ব পাৰোঁ — এই পদ্ধতিটোৱে নতুন pattern অনুসৰি ছাত্র-ছাত্ৰীক গঠনমূলকভাৱে সাজু কৰি তোলে।</p>
-                    <div class="trust-author">
-                        <div class="trust-author-badge">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <div class="trust-author-info">
-                            <div class="trust-author-name">Ms. Rekha Menon</div>
-                            <div class="trust-author-verified">
-                                <i class="fas fa-check-circle"></i> Verified Parent
-                            </div>
-                           </div>
-                           </div>
-                          </div>
-         </div>
-
-            <div class="parent-trust-card">
-                <div class="trust-card-inner">
-                    <div class="trust-quote-mark">“</div>
-                    <p class="trust-text">My child never liked solving MCQs, but now she actually enjoys practicing them every day. As parents, we are thankful for this change in attitude and commitment.</p>
-                    <div class="trust-author">
-                        <div class="trust-author-badge">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <div class="trust-author-info">
-                            <div class="trust-author-name">Mr. Akash Das</div>
-                            <div class="trust-author-verified">
-                                <i class="fas fa-check-circle"></i> Verified Parent
-                            </div>
-                           </div>
-                           </div>
-                          </div>
-         </div>
-
-
-
-        </div>
-    </div>
-<br>
-    <div class="container">
-        <h2 class="section-title">
-            What Students Say
-            <i class="fas fa-comment-dots title-icon"></i>
-        </h2>
-        
-        <div class="reviews-grid">
-            <!-- Review 1 -->
-
-
-           <div class="review-card">
-                <div class="review-header">
-                    <div class="review-user-icon">
-                        <i class="fas fa-user-graduate"></i>
-                        <div class="verified-badge">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                    </div>
-                    <div class="review-user">
-                        <h4>Aarav Mehta</h4>
-                        <div class="review-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p>MCQ practice toh daily hoti hai yahan. Bohot kaam aata hai boards ke liye.</p>
-                </div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-user-icon">
-                        <i class="fas fa-user-graduate"></i>
-                        <div class="verified-badge">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                    </div>
-                    <div class="review-user">
-                        <h4>Nandita Deka</h4>
-                        <div class="review-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p>আগতে ভয় লাগিছিল, এতিয়া regular practiceৰ বাবে মনৰ ভয় নাই।</p>
-                </div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-user-icon">
-                        <i class="fas fa-user-graduate"></i>
-                        <div class="verified-badge">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                    </div>
-                    <div class="review-user">
-                        <h4>Rishabh Nair</h4>
-                        <div class="review-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p>Finally I feel ready for final board exam. New pattern isn’t scary anymore.</p>
-                </div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-user-icon">
-                        <i class="fas fa-user-graduate"></i>
-                        <div class="verified-badge">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                    </div>
-                    <div class="review-user">
-                        <h4>Tanya Sharma</h4>
-                        <div class="review-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p>Sab kuch exam type lagta hai. Pehle confusion tha MCQ ka, ab clarity hai.</p>
-                </div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-user-icon">
-                        <i class="fas fa-user-graduate"></i>
-                        <div class="verified-badge">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                    </div>
-                    <div class="review-user">
-                        <h4>Faizan Qureshi</h4>
-                        <div class="review-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p>Board ke hisab se content diya gaya hai, not random like other apps.</p>
-                </div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-user-icon">
-                        <i class="fas fa-user-graduate"></i>
-                        <div class="verified-badge">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                    </div>
-                    <div class="review-user">
-                        <h4>Sneha Verma</h4>
-                        <div class="review-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p>MCQs 50% hone se tension tha, yahan practice mil gaya daily.</p>
-                </div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-user-icon">
-                        <i class="fas fa-user-graduate"></i>
-                        <div class="verified-badge">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                    </div>
-                    <div class="review-user">
-                        <h4>Dipankar Das</h4>
-                        <div class="review-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p>আগৰ দৰে random question নহয়, exact board patternৰ মাজত practice হয়।</p>
-                </div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-user-icon">
-                        <i class="fas fa-user-graduate"></i>
-                        <div class="verified-badge">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                    </div>
-                    <div class="review-user">
-                        <h4>Neha Bhuyan</h4>
-                        <div class="review-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p>Daily test se maza bhi aata hai aur padhna bhi ho jata hai.</p>
-                </div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-user-icon">
-                        <i class="fas fa-user-graduate"></i>
-                        <div class="verified-badge">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                    </div>
-                    <div class="review-user">
-                        <h4>Kunal Roy</h4>
-                        <div class="review-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p>Feels like I’m solving actual board papers.</p>
-                </div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-user-icon">
-                        <i class="fas fa-user-graduate"></i>
-                        <div class="verified-badge">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                    </div>
-                    <div class="review-user">
-                        <h4>Avni Jain</h4>
-                        <div class="review-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p>New pattern is tricky, but this series made it super easy.</p>
-                </div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-user-icon">
-                        <i class="fas fa-user-graduate"></i>
-                        <div class="verified-badge">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                    </div>
-                    <div class="review-user">
-                        <h4>Zoya Hussain</h4>
-                        <div class="review-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p>MCQ ke liye daily solve karne wala module best lagta hai.</p>
-                </div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-user-icon">
-                        <i class="fas fa-user-graduate"></i>
-                        <div class="verified-badge">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                    </div>
-                    <div class="review-user">
-                        <h4>Lakshit Taneja</h4>
-                        <div class="review-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p>50% MCQ hona tension deta tha, ab toh full tayyari lagti hai.</p>
-                </div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-user-icon">
-                        <i class="fas fa-user-graduate"></i>
-                        <div class="verified-badge">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                    </div>
-                    <div class="review-user">
-                        <h4>Reema Patil</h4>
-                        <div class="review-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p>Real feel aata hai final exam ka.</p>
-                </div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-user-icon">
-                        <i class="fas fa-user-graduate"></i>
-                        <div class="verified-badge">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                    </div>
-                    <div class="review-user">
-                        <h4>Jashanpreet Kaur</h4>
-                        <div class="review-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p>আগতে পৰীক্ষাৰ ভয় আছিল, এতিয়া daily MCQ solve কৰোঁতে সাহস পালোঁ।</p>
-                </div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-user-icon">
-                        <i class="fas fa-user-graduate"></i>
-                        <div class="verified-badge">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                    </div>
-                    <div class="review-user">
-                        <h4>Arjun Kalita</h4>
-                        <div class="review-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p>Earlier I was scoring 30-35, now I’m hitting 60+ just by solving these.</p>
-                </div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-user-icon">
-                        <i class="fas fa-user-graduate"></i>
-                        <div class="verified-badge">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                    </div>
-                    <div class="review-user">
-                        <h4>Simran Khurana</h4>
-                        <div class="review-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p>MCQ round har din test karta hai dimaag ko — feels like quiz time.</p>
-                </div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-user-icon">
-                        <i class="fas fa-user-graduate"></i>
-                        <div class="verified-badge">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                    </div>
-                    <div class="review-user">
-                        <h4>Nikhil Choudhary</h4>
-                        <div class="review-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p>Concepts clear ho gaye, pehle ratta tha bas.</p>
-                </div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-user-icon">
-                        <i class="fas fa-user-graduate"></i>
-                        <div class="verified-badge">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                    </div>
-                    <div class="review-user">
-                        <h4>Aashi Rajput</h4>
-                        <div class="review-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p>MCQ practice toh ultimate level ki hai. I feel confident for NEET also.</p>
-                </div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-user-icon">
-                        <i class="fas fa-user-graduate"></i>
-                        <div class="verified-badge">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                    </div>
-                    <div class="review-user">
-                        <h4>Bipul Gogoi</h4>
-                        <div class="review-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p>Board MCQ match karta hai test ke pattern se.</p>
-                </div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-user-icon">
-                        <i class="fas fa-user-graduate"></i>
-                        <div class="verified-badge">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                    </div>
-                    <div class="review-user">
-                        <h4>Anaya Saikia</h4>
-                        <div class="review-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p>ধন্যবাদ এই নতুন সিস্টেমৰ বাবে, মই confident অনুভৱ কৰিছোঁ।</p>
-                </div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-user-icon">
-                        <i class="fas fa-user-graduate"></i>
-                        <div class="verified-badge">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                    </div>
-                    <div class="review-user">
-                        <h4>Yuvraj Thakur</h4>
-                        <div class="review-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p>Mujhe lagta tha MCQ toh luck se hota hai, ab samajh aa gaya logic se bhi aata hai.</p>
-                </div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-user-icon">
-                        <i class="fas fa-user-graduate"></i>
-                        <div class="verified-badge">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                    </div>
-                    <div class="review-user">
-                        <h4>Tanisha Dey</h4>
-                        <div class="review-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p>Questions are sharp and similar to board level — very helpful.</p>
-                </div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-user-icon">
-                        <i class="fas fa-user-graduate"></i>
-                        <div class="verified-badge">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                    </div>
-                    <div class="review-user">
-                        <h4>Harshil Rawat</h4>
-                        <div class="review-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p>Test diya toh laga real board ka paper solve kar rahe ho.</p>
-                </div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-user-icon">
-                        <i class="fas fa-user-graduate"></i>
-                        <div class="verified-badge">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                    </div>
-                    <div class="review-user">
-                        <h4>Debojit Baruah</h4>
-                        <div class="review-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p>আগতে অলপ বেয়া হৈছিল, এতিয়া top 10 তো নাম আহে।</p>
-                </div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-user-icon">
-                        <i class="fas fa-user-graduate"></i>
-                        <div class="verified-badge">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                    </div>
-                    <div class="review-user">
-                        <h4>Prerna Nath</h4>
-                        <div class="review-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p>Board ke MCQ ka jo format hai, woh yahan match karta hai 100%.</p>
-                </div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-user-icon">
-                        <i class="fas fa-user-graduate"></i>
-                        <div class="verified-badge">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                    </div>
-                    <div class="review-user">
-                        <h4>Ishaan Bhattacharya</h4>
-                        <div class="review-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p>Systematic prep ho rahi hai, har week ek goal complete hota hai.</p>
-                </div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-user-icon">
-                        <i class="fas fa-user-graduate"></i>
-                        <div class="verified-badge">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                    </div>
-                    <div class="review-user">
-                        <h4>Kritika Das</h4>
-                        <div class="review-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p>MCQ ke through hum weak chapters ko pehchan paate hain. Very useful.</p>
-                </div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-user-icon">
-                        <i class="fas fa-user-graduate"></i>
-                        <div class="verified-badge">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                    </div>
-                    <div class="review-user">
-                        <h4>Shubham Kashyap</h4>
-                        <div class="review-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p>The best part is pattern match — no time waste.</p>
-                </div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-user-icon">
-                        <i class="fas fa-user-graduate"></i>
-                        <div class="verified-badge">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                    </div>
-                    <div class="review-user">
-                        <h4>Jinti Kalita</h4>
-                        <div class="review-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p>I hated MCQs before. Now it feels easy and interesting.</p>
-                </div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-user-icon">
-                        <i class="fas fa-user-graduate"></i>
-                        <div class="verified-badge">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                    </div>
-                    <div class="review-user">
-                        <h4>Rehaan Ahmed</h4>
-                        <div class="review-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p>MCQ ka fear gaya, ab toh speed bhi improve ho gayi.</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Fixed Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <span class="footer-text">Class 12 PCMB Series</span>
-            <div class="footer-buttons">
-                <button id="footerShopNow" class="footer-btn">
-                    Buy Now
-                </button>
-                <button id="footerTryFree" class="footer-btn footer-try-btn">
-                    <i class="fas fa-external-link-alt mr-2"></i> Try Free
-                </button>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript -->
     <script>
-        // Theme Toggle
+        // DOM elements
         const themeToggle = document.getElementById('themeToggle');
+        const themeLabel = document.getElementById('themeLabel');
+        const backButton = document.getElementById('backButton');
+        const mainHeader = document.getElementById('main-header');
+        const mainContent = document.getElementById('main-content');
+        const contentFrame = document.getElementById('contentFrame');
+        const clickSound = document.getElementById('clickSound');
+        const currentPasswordsEl = document.getElementById('current-passwords');
+        const popupNotification = document.getElementById('popupNotification');
         
-        function applyTheme(isDark) {
-            if (isDark) {
-                document.documentElement.classList.add('dark-mode');
-                localStorage.setItem('theme', 'dark');
-                themeToggle.checked = true;
-            } else {
-                document.documentElement.classList.remove('dark-mode');
-                localStorage.setItem('theme', 'light');
-                themeToggle.checked = false;
-            }
-        }
+        // Check URL parameters and hash
+        const urlParams = new URLSearchParams(window.location.search);
+        const passwordParam = urlParams.get('P');
+        const subjectParam = window.location.hash.substring(1); // Remove # from hash
         
-        themeToggle.addEventListener('change', function() {
-            applyTheme(this.checked);
-        });
-
-        // Set initial theme from localStorage or system preference
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const savedTheme = localStorage.getItem('theme') || (prefersDark ? 'dark' : 'light');
-        applyTheme(savedTheme === 'dark');
-
-        // Get URL parameters
-        function getUrlParameter(name) {
-            name = name.replace(/[[]/, '\\[').replace(/[\]]/, '\\]');
-            const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-            const results = regex.exec(location.search);
-            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-        }
-
-        const referenceParam = getUrlParameter('R');
-        const couponParam = getUrlParameter('cou');
-
-        // Check URL hash for subject selection
-        function checkUrlHash() {
-            const hash = window.location.hash.substring(1);
-            
-            if (hash.startsWith('shop')) {
-                const subjects = hash.replace('shop', '').split('');
-                
-                // Clear current selection
-                selectedSubjects = [];
-                
-                // Add subjects from URL
-                subjects.forEach(num => {
-                    const subject = getSubjectByNumber(num);
-                    if (subject && !selectedSubjects.includes(subject)) {
-                        selectedSubjects.push(subject);
-                    }
-                });
-                
-                // Update UI
-                updateSubjectCards();
-                updateQuickSelectItems();
-                updatePrice();
-                
-                // Scroll to shop section
-                setTimeout(() => {
-                    document.getElementById('shop').scrollIntoView({ behavior: 'smooth' });
-                }, 100);
-            }
-        }
-
-        // Map numbers to subjects
-        function getSubjectByNumber(num) {
-            switch(num) {
-                case '1': return 'physics';
-                case '2': return 'chemistry';
-                case '3': return 'maths';
-                case '4': return 'biology';
-                case '5': return 'neet';
-                case '6': return 'jee';
-                default: return null;
-            }
-        }
-
-        // Subject Selection
-        const subjectCards = document.querySelectorAll('.subject-card');
-        const selectAllBtn = document.getElementById('selectAllBtn');
-        const quickSelectItems = document.querySelectorAll('.quick-select-item');
-        let selectedSubjects = [];
-        let isAllSelected = false;
-
-        // Subject data
-        const subjectsData = {
+        // Subject passwords configuration
+        const subjectPasswords = {
             physics: {
-                name: 'Physics',
-                price: 149,
-                originalPrice: 299,
-                icon: 'fa-atom'
+                formula: (d, t, m, y) => d + t + y + m * t,
+                chapters: ['Live Tests','Electric Charges and Fields', 'Electrostatic Potential and Capacitance', 'Current Electricity', 'Moving Charges and Magnetism', 'Magnetism and Matter', 'Electromagnetic Induction', 'Alternating Current', 'Electromagnetic Waves', 'Ray Optics and Optical Instruments', 'Wave Optics', 'Dual Nature of Matter and Radiation', 'Atoms', 'Nuclei', 'Semiconductor Electronics', 'More Tests'],
+                prefix: 'physics',
+                price: 'Just ₹49-₹149',
+                icon: 'atom'
             },
             chemistry: {
-                name: 'Chemistry',
-                price: 149,
-                originalPrice: 299,
-                icon: 'fa-flask'
+                formula: (d, t, m, y) => d * t + y - m,
+                chapters: ['Live Tests','Solutions', 'Electrochemistry', 'Chemical Kinetics', 'Surface Chemistry', 'The p-Block Elements', 'The p-Block Elements (Contd.)', 'The d- and f-Block Elements', 'The Coordination Compounds', 'Haloalkanes and Haloarenes', 'Alcohols, Phenols and Ethers', 'Aldehydes, Ketones and Carboxylic Acids', 'Organic Compounds Containing Nitrogen', 'Biomolecules', 'Polymers', 'Chemistry in Everyday Life', 'More Tests'],
+                prefix: 'chemistry',
+                price: 'Just ₹49-₹149',
+                icon: 'flask'
             },
             maths: {
-                name: 'Mathematics',
-                price: 149,
-                originalPrice: 299,
-                icon: 'fa-square-root-alt'
+                formula: (d, t, m, y) => y + d - m * t,
+                chapters: ['Live Tests','Relations and Functions', 'Inverse Trigonometric Functions', 'Matrices', 'Determinants', 'Continuity and Differentiability', 'Application of Derivatives', 'Integrals', 'Application of Integrals', 'Differential Equations', 'Vector Algebra', 'Three Dimensional Geometry', 'Linear Programming', 'Probability', 'More Tests'],
+                prefix: 'maths',
+                price: 'Just ₹49-₹149',
+                icon: 'square-root-alt'
             },
             biology: {
-                name: 'Biology',
-                price: 149,
-                originalPrice: 299,
-                icon: 'fa-dna'
+                formula: (d, t, m, y) => y - t + d + m,
+                chapters: ['Live Tests','Sexual Reproduction in Flowering Plants', 'Human Reproduction', 'Reproductive Health', 'Principles of Inheritance and Variation', 'Molecular Basis of Inheritance', 'Evolution', 'Human Health and Disease', 'Strategies for Enhancement in Food Production', 'Microbes in Human Welfare', 'Biotechnology: Principles and Processes', 'Biotechnology and Its Applications', 'Organisms and Populations', 'Ecosystem', 'Biodiversity and Conservation', 'Environmental Issues', 'More Tests'],
+                prefix: 'biology',
+                price: 'Just ₹49-₹149',
+                icon: 'dna'
             },
             neet: {
-                name: 'Neet',
-                price: 201,
-                originalPrice: 599,
-                icon: 'fa-medkit'
+                formula: (d, t, m, y) => d * t + m * y,
+                chapters: ['Live Tests','NEET Physics', 'NEET Chemistry', 'NEET Biology', 'NEET Series 1', 'NEET Series 2', 'More Tests'],
+                prefix: 'neet',
+                price: 'Just ₹99-₹201',
+                icon: 'medal'
             },
             jee: {
-                name: 'Jee',
-                price: 202,
-                originalPrice: 599,
-                icon: 'fa-rocket'
+                formula: (d, t, m, y) => d + t * m + y,
+                chapters: ['Live Tests','JEE Physics', 'JEE Chemistry', 'JEE Mathematics', 'JEE Series 1', 'JEE Series 2', 'More Tests'],
+                prefix: 'jee',
+                price: 'Just ₹99-₹203',
+                icon: 'rocket'
             }
         };
 
-        // Initialize subject selection
-        subjectCards.forEach(card => {
-            card.addEventListener('click', function() {
-                const subject = this.dataset.subject;
-                toggleSubjectSelection(subject);
-            });
-        });
+        // Card order mapping for #1 to #6
+        const cardOrder = ['physics', 'chemistry', 'maths', 'biology', 'neet', 'jee'];
 
-        // Select all button
-        selectAllBtn.addEventListener('click', function() {
-            isAllSelected = !isAllSelected;
-            
-            if (isAllSelected) {
-                selectedSubjects = Object.keys(subjectsData);
-                selectAllBtn.innerHTML = '<i class="fas fa-times"></i> Deselect All';
-            } else {
-                selectedSubjects = [];
-                selectAllBtn.innerHTML = '<i class="fas fa-check-square"></i> Select All';
-            }
-            
-            updateSubjectCards();
-            updateQuickSelectItems();
-            updatePrice();
-        });
-
-        // Function to toggle subject selection
-        function toggleSubjectSelection(subject) {
-            const index = selectedSubjects.indexOf(subject);
-            
-            if (index === -1) {
-                selectedSubjects.push(subject);
-            } else {
-                selectedSubjects.splice(index, 1);
-            }
-            
-            isAllSelected = selectedSubjects.length === Object.keys(subjectsData).length;
-            selectAllBtn.innerHTML = isAllSelected ? 
-                '<i class="fas fa-times"></i> Deselect All' : 
-                '<i class="fas fa-check-square"></i> Select All';
-            
-            updateSubjectCards();
-            updateQuickSelectItems();
-            updatePrice();
-            
-            // Save to localStorage
-            saveSelectionToLocalStorage();
-        }
-
-        // Function to update subject cards appearance
-        function updateSubjectCards() {
-            subjectCards.forEach(card => {
-                const subject = card.dataset.subject;
-                
-                if (selectedSubjects.includes(subject)) {
-                    card.classList.add('selected');
-                } else {
-                    card.classList.remove('selected');
-                }
-            });
-        }
-
-        // Function to update quick select items
-        function updateQuickSelectItems() {
-            quickSelectItems.forEach(item => {
-                const subject = item.dataset.subject;
-                
-                if (selectedSubjects.includes(subject)) {
-                    item.classList.add('selected');
-                } else {
-                    item.classList.remove('selected');
-                }
-            });
-        }
-
-        // Function to select subject from quick select
-        function toggleSubjectFromQuickSelect(subject) {
-            toggleSubjectSelection(subject);
-        }
-
-        // Function to select subject from chapters section
-        function selectSubjectFromChapter(subject) {
-            if (!selectedSubjects.includes(subject)) {
-                selectedSubjects.push(subject);
-                updateSubjectCards();
-                updateQuickSelectItems();
-                updatePrice();
-                saveSelectionToLocalStorage();
-            }
-            
-            // Scroll to shop section
-            document.getElementById('shop').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Save selection to localStorage
-        function saveSelectionToLocalStorage() {
-            const selectionData = {
-                subjects: selectedSubjects,
-                timestamp: new Date().getTime()
-            };
-            localStorage.setItem('12sbuybow', JSON.stringify(selectionData));
-        }
-
-        // Load selection from localStorage
-        function loadSelectionFromLocalStorage() {
-            const savedData = localStorage.getItem('12sbuybow');
-            if (savedData) {
-                try {
-                    const data = JSON.parse(savedData);
-                    // Check if data is not too old (e.g., 7 days)
-                    if (new Date().getTime() - data.timestamp < 7 * 24 * 60 * 60 * 1000) {
-                        selectedSubjects = data.subjects || [];
-                        updateSubjectCards();
-                        updateQuickSelectItems();
-                        updatePrice();
-                    }
-                } catch (e) {
-                    console.error('Error loading selection data:', e);
-                }
-            }
-        }
-
-        // Coupon Logic
-        const couponCodes = {
-            // Fixed amount coupons (applied per subject)
-            'SAVE50': 50,
-            'STUDENT25': 25,
-            'NEET100': 100,
-            'PHYSICS20': 20,
-            'CRACKIT75': 75,
-            'CHAI50': 50,
-'BELLRING51': 51,
-'GAMER52': 52,
-'SMARTCHEAT53': 53,
-'FOODIES54': 54,
-'HEART55': 55,
-'NETON56': 56,
-'DOGGY57': 57,
-'NIGHTOWL58': 58,
-'FOODIE59': 59,
-'NUMBERKING60': 60,
-'RESULTDAY61': 61,
-'SHOPMORE62': 62,
-'MUSCLE63': 63,
-'POPCORN64': 64,
-'BEATBOX65': 65,
-'BIKERIDE66': 66,
-'SNAPSHOT67': 67,
-'SNOOZER68': 68,
-'CHAMP69': 69,
-'PASS50': 50,
-'TOPPER51': 51,
-'BOARD52': 52,
-'STUDY53': 53,
-'EXAM54': 54,
-'CHAPTER55': 55,
-'NOTES56': 56,
-'SEBA57': 57,
-'NEET58': 58,
-'JEE59': 59,
-'BIO76': 76,
-'PHYSICS77': 77,
-'CHEM78': 78,
-'MATH79': 79,
-'LEARN80': 80,
-'BOOST81': 81,
-'PREP82': 82,
-'WIN83': 83,
-'PASS84': 84,
-'SMILE85': 85,
-
-
-
-            // Special coupons (applied to total based on number of subjects)
-            'AAA': function(count) { return count >= 2 ? 129 : 0; },
-            'XYZA': function(count) { return count >= 3 ? 350 : 0; },
-            'GGG': function(count) { return count >= 4 ? 495 : 0; },
-            'JJJ': function(count) { return count >= 4 ? 495 : 0; },
-            'KKK': function(count) { return count >= 5 ? 890 : 0; },
-            'YYY': function(count) { return count >= 4 ? 546 : 0; }
-        };
-        
-        const applyCouponBtn = document.getElementById('applyCoupon');
-        const couponInput = document.getElementById('coupon');
-        const couponMessage = document.getElementById('couponMessage');
-        const originalPrice = document.getElementById('originalPrice');
-        const finalPrice = document.getElementById('finalPrice');
-        const discountBadge = document.getElementById('discountBadge');
-        let currentDiscount = 0;
-        let appliedCouponCode = '';
-        
-        // Apply coupon from URL if present
-        if (couponParam) {
-            const couponParts = couponParam.split('-');
-            const couponCode = couponParts[0];
-            const discountAmount = parseInt(couponParts[1]) || 0;
-            
-            // Add to coupon codes if not already there
-            if (!couponCodes[couponCode] && discountAmount > 0) {
-                couponCodes[couponCode] = discountAmount;
-            }
-            
-            couponInput.value = couponCode;
-            applyCoupon(couponCode);
-        }
-        
-        applyCouponBtn.addEventListener('click', () => {
-            const coupon = couponInput.value.trim().toUpperCase();
-            applyCoupon(coupon);
-        });
-        
-        function applyCoupon(coupon) {
-            if (coupon === '') {
-                resetCoupon();
-                showCouponMessage('Please enter a coupon code', 'error');
-                return;
-            }
-            
-            if (couponCodes.hasOwnProperty(coupon)) {
-                appliedCouponCode = coupon;
-                
-                // Check if it's a special coupon
-                if (typeof couponCodes[coupon] === 'function') {
-                    // Special coupon based on number of subjects
-                    currentDiscount = couponCodes[coupon](selectedSubjects.length);
-                } else {
-                    // Fixed amount per subject
-                    currentDiscount = couponCodes[coupon] * selectedSubjects.length;
-                }
-                
-                showCouponMessage('Coupon applied successfully!', 'success');
-                localStorage.setItem('appliedCoupon', coupon);
-                updatePrice();
-            } else {
-                resetCoupon();
-                showCouponMessage('Invalid coupon code', 'error');
-            }
-        }
-        
-        function resetCoupon() {
-            currentDiscount = 0;
-            appliedCouponCode = '';
-            couponInput.value = '';
-            localStorage.removeItem('appliedCoupon');
-            updatePrice();
-        }
-        
-        function showCouponMessage(message, type) {
-            couponMessage.textContent = message;
-            couponMessage.className = type === 'error' ? 'error-message' : 'success-message';
-            couponMessage.classList.remove('hidden');
-            
+        // Show popup notification
+        function showPopup() {
+            popupNotification.classList.remove('hidden');
             setTimeout(() => {
-                couponMessage.classList.add('hidden');
+                popupNotification.classList.add('hidden');
             }, 3000);
         }
 
-        // Check for previously applied coupon
-        const appliedCoupon = localStorage.getItem('appliedCoupon');
-        if (appliedCoupon) {
-            couponInput.value = appliedCoupon;
-            applyCoupon(appliedCoupon);
+        // Initialize theme
+        function initTheme() {
+            const darkMode = localStorage.getItem('darkMode') === 'true';
+            themeToggle.checked = darkMode;
+            updateTheme(darkMode);
         }
-
-        // Price Calculation
-        function updatePrice() {
-            const subtotal = selectedSubjects.reduce((total, subject) => {
-                return total + subjectsData[subject].price;
-            }, 0);
-            
-            const originalSubtotal = selectedSubjects.reduce((total, subject) => {
-                return total + subjectsData[subject].originalPrice;
-            }, 0);
-            
-            // Apply discount
-            const finalAmount = Math.max(0, subtotal - currentDiscount);
-            
-            // Update UI
-            originalPrice.textContent = `₹${originalSubtotal}`;
-            finalPrice.textContent = `₹${finalAmount}`;
-            
-            if (currentDiscount > 0) {
-                discountBadge.textContent = `SAVED ₹${currentDiscount}`;
-                discountBadge.classList.remove('hidden');
-            } else {
-                discountBadge.classList.add('hidden');
-            }
-        }
-
-        // Order Modal
-        const orderModal = document.getElementById('orderModal');
-        const closeOrderModal = document.getElementById('closeOrderModal');
-        const cancelOrder = document.getElementById('cancelOrder');
-        const confirmOrder = document.getElementById('confirmOrder');
-        const orderItems = document.getElementById('orderItems');
-        const orderSubtotal = document.getElementById('orderSubtotal');
-        const orderDiscount = document.getElementById('orderDiscount');
-        const orderOriginalPrice = document.getElementById('orderOriginalPrice');
-        const orderFinalPrice = document.getElementById('orderFinalPrice');
-
-        // Payment Loader Modal
-        const paymentLoaderModal = document.getElementById('paymentLoaderModal');
-
-        // Shop Now Button
-        const shopNowBtn = document.getElementById('shopNow');
-        const phoneInput = document.getElementById('phone');
-        const nameInput = document.getElementById('name');
-        const phoneError = document.getElementById('phoneError');
         
-        shopNowBtn.addEventListener('click', () => {
-            const phone = phoneInput.value;
-            const name = nameInput.value.trim();
-            
-            if (selectedSubjects.length === 0) {
-                showCouponMessage('Please select at least one subject', 'error');
-                return;
-            }
-            
-            if (!name) {
-                showCouponMessage('Please enter your name', 'error');
-                nameInput.focus();
-                return;
-            }
-            
-            if (!phone || phone.length !== 10 || !/^\d+$/.test(phone)) {
-                phoneError.classList.remove('hidden');
-                phoneInput.focus();
-                return;
-            }
-            
-            phoneError.classList.add('hidden');
-            
-            // Save customer info to localStorage
-            saveCustomerInfo(name, phone);
-            
-            // Update order summary modal
-            updateOrderSummary(name, phone);
-            
-            // Show modal
-            orderModal.classList.add('active');
+        // Update theme
+        function updateTheme(isDark) {
+            document.body.classList.toggle('dark-mode', isDark);
+            themeLabel.textContent = isDark ? ' ' : ' ';
+            localStorage.setItem('darkMode', isDark);
+        }
+        
+        // Theme toggle event
+        themeToggle.addEventListener('change', function() {
+            const isDark = this.checked;
+            updateTheme(isDark);
+            playClickSound();
         });
-
-        // Save customer info to localStorage
-        function saveCustomerInfo(name, phone) {
-            const customerInfo = {
-                name: name,
-                phone: phone,
-                coupon: appliedCouponCode,
-                subjects: selectedSubjects,
-                timestamp: new Date().getTime()
+        
+        // Play click sound
+        function playClickSound() {
+            clickSound.currentTime = 0;
+            clickSound.play().catch(e => console.log("Sound play prevented:", e));
+        }
+        
+        // Calculate current date components
+        function getDateComponents() {
+            const now = new Date();
+            return {
+                d: now.getDate(),
+                t: now.getHours(),
+                m: now.getMonth() + 1,
+                y: now.getFullYear()
             };
-            localStorage.setItem('12sbuybow_customer', JSON.stringify(customerInfo));
         }
-
-        function updateOrderSummary(name, phone) {
-            // Clear previous items
-            orderItems.innerHTML = '';
+        
+        // Calculate current passwords for all subjects
+        function calculateCurrentPasswords() {
+            const { d, t, m, y } = getDateComponents();
+            const passwords = {};
             
-            // Calculate prices
-            const subtotal = selectedSubjects.reduce((total, subject) => {
-                return total + subjectsData[subject].price;
-            }, 0);
+            for (const [subject, config] of Object.entries(subjectPasswords)) {
+                passwords[subject] = config.formula(d, t, m, y);
+            }
             
-            const originalSubtotal = selectedSubjects.reduce((total, subject) => {
-                return total + subjectsData[subject].originalPrice;
-            }, 0);
+            return passwords;
+        }
+        
+        // Display current passwords (hidden now)
+        function displayCurrentPasswords() {
+            const passwords = calculateCurrentPasswords();
+            currentPasswordsEl.innerHTML = '';
             
-            const finalAmount = Math.max(0, subtotal - currentDiscount);
-            
-            // Add customer info
-            const customerInfo = document.createElement('div');
-            customerInfo.className = 'order-item';
-            customerInfo.innerHTML = `
-                <div><strong>Customer:</strong> ${name}</div>
-                <div><strong>Phone:</strong> ${phone}</div>
-            `;
-            orderItems.appendChild(customerInfo);
-            
-            // Add selected subjects
-            selectedSubjects.forEach(subject => {
+            for (const [subject, password] of Object.entries(passwords)) {
                 const item = document.createElement('div');
-                item.className = 'order-item';
-                item.innerHTML = `
-                    <div class="order-item-name">
-                        <i class="fas ${subjectsData[subject].icon}"></i> ${subjectsData[subject].name}
-                    </div>
-                    <div class="order-item-price">
-                        <span style="text-decoration: line-through; color: var(--muted-text); margin-right: 5px;">
-                            ₹${subjectsData[subject].originalPrice}
-                        </span>
-                        ₹${subjectsData[subject].price}
-                    </div>
-                `;
-                orderItems.appendChild(item);
-            });
-            
-            // Update summary
-            orderSubtotal.textContent = `₹${subtotal}`;
-            orderDiscount.textContent = `-₹${currentDiscount}`;
-            orderOriginalPrice.textContent = `₹${originalSubtotal}`;
-            orderFinalPrice.textContent = `₹${finalAmount}`;
-        }
-
-        // Close modal
-        closeOrderModal.addEventListener('click', () => {
-            orderModal.classList.remove('active');
-        });
-
-        cancelOrder.addEventListener('click', () => {
-            orderModal.classList.remove('active');
-        });
-
-        // Confirm order
-        confirmOrder.addEventListener('click', () => {
-            const phone = phoneInput.value;
-            const name = nameInput.value.trim();
-            
-            // Calculate final amount
-            const subtotal = selectedSubjects.reduce((total, subject) => {
-                return total + subjectsData[subject].price;
-            }, 0);
-            
-            const finalAmount = Math.max(0, subtotal - currentDiscount);
-            
-            // Show payment loader
-            orderModal.classList.remove('active');
-            paymentLoaderModal.classList.add('active');
-            
-            // Generate UPI payment link after short delay
-            setTimeout(() => {
-                // Generate UPI payment link
-                const note = `Class 12 PCMB | ${selectedSubjects.map(s => subjectsData[s].name).join(', ')} | Name: ${name} | Phone: ${phone}` + 
-                             (referenceParam ? ` | R: ${referenceParam}` : '');
-                
-                const upiLink = `upi://pay?pa=senddetailsfororder@okaxis&pn=Class%2012%20Science&am=${finalAmount}&tn=${encodeURIComponent(note)}`;
-                
-                // Open UPI link
-                window.location.href = upiLink;
-            }, 500);
-        });
-
-        // Free Trial Button
-        const tryFreeBtn = document.getElementById('tryFree');
-        const footerTryFree = document.getElementById('footerTryFree');
-        
-        tryFreeBtn.addEventListener('click', () => {
-            window.open('./Free/1.html', '_blank');
-        });
-        
-        footerTryFree.addEventListener('click', () => {
-            window.open('./Free/1.html', '_blank');
-        });
-
-        // Footer Shop Now button
-        const footerShopNow = document.getElementById('footerShopNow');
-        
-        footerShopNow.addEventListener('click', () => {
-            document.getElementById('shop').scrollIntoView({ behavior: 'smooth' });
-        });
-
-        // Scroll animations
-        function checkScroll() {
-            const fadeElements = document.querySelectorAll('.fade-in');
-            const chaptersContainer = document.querySelector('.chapters-container');
-            
-            fadeElements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                if (elementTop < windowHeight - 100) {
-                    element.classList.add('visible');
-                }
-            });
-            
-            // Check if chapters container is in view
-            if (chaptersContainer) {
-                const containerTop = chaptersContainer.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                if (containerTop < windowHeight - 100) {
-                    chaptersContainer.classList.add('visible');
-                }
+                item.className = 'password-item';
+                item.innerHTML = `<strong>Why ${subject.charAt(0).toUpperCase() + subject.slice(1)}:</strong> 2486579567862424445788545244465876782${password}458683244548724544453488575272457868736876987567968975245657452`;
+                currentPasswordsEl.appendChild(item);
             }
         }
         
-        window.addEventListener('scroll', checkScroll);
-        window.addEventListener('load', () => {
-            checkScroll();
-            loadSelectionFromLocalStorage();
-            checkUrlHash();
-        });
-
-        // Handle URL hash changes
-        window.addEventListener('hashchange', checkUrlHash);
-
-        // Phone number validation
-        phoneInput.addEventListener('input', () => {
-            if (phoneInput.value.length > 10) {
-                phoneInput.value = phoneInput.value.slice(0, 10);
+        // Check if subject is purchased
+        function isSubjectPurchased(subject) {
+            const passwordKey = `HS_${subject}`;
+            const currentPasswords = calculateCurrentPasswords();
+            const currentPassword = currentPasswords[subject];
+            
+            // Check if any password in URL matches (comma-separated)
+            if (passwordParam) {
+                const passwordList = passwordParam.split(',');
+                if (passwordList.includes(currentPassword.toString())) {
+                    localStorage.setItem(passwordKey, 'true');
+                    return true;
+                }
             }
             
-            if (/^\d+$/.test(phoneInput.value)) {
-                phoneError.classList.add('hidden');
+            // Then check localStorage
+            return localStorage.getItem(passwordKey) === 'true';
+        }
+        
+        // Update subject card UI
+        function updateSubjectCard(subject) {
+            const isPurchased = isSubjectPurchased(subject);
+            const card = document.getElementById(`${subject}-card`);
+            const priceEl = document.getElementById(`${subject}-price`);
+            const statusEl = document.getElementById(`${subject}-status`);
+            const actionBtn = document.getElementById(`${subject}-action`);
+            
+            if (isPurchased) {
+                card.classList.add('purchased');
+                card.classList.remove('locked');
+                priceEl.textContent = 'Continue Your😎';
+                priceEl.classList.add('purchased');
+                priceEl.classList.remove('locked');
+                statusEl.innerHTML = '<i class="fas fa-play"></i> Start';
+                statusEl.classList.add('purchased');
+                statusEl.classList.remove('locked');
+                actionBtn.innerHTML = '<i class="fas fa-play"></i> Start Now';
+                actionBtn.classList.add('purchased');
+                actionBtn.classList.remove('locked');
+            } else {
+                card.classList.add('locked');
+                card.classList.remove('purchased');
+                priceEl.textContent = subjectPasswords[subject].price;
+                priceEl.classList.add('locked');
+                priceEl.classList.remove('purchased');
+                statusEl.innerHTML = '<i class="fas fa-info-circle"></i> Know More';
+                statusEl.classList.add('locked');
+                statusEl.classList.remove('purchased');
+                actionBtn.innerHTML = '<i class="fas fa-eye"></i> View';
+                actionBtn.classList.add('locked');
+                actionBtn.classList.remove('purchased');
             }
+        }
+        
+        // Generate chapter buttons for a subject
+        function generateSubjectButtons(subject) {
+            const container = document.getElementById(`${subject}-buttons`);
+            const isPurchased = isSubjectPurchased(subject);
+            const chapters = subjectPasswords[subject].chapters;
+            const prefix = subjectPasswords[subject].prefix;
+            const icon = subjectPasswords[subject].icon;
+            
+            container.innerHTML = '';
+            
+            chapters.forEach((chapter, index) => {
+                const button = document.createElement('button');
+                button.className = `chapter-button ${isPurchased ? 'purchased' : 'locked'}`;
+                
+                const iconSpan = document.createElement('span');
+                iconSpan.innerHTML = `<i class="fas fa-${icon}"></i> ${chapter}`;
+                button.appendChild(iconSpan);
+                
+                const badge = document.createElement('span');
+                badge.className = `status-badge ${isPurchased ? 'purchased-badge' : 'locked-badge'}`;
+                badge.textContent = isPurchased ? 'START' : 'LOCK';
+                
+                button.appendChild(badge);
+                
+                if (isPurchased) {
+                    button.onclick = () => {
+                        showPopup();
+                        setTimeout(() => {
+                            openIframe(`./${prefix}/12Schapter${index+1}`);
+                        }, 1000);
+                    };
+                } else {
+                    button.onclick = () => window.location.href = `Join.html`;
+                }
+                
+                container.appendChild(button);
+            });
+        }
+        
+        // Setup subject card click handlers
+        function setupSubjectCards() {
+            Object.keys(subjectPasswords).forEach(subject => {
+                const card = document.getElementById(`${subject}-card`);
+                const actionBtn = document.getElementById(`${subject}-action`);
+                
+                card.addEventListener('click', (e) => {
+                    // Don't navigate if clicking on the action button
+                    if (e.target.closest('.subject-status-button')) return;
+                    
+                    if (isSubjectPurchased(subject)) {
+                        // Scroll to subject section
+                        window.location.hash = subject;
+                        document.getElementById(subject).scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                        window.location.href = `Join.html`;
+                    }
+                });
+                
+                actionBtn.addEventListener('click', () => {
+                    if (isSubjectPurchased(subject)) {
+                        // Already purchased - do nothing
+                        return;
+                    } else {
+                        window.location.href = `Join.html`;
+                    }
+                });
+            });
+        }
+        
+        // Open iframe with content
+        function openIframe(page) {
+            contentFrame.src = `${page}.html`;
+            contentFrame.classList.remove('hidden');
+            mainHeader.classList.add('hidden');
+            mainContent.classList.add('hidden');
+            backButton.classList.remove('hidden');
+        }
+        
+        // Back button functionality
+        backButton.addEventListener('click', function() {
+            contentFrame.classList.add('hidden');
+            mainHeader.classList.remove('hidden');
+            mainContent.classList.remove('hidden');
+            backButton.classList.add('hidden');
         });
+        
+        // Scroll to subject if hash is present
+        function scrollToSubject() {
+            if (subjectParam) {
+                // Check if it's a number (1-6)
+                const cardIndex = parseInt(subjectParam);
+                if (!isNaN(cardIndex) && cardIndex >= 1 && cardIndex <= 6) {
+                    const subject = cardOrder[cardIndex - 1];
+                    const element = document.getElementById(subject);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                    return;
+                }
+                
+                // Check if it's a subject name
+                if (subjectPasswords[subjectParam]) {
+                    const element = document.getElementById(subjectParam);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            }
+        }
+        
+        // Initialize page
+        function initPage() {
+            initTheme();
+            displayCurrentPasswords();
+            
+            // Initialize all subjects
+            Object.keys(subjectPasswords).forEach(subject => {
+                updateSubjectCard(subject);
+                generateSubjectButtons(subject);
+            });
+            
+            setupSubjectCards();
+            scrollToSubject();
+        }
+        
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', initPage);
     </script>
-    <script src="/JS/Join-Clickdot.js"></script>
 </body>
 </html>
