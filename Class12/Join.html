@@ -86,7 +86,7 @@
                     </div>
                     <i class="fas fa-book text-2xl mr-2"></i>
                     <h1 class="header-title">
-                         Class 12 Science AveriQ Series
+                         Class 12 AveriQ Batch
                     </h1>
                 </div>
                 <div class="theme-switch-wrapper">
@@ -125,12 +125,10 @@ PHYSICS
                 <i class="fas fa-atom"></i>
             </h2>
             <div class="chapters-grid">
-                <div class="chapter-card" style="animation-delay: 0.1s" onclick="selectSubjectFromChapter('physics')">
-                    Electric Charges
+
+                <div class="chapter-card1" style="animation-delay: 0.1s" onclick="window.open('./Free/Test.html', '_blank')">
+                    Electric Charges and Fields
                 </div>
-                <div class="chapter-card" style="animation-delay: 0.2s" onclick="selectSubjectFromChapter('physics')">
-Electric Charges and Fields
-</div>
 
                 <div class="chapter-card" style="animation-delay: 0.3s" onclick="selectSubjectFromChapter('physics')">
 Electrostatic Potential and Capacitance
@@ -194,9 +192,7 @@ CHEMISTRY
                 <i class="fas fa-flask"></i>
             </h2>
         <div class="chapters-grid">
-                   <div class="chapter-card" style="animation-delay: 1.6s" onclick="selectSubjectFromChapter('chemistry')">
-                    Free Test
-                   </div>
+
                    <div class="chapter-card" style="animation-delay: 1.6s" onclick="selectSubjectFromChapter('chemistry')">
                     Electric Charges and Fields
                    </div>
@@ -398,10 +394,24 @@ Environmental Issues
 NEET
                 <i class="fas fa-medkit"></i>
             </h2>
+        <div class="chapters-grid">
+
+
+                   <div class="chapter-card" style="animation-delay: 3.3s" onclick="selectSubjectFromChapter('neet')">
+                    NEET Physics
+                   </div>
+
+                   <div class="chapter-card" style="animation-delay: 3.32s" onclick="selectSubjectFromChapter('neet')">
+                    NEET Chemistry
+                   </div>
+
+                   <div class="chapter-card" style="animation-delay: 3.35s" onclick="selectSubjectFromChapter('neet')">
+                    NEET Biology
+                   </div>
 
 
 
-
+</div>
 
 
 
@@ -410,6 +420,18 @@ NEET
 JEE
                 <i class="fas fa-rocket"></i>
             </h2>
+        <div class="chapters-grid">
+                   <div class="chapter-card" style="animation-delay: 3.37s" onclick="selectSubjectFromChapter('jee')">
+                    JEE Physics
+                   </div>
+
+                   <div class="chapter-card" style="animation-delay: 3.39s" onclick="selectSubjectFromChapter('jee')">
+                    JEE Chemistry
+                   </div>
+
+                   <div class="chapter-card" style="animation-delay: 3.42s" onclick="selectSubjectFromChapter('jee')">
+                    JEE Mathematics
+                   </div>
 
 
         				</div>
@@ -554,7 +576,7 @@ JEE
     <section class="py-8">
         <div class="container">
             <div class="banner-image">
-                <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                <img src="https://i.ibb.co/PvC4b9pB/PCMB-png.png" 
                      alt="PCMB eBook Banner">
             </div>
             <div class="features-grid">
@@ -993,7 +1015,7 @@ JEE
                         <div class="ima-image-title">Not Read Like This</div>
                     </div>
                 </div>
-               <div class="ima-image-box visible" style="height:70%;">
+               <div class="ima-image-box visible" >
                     <img src="https://i.ibb.co/v6kQ54vx/Tenson.png">
                     <div class="ima-image-content">
                         <div class="ima-image-desc">What You thinks About This🤐</div>
@@ -2473,7 +2495,6 @@ JEE
 'WIN83': 83,
 'PASS84': 84,
 'SMILE85': 85,
-'SMILE100': 100,
 
 
             // Special coupons (applied to total based on number of subjects)
@@ -2654,7 +2675,7 @@ JEE
                 subjects: selectedSubjects,
                 timestamp: new Date().getTime()
             };
-            localStorage.setItem('12sbuybow_customer', JSON.stringify(customerInfo));
+            localStorage.setItem('12SD', JSON.stringify(customerInfo));
         }
 
         function updateOrderSummary(name, phone) {
@@ -2676,7 +2697,7 @@ JEE
             const customerInfo = document.createElement('div');
             customerInfo.className = 'order-item';
             customerInfo.innerHTML = `
-                <div><strong>Customer:</strong> ${name}</div>
+                <div><strong>Name:</strong> ${name}</div>
                 <div><strong>Phone:</strong> ${phone}</div>
             `;
             orderItems.appendChild(customerInfo);
@@ -2701,7 +2722,7 @@ JEE
             
             // Update summary
             orderSubtotal.textContent = `₹${subtotal}`;
-            orderDiscount.textContent = `-₹${currentDiscount}`;
+            orderDiscount.textContent = `-₹${1395+currentDiscount}`;
             orderOriginalPrice.textContent = `₹${originalSubtotal}`;
             orderFinalPrice.textContent = `₹${finalAmount}`;
         }
@@ -2749,11 +2770,11 @@ JEE
         const footerTryFree = document.getElementById('footerTryFree');
         
         tryFreeBtn.addEventListener('click', () => {
-            window.open('./Free/1.html', '_blank');
+            window.open('./Free/Test.html', '_blank');
         });
         
         footerTryFree.addEventListener('click', () => {
-            window.open('./Free/1.html', '_blank');
+            window.open('./Free/Test.html', '_blank');
         });
 
         // Footer Shop Now button

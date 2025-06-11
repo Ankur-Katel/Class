@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AveriQ Series Tests Results</title>
+
+
+<link rel="icon" href="https://i.ibb.co/v4v4fj58/Logo.png" type="image/png">
+
+    <meta property="og:title" content="Free Tests From AveriQ Series">
+
+    <meta property="og:description" content="Class 12 Science - AveriQ Series Free MCQs Tests">
+
+<meta property="og:image" content="https://i.ibb.co/hxWHW9c3/Test-free.png">
+
+    <meta property="og:image:width" content="1000">
+
+    <meta property="og:image:height" content="1000">
+
+
+    <meta property="og:type" content="website">
+
+
+
+
+
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6c63ff;
+            --secondary: #4d44db;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --gold: #ffd700;
+            --silver: #c0c0c0;
+            --bronze: #cd7f32;
+            --pastel-blue: #a7c5eb;
+            --pastel-lavender: #e6e6fa;
+            --pastel-mint: #b5ead7;
+            --pastel-peach: #ffdac1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f5f7ff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #f5f7ff 0%, #e8edff 100%);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        .date-info {
+            display: flex;
+            gap: 30px;
+        }
+
+        .date-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #555;
+            font-size: 15px;
+        }
+
+        .date-item i {
+            color: var(--primary);
+            font-size: 18px;
+        }
+
+        /* Search Section */
+        .search-container {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 15px 20px;
+            padding-left: 50px;
+            border: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background-color: white;
+        }
+
+        .search-bar:focus {
+            outline: none;
+            box-shadow: 0 4px 20px rgba(108, 99, 255, 0.2);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary);
+            font-size: 18px;
+        }
+
+        /* Top Students Section */
+        .section-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            font-size: 24px;
+        }
+
+        .top-students {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .student-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+        }
+
+        .student-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid transparent;
+            margin: 0 auto 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 40px;
+            overflow: hidden;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .first-place .profile-img {
+            border-color: var(--gold);
+        }
+
+        .second-place .profile-img {
+            border-color: var(--silver);
+        }
+
+        .third-place .profile-img {
+            border-color: var(--bronze);
+        }
+
+        .student-name {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+
+        .student-score {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .rank-badge {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            margin: 0 auto;
+            font-size: 18px;
+        }
+
+        .first-place .rank-badge {
+            background-color: var(--gold);
+        }
+
+        .second-place .rank-badge {
+            background-color: var(--silver);
+        }
+
+        .third-place .rank-badge {
+            background-color: var(--bronze);
+        }
+
+        /* All Students Section */
+        .all-students {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .student-item {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .student-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .student-item:nth-child(4n+1) {
+            background-color: var(--pastel-blue);
+        }
+
+        .student-item:nth-child(4n+2) {
+            background-color: var(--pastel-lavender);
+        }
+
+        .student-item:nth-child(4n+3) {
+            background-color: var(--pastel-mint);
+        }
+
+        .student-item:nth-child(4n+4) {
+            background-color: var(--pastel-peach);
+        }
+
+        .student-item-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 20px;
+            overflow: hidden;
+        }
+
+        .student-item-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .student-item-info {
+            flex: 1;
+        }
+
+        .student-item-name {
+            font-weight: 500;
+            margin-bottom: 3px;
+        }
+
+        .student-item-score {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .student-item-rank {
+            background-color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Rank colors for all students */
+        .rank-1 .student-item-rank {
+            background-color: var(--gold);
+            color: white;
+        }
+
+        .rank-2 .student-item-rank {
+            background-color: var(--silver);
+            color: white;
+        }
+
+        .rank-3 .student-item-rank {
+            background-color: var(--bronze);
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .top-students {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .student-card {
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            .date-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        /* Animation for search filtering */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .student-card, .student-item {
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        /* No results message */
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-size: 18px;
+        }
+
+        /* Highlight matching text */
+        .highlight {
+            background-color: #fffacd;
+            padding: 0 2px;
+            border-radius: 2px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #4a6bff, #6b4aff);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1>AveriQ Series Free Test Results</h1>
+            <div class="date-info">
+                <div class="date-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Exam Date: June 1<sup>st</sup>, 2025</span>
+                </div>
+                <div class="date-item">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Result Announcement: June 2<sup>nd</sup>, 2025</span>
+                </div>
+            </div><br><br>
+<a href="../All.html">
+                <button class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Join Now
+                </button></a>
+
+        </header>
+
+
+        <!-- Search Section -->
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" class="search-bar" placeholder="Search by name, rank, or marks..." id="searchInput">
+        </div>
+
+        <!-- Top 3 Students Section -->
+        <h2 class="section-title"><i class="fas fa-trophy"></i> Top Performers</h2>
+        <div class="top-students" id="topStudents">
+            <!-- Top students will be populated by JavaScript -->
+        </div>
+
+        <!-- All Students Section -->
+        <h2 class="section-title"><i class="fas fa-users"></i> Top 50 Students</h2>
+        <div class="all-students" id="allStudents">
+            <!-- All students will be populated by JavaScript -->
+        </div>
+    </div>
+
+
+    <script>
+        // Sample student data with mixed images
+        const students = [
+            { id: 2, name: "Aarav Sharma", marks: 500, total: 500, image: "" },
+
+            { id: 2, name: "Suman Thapa", marks: 490, total: 500, image: "" },
+
+            { id: 2, name: "Priya Verma", marks: 480, total: 500, image: "" },
+
+            { id: 2, name: "Diganta Das", marks: 470, total: 500, image: "" },
+
+            { id: 2, name: "Anusha Gurung", marks: 470, total: 500, image: "" },
+
+            { id: 2, name: "Mehul Patel", marks: 460, total: 500, image: "" },
+
+            { id: 2, name: "Rupali Barman", marks: 450, total: 500, image: "" },
+
+            { id: 2, name: "Rohan Mehta", marks: 440, total: 500, image: "" },
+
+            { id: 2, name: "Pooja Magar", marks: 440, total: 500, image: "" },
+
+            { id: 2, name: "Ankur Katel", marks: 430, total: 500, image: "" },
+
+            { id: 2, name: "Ishita Reddy", marks: 420, total: 500, image: "" },
+
+            { id: 2, name: "Niraj KC", marks: 410, total: 500, image: "" },
+
+            { id: 2, name: "Mridul Deka", marks: 400, total: 500, image: "" },
+
+            { id: 2, name: "Anaya Kapoor", marks: 390, total: 500, image: "" },
+
+            { id: 2, name: "Pratiksha Karki", marks: 380, total: 500, image: "" },
+
+            { id: 2, name: "Junali Hazarika", marks: 380, total: 500, image: "" },
+
+            { id: 2, name: "Kabir Joshi", marks: 370, total: 500, image: "" },
+
+            { id: 2, name: "Rajat Bansal", marks: 360, total: 500, image: "" },
+
+            { id: 2, name: "Bikash Shrestha", marks: 360, total: 500, image: "" },
+
+            { id: 2, name: "Pallabi Saikia", marks: 350, total: 500, image: "" },
+
+            { id: 2, name: "Manisha Lama", marks: 340, total: 500, image: "" },
+
+            { id: 2, name: "Kriti Malhotra", marks: 340, total: 500, image: "" },
+
+            { id: 2, name: "Kishore Bora", marks: 330, total: 500, image: "" },
+
+            { id: 2, name: "Sanjay Basnet", marks: 320, total: 500, image: "" },
+
+            { id: 2, name: "Tanya Singh", marks: 310, total: 500, image: "" },
+
+            { id: 2, name: "Avni Shah", marks: 300, total: 500, image: "" },
+
+            { id: 2, name: "Bitopan Medhi", marks: 300, total: 500, image: "" },
+
+            { id: 2, name: "Sneha Iyer", marks: 290, total: 500, image: "" },
+
+            { id: 2, name: "Kabita Rai", marks: 280, total: 500, image: "" },
+
+            { id: 2, name: "Dhruv Sinha", marks: 270, total: 500, image: "" },
+
+            { id: 2, name: "Barnali Bhuyan", marks: 260, total: 500, image: "" },
+
+            { id: 2, name: "Aditya Deshmukh", marks: 250, total: 500, image: "" },
+
+            { id: 2, name: "Simran Kaur", marks: 240, total: 500, image: "" },
+
+            { id: 2, name: "Kunal Bhatia", marks: 230, total: 500, image: "" },
+
+            { id: 2, name: "Jitul Nath", marks: 230, total: 500, image: "" },
+
+            { id: 2, name: "Ramesh Adhikari", marks: 220, total: 500, image: "" },
+
+            { id: 2, name: "Mitali Dey", marks: 210, total: 500, image: "" },
+
+            { id: 2, name: "Aryan Choudhary", marks: 210, total: 500, image: "" },
+
+            { id: 2, name: "Nisha Nair", marks: 200, total: 500, image: "" },
+
+            { id: 2, name: "Vihaan Saxena", marks: 190, total: 500, image: "" },
+
+            { id: 2, name: "Sita Gurung", marks: 180, total: 500, image: "" },
+
+            { id: 2, name: "Supriya Dutta", marks: 180, total: 500, image: "" },
+
+            { id: 2, name: "Amit Thapa", marks: 170, total: 500, image: "" },
+
+            { id: 2, name: "Deepika Saikia", marks: 160, total: 500, image: "" },
+
+            { id: 2, name: "Namrata Bista", marks: 150, total: 500, image: "" },
+
+            { id: 2, name: "Debojit Nath", marks: 140, total: 500, image: "" },
+
+            { id: 2, name: "Rahul Shrestha", marks: 130, total: 500, image: "" },
+
+            { id: 2, name: "Tashi Lama", marks: 120, total: 500, image: "" },
+
+            { id: 2, name: "Ankit Sharma", marks: 110, total: 500, image: "" },
+
+            { id: 2, name: "Bidisha Kalita", marks: 100, total: 500, image: "" }
+        ];
+
+        // Sort students by marks (descending)
+        students.sort((a, b) => b.marks - a.marks);
+
+        // Add rank to each student
+        students.forEach((student, index) => {
+            student.rank = index + 1;
+        });
+
+        // Function to get initials from name
+        function getInitials(name) {
+            return name.split(' ').map(part => part[0]).join('');
+        }
+
+        // Function to highlight matching text
+        function highlightText(text, searchTerm) {
+            if (!searchTerm) return text;
+            
+            const regex = new RegExp(`(${searchTerm})`, 'gi');
+            return text.replace(regex, '<span class="highlight">$1</span>');
+        }
+
+        // Function to render top students
+        function renderTopStudents(searchTerm = '') {
+            const topStudentsContainer = document.getElementById('topStudents');
+            topStudentsContainer.innerHTML = '';
+            
+            let top3 = students.slice(0, 3);
+            
+            // Filter top 3 if searching
+            if (searchTerm) {
+                top3 = students.filter(student => {
+                    const term = searchTerm.toLowerCase();
+                    return (
+                        student.name.toLowerCase().includes(term) ||
+                        student.rank.toString().includes(term) ||
+                        student.marks.toString().includes(term)
+                    ) && student.rank <= 3;
+                });
+            }
+            
+            if (top3.length === 0) {
+                topStudentsContainer.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 20px; color: #666;">
+                        No top students match your search
+                    </div>
+                `;
+                return;
+            }
+            
+            top3.forEach((student, index) => {
+                let placeClass = '';
+                if (student.rank === 1) placeClass = 'first-place';
+                else if (student.rank === 2) placeClass = 'second-place';
+                else if (student.rank === 3) placeClass = 'third-place';
+                
+                const studentCard = document.createElement('div');
+                studentCard.className = `student-card ${placeClass}`;
+                
+                const profileImgContent = student.image 
+                    ? `<img src="${student.image}" alt="${student.name}">`
+                    : getInitials(student.name);
+                
+                const highlightedName = highlightText(student.name, searchTerm);
+                const highlightedMarks = highlightText(`${student.marks} / ${student.total}`, searchTerm);
+                const highlightedRank = highlightText(student.rank.toString(), searchTerm);
+                
+                studentCard.innerHTML = `
+                    <div class="profile-img">${profileImgContent}</div>
+                    <h3 class="student-name">${highlightedName}</h3>
+                    <p class="student-score">${highlightedMarks}</p>
+                    <div class="rank-badge">${highlightedRank}</div>
+                `;
+                topStudentsContainer.appendChild(studentCard);
+            });
+        }
+
+        // Function to render all students
+        function renderAllStudents(searchTerm = '') {
+            const allStudentsContainer = document.getElementById('allStudents');
+            allStudentsContainer.innerHTML = '';
+            
+            const filteredStudents = students.filter(student => {
+                if (!searchTerm) return true;
+                const term = searchTerm.toLowerCase();
+                return (
+                    student.name.toLowerCase().includes(term) ||
+                    student.rank.toString().includes(term) ||
+                    student.marks.toString().includes(term)
+                );
+            });
+            
+            if (filteredStudents.length === 0) {
+                allStudentsContainer.innerHTML = `
+                    <div class="no-results">
+                        <i class="fas fa-search" style="font-size: 40px; margin-bottom: 15px;"></i>
+                        <p>No students found matching your search</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            filteredStudents.forEach(student => {
+                const studentItem = document.createElement('div');
+                studentItem.className = `student-item rank-${student.rank}`;
+                
+                const profileImgContent = student.image 
+                    ? `<img src="${student.image}" alt="${student.name}">`
+                    : getInitials(student.name);
+                
+                const highlightedName = highlightText(student.name, searchTerm);
+                const highlightedMarks = highlightText(`${student.marks} / ${student.total}`, searchTerm);
+                const highlightedRank = highlightText(student.rank.toString(), searchTerm);
+                
+                studentItem.innerHTML = `
+                    <div class="student-item-img">${profileImgContent}</div>
+                    <div class="student-item-info">
+                        <h4 class="student-item-name">${highlightedName}</h4>
+                        <p class="student-item-score">${highlightedMarks}</p>
+                    </div>
+                    <div class="student-item-rank">${highlightedRank}</div>
+                `;
+                allStudentsContainer.appendChild(studentItem);
+            });
+        }
+
+        // Live search functionality
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.trim();
+            renderTopStudents(searchTerm);
+            renderAllStudents(searchTerm);
+        });
+
+        // Initial render
+        renderTopStudents();
+        renderAllStudents();
+    </script>
+</body>
+</html>

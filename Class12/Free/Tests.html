@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Class 12 Science Free AveriQ Tests</title>
+
+
+<link rel="icon" href="https://i.ibb.co/v4v4fj58/Logo.png" type="image/png">
+
+    <meta property="og:title" content="Free Tests From AveriQ Series">
+
+    <meta property="og:description" content="Class 12 Science - AveriQ Series Free MCQs Tests">
+
+<meta property="og:image" content="https://i.ibb.co/hxWHW9c3/Test-free.png">
+
+    <meta property="og:image:width" content="1000">
+
+    <meta property="og:image:height" content="1000">
+
+
+    <meta property="og:type" content="website">
+
+
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f7ff;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .thank-you-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .thank-you-header h1 {
+            color: #4a6bff;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .thank-you-header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .thank-you-icon {
+            font-size: 4rem;
+            color: #4CAF50;
+            margin-bottom: 1rem;
+            animation: bounce 1s ease infinite alternate;
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-15px); }
+        }
+
+        /* Free Tests Section */
+        .free-tests {
+            margin: 3rem 0;
+        }
+
+        .free-tests h2 {
+            text-align: center;
+            color: #4a6bff;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+
+        .test-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .test-card {
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .test-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .test-card i {
+            font-size: 2.5rem;
+            color: #4a6bff;
+            margin-bottom: 1rem;
+        }
+
+        .test-card h3 {
+            margin-bottom: 0.5rem;
+            color: #4a6bff;
+        }
+
+        /* Iframe Container */
+        .iframe-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+            background: white;
+            display: none;
+        }
+
+        .iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            text-align: center;
+            gap: 8px;
+        }
+
+        .join-btn {
+            background: linear-gradient(135deg, #4a6bff, #6b4aff);
+            color: white;
+            box-shadow: 0 4px 15px rgba(74, 107, 255, 0.4);
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        .share-btn {
+            background: linear-gradient(135deg, #3b5998, #8b9dc3);
+            color: white;
+            box-shadow: 0 4px 15px rgba(59, 89, 152, 0.4);
+        }
+
+        .action-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .thank-you-header h1 {
+                font-size: 2rem;
+            }
+            
+            .test-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .action-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .thank-you-header h1 {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="thank-you-header">
+            <div class="thank-you-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h1>Thank You for Applying!</h1>
+            <p>Your application for the Class 12 Science Free AveriQ Tests has been received successfully. Start your preparation with these free tests:</p>
+        </div>
+
+        <!-- Free Tests Section -->
+        <div class="free-tests">
+            <h2><i class="fas fa-gift"></i> Free Tests Available Now</h2>
+            
+            <div class="test-cards">
+
+
+                        <!-- Cards Hide
+
+
+                <div class="test-card" data-test="1">
+                    <i class="fas fa-atom"></i>
+                    <h3>Physics Test</h3>
+                    <p>Full syllabus test with 50 questions</p>
+                    <small>Click to start</small>
+                </div>
+                
+                <div class="test-card" data-test="2">
+                    <i class="fas fa-flask"></i>
+                    <h3>Chemistry Test</h3>
+                    <p>Organic chemistry practice test</p>
+                    <small>Click to start</small>
+                </div>
+                
+                <div class="test-card" data-test="3">
+                    <i class="fas fa-square-root-alt"></i>
+                    <h3>Mathematics Test</h3>
+                    <p>Calculus and algebra problems</p>
+                    <small>Click to start</small>
+                </div>
+                
+                <div class="test-card" data-test="4">
+                    <i class="fas fa-dna"></i>
+                    <h3>Biology Test</h3>
+                    <p>Genetics and biotechnology quiz</p>
+                    <small>Click to start</small>
+                </div>
+ -->
+
+
+
+
+
+
+
+                
+                <div class="test-card" data-test="6">
+                    <i class="fas fa-random"></i>
+                    <h3>Mixed Subject Test</h3>
+                    <p>All subjects combined challenge</p>
+                    <small>50 Mark</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <a href="../All.html" class="action-btn join-btn">
+                <i class="fas fa-user-plus"></i> Join Now
+            </a>
+            <a href="https://whatsapp.com/channel/0029VaAxrMK3WHTaOACifa3U" id="group-link" class="action-btn whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> WhatsApp Channel
+            </a>
+            <button class="action-btn share-btn" onclick="shareLink()">
+                <i class="fas fa-share-alt"></i> Share Link
+            </button>
+        </div>
+    </div>
+
+    <!-- Iframe Container -->
+    <div class="iframe-container" id="iframeContainer">
+        <iframe id="testIframe"></iframe>
+    </div>
+
+    <script>
+        // Test URLs mapping
+        const testUrls = {
+            1: 'https://example.com/physics-test',
+            2: 'https://example.com/chemistry-test',
+            3: 'https://example.com/math-test',
+            4: 'https://example.com/biology-test',
+            5: 'https://example.com/computer-test',
+            6: './Mix.html?1=2'
+        };
+
+        // Add click event to all test cards
+        document.querySelectorAll('.test-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const testId = this.getAttribute('data-test');
+                openTest(testId);
+            });
+        });
+
+        // Open test in iframe
+        function openTest(testId) {
+            const iframeContainer = document.getElementById('iframeContainer');
+            const iframe = document.getElementById('testIframe');
+            
+            // Update URL with test parameter
+            const newUrl = window.location.pathname + '?test=' + testId;
+            window.history.pushState({}, '', newUrl);
+            
+            // Load the test in iframe
+            iframe.src = testUrls[testId];
+            iframeContainer.style.display = 'block';
+            
+            // Listen for messages from iframe to close it
+            window.addEventListener('message', function(e) {
+                if (e.data === 'closeIframe') {
+                    closeTest();
+                }
+            });
+        }
+
+        // Close the iframe
+        function closeTest() {
+            const iframeContainer = document.getElementById('iframeContainer');
+            const iframe = document.getElementById('testIframe');
+            
+            iframeContainer.style.display = 'none';
+            iframe.src = '';
+            
+            // Update URL to remove test parameter
+            window.history.pushState({}, '', window.location.pathname);
+        }
+
+        // Check URL on load for test parameter
+        window.addEventListener('load', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const testId = urlParams.get('test');
+            
+            if (testId && testUrls[testId]) {
+                openTest(testId);
+            }
+        });
+
+        // Close iframe when clicking outside (if visible)
+        document.addEventListener('click', function(e) {
+            const iframeContainer = document.getElementById('iframeContainer');
+            if (iframeContainer.style.display === 'block' && e.target === iframeContainer) {
+                closeTest();
+            }
+        });
+
+        // Share function
+        function shareLink() {
+            const shareUrl = 'mydomain.com/Free';
+            const shareText = 'Check out these free Class 12 Science tests!';
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Free Class 12 Science Tests',
+                    text: shareText,
+                    url: shareUrl
+                }).catch(err => {
+                    console.log('Error sharing:', err);
+                    copyToClipboard(shareUrl);
+                });
+            } else {
+                copyToClipboard(shareUrl);
+            }
+        }
+
+        function copyToClipboard(text) {
+            const input = document.createElement('input');
+            input.value = text;
+            document.body.appendChild(input);
+            input.select();
+            document.execCommand('copy');
+            document.body.removeChild(input);
+            alert('Link copied to clipboard: ' + text);
+        }
+    </script>
+
+    <script src="../../JS/Channel.js"></script>
+</body>
+</html>

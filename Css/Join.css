@@ -179,6 +179,7 @@
             overflow: hidden;
             transition: transform 0.5s ease;
             margin: 20px 0;
+
         }
         
         .banner-image:hover {
@@ -188,7 +189,7 @@
         .banner-image img {
             width: 100%;
             height: auto;
-            aspect-ratio: 16/9;
+            aspect-ratio: 1/1;
             object-fit: cover;
         }
         
@@ -373,10 +374,10 @@
 
         .subject-card .selected-icon {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: 1px;
+            right: 1px;
             color: var(--primary-color);
-            font-size: 1.2rem;
+            font-size: 2rem;
             opacity: 0;
             transition: opacity 0.3s;
         }
