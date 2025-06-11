@@ -223,7 +223,7 @@ box-shadow: inset 1px 0px 0px 2px rgba(0, 0, 0, 0.1);
 
 .timer-container {
     position: absolute;
-    top: 420px;
+    top: 465px;
     left: 50%;
     transform: translateX(-50%);
     background: var(--timer-color);
