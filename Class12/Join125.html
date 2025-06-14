@@ -193,6 +193,9 @@ CHEMISTRY
             </h2>
         <div class="chapters-grid">
 
+                   <div class="chapter-card" style="animation-delay: 1.6s" onclick="selectSubjectFromChapter('chemistry')">
+                    Electric Charges and Fields
+                   </div>
                 <div class="chapter-card" style="animation-delay: 1.6s"  onclick="selectSubjectFromChapter('chemistry')">
 Solutions
                 </div>
@@ -538,13 +541,19 @@ JEE
                     </div>
                 </div>
 
-
+               <div class="flex items-start space-x-4 fade-in" data-delay="100">
+                    <i class="fas fa-bolt text-2xl text-red-500 mt-1"></i>
+                    <div>
+                        <h3 class="font-bold">Daily Test</h3>
+                        <p class="af">Monday's - Saturday's MCQs & test covering important topics</p>
+                    </div>
+                </div>
 
                <div class="flex items-start space-x-4 fade-in" data-delay="100">
                     <i class="fas fa-star text-2xl text-green-500 mt-1"></i>
                     <div>
                         <h3 class="font-bold">More</h3>
-                        <p class="af">Covering all concepts In Fun Way</p>
+                        <p class="af">covering all concepts</p>
                     </div>
                 </div>
 
@@ -653,8 +662,8 @@ JEE
                     <h3><i class="fas fa-medkit"></i> Neet</h3>
                     <p>Complete Neet With Fun</p>
                     <div class="price">
-                        <span class="original-price">₹899</span>
-                        <span>₹179-₹499</span>
+                        <span class="original-price">₹299</span>
+                        <span>₹99-₹201</span>
                     </div>
                 </div>
 
@@ -662,10 +671,10 @@ JEE
                     <span class="tap-text">Tap to select</span>
                     <i class="fas fa-check-circle selected-icon"></i>
                     <h3><i class="fas fa-rocket"></i> Jee</h3>
-                    <p>Complete Jee With Fun</p>
+                    <p>Complete Jee With Fun </p>
                     <div class="price">
-                        <span class="original-price">₹899</span>
-                        <span>₹179-₹499</span>
+                        <span class="original-price">₹599</span>
+                        <span>₹99-₹202</span>
                     </div>
                 </div>
 
@@ -869,11 +878,11 @@ JEE
                         </div>
                         <div class="quick-select-item" data-subject="neet" onclick="toggleSubjectFromQuickSelect('neet')">
                             <h4>Neet</h4>
-                            <div class="price">₹179-₹499</div>
+                            <div class="price">₹99-₹201</div>
                         </div>
                         <div class="quick-select-item" data-subject="jee" onclick="toggleSubjectFromQuickSelect('jee')">
                             <h4>Jee</h4>
-                            <div class="price">₹179-₹499</div>
+                            <div class="price">₹99-₹202</div>
                         </div>
                     </div>
 
@@ -916,24 +925,19 @@ JEE
                         </div>
                     </div>
 <br>
-                <div class="action-buttons" style="background: linear-gradient(to right, var(--primary-color), var(--secondary-color));border-radius: 8px;padding: 12px 24px;box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);">
+                <div class="action-buttons">
                     <button id="shopNow" class="action-btn"><span id="discountBadge" class="discount-badge hidden">Extra SAVED ₹0</span>
                         Join Now
                     </button>
-
-
                 </div>
                 </div>
             </div>
 
 
-                <div class="action-buttons" style="padding:0px;">
-                    <button id="tryFree" class="action-btn try-btn" >
-                    </button>
-
-            <button onclick="shareLink()" class="sha-btn">
-                <i class="fas fa-share-alt"></i> Share Link
-            </button></div>
+                <div class="action-buttons">
+                    <button id="tryFree" class="action-btn try-btn">
+                        Try Free
+                    </button></div>
         </div>
     </section>
 
@@ -989,8 +993,6 @@ JEE
                 </p>
             </div>
         </div>
-
-
     </div>
 
 
@@ -999,14 +1001,15 @@ JEE
 
 
 
+
+
+
 <section class="ima-images-section">
-
-
         <h2 class="section-title">Why Us?</h2>
         <div class="ima-images-grid" id="imagesContainer">
             <!-- Image boxes will be added here by JavaScript -->
 
-               <div class="ima-image-box visible" style="background-color: #00000000;">
+               <div class="ima-image-box visible">
                     <img src="https://i.ibb.co/qLXpPjLZ/Burger.png">
                     <div class="ima-image-content">
                         <div class="ima-image-title">Burger🍔</div>
@@ -1025,7 +1028,7 @@ JEE
                         <div class="ima-image-desc">What You thinks About This🤐</div>
                     </div>
                 </div>
-               <div class="ima-image-box visible" style="height:100%;background-color: #00000000;">
+               <div class="ima-image-box visible" style="height:100%;">
                     <img src="https://i.ibb.co/5wkvchD/Start-now.png">
                     <div class="ima-image-content">
                         <div class="ima-image-title">Start Now</div>
@@ -1517,6 +1520,7 @@ JEE
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                         </div>
                     </div>
                 </div>
@@ -1564,6 +1568,7 @@ JEE
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                         </div>
                     </div>
                 </div>
@@ -1583,6 +1588,8 @@ JEE
                     <div class="review-user">
                         <h4>Sneha Verma</h4>
                         <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -1681,6 +1688,7 @@ JEE
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                         </div>
                     </div>
                 </div>
@@ -1700,6 +1708,7 @@ JEE
                     <div class="review-user">
                         <h4>Zoya Hussain</h4>
                         <div class="review-stars">
+                            <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -1799,6 +1808,7 @@ JEE
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                         </div>
                     </div>
                 </div>
@@ -1818,6 +1828,8 @@ JEE
                     <div class="review-user">
                         <h4>Simran Khurana</h4>
                         <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -1868,6 +1880,7 @@ JEE
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                         </div>
                     </div>
                 </div>
@@ -1887,6 +1900,8 @@ JEE
                     <div class="review-user">
                         <h4>Bipul Gogoi</h4>
                         <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -1961,6 +1976,7 @@ JEE
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                         </div>
                     </div>
                 </div>
@@ -1984,6 +2000,7 @@ JEE
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                         </div>
                     </div>
                 </div>
@@ -2003,6 +2020,8 @@ JEE
                     <div class="review-user">
                         <h4>Debojit Baruah</h4>
                         <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -2125,6 +2144,7 @@ JEE
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                         </div>
                     </div>
                 </div>
@@ -2144,6 +2164,8 @@ JEE
                     <div class="review-user">
                         <h4>Rehaan Ahmed</h4>
                         <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -2185,124 +2207,9 @@ JEE
         </div>
     </footer>
 
-
-
-
-
-
-    <div class="notification-container" id="notificationContainer"></div>
-
-    <audio id="notificationSound" preload="auto">
-        <source src="mp3" type="audio/mpeg">
-    </audio>
-
     <!-- JavaScript -->
     <script>
-
-// Notifications
-// Simple data
-const names = [ "Sumeet","Aishwarya","Bharat","Ekta","Devendra","Chandni","Ujjwal","Aarti","Raghunath","Malvika",
-  "Satyam","Komal","Ashutosh","Gunjan","Bhuvan","Neelam","Shubham","Juhi","Dhruv","Mannat",
-  "Ashwin","Namrata","Pratik","Vidya","Jai","Shanaya","Siddhant","Karuna","Vikas","Yamini",
-  "Dinesh","Manvi","Vivek","Ishani","Tapan","Grishma","Nilesh","Rajshree","Ashish","Vaidehi",
-  "Dilip","Kiran","Arnav","Hansika","Rajdeep","Shraddha","Mukul","Rajnandini","Sharvil","Charul",
-  "Tarun","Harleen","Bhanu","Devika","Rajesh","Rashmi","Kishore","Meghna","Madhav","Siddhi",
-  "Gautam","Manisha","Praveen","Mira","Nandan","Samaira","Lokesh","Jiya","Sudhir","Yashika",
-  "Inder","Jivika","Naresh","Preeti","Vimal","Kashvi","Ajit","Apeksha","Sameer","Lavina",
-  "Ashraf","Saisha","Ravindra","Riddhima","Sachin","Tanaya","Shyam","Veena","Mahavir","Ashna","Abhimanyu","Arohi","Samarjeet","Prisha","Karthik","Ishq","Abdul","Shravya","Mohnish","Aadhya",
-  "Shivendra","Nivriti","Manan","Baani","Ravish","Tisya","Neeraj","Vedika","Rajveer","Pranika",
-  "Manoj","Vaanya","Umesh","Avika","Brijesh","Yashvi","Rajkumar","Dhriti","Pradyumna","Charisma",
-  "Bhargav","Kashika","Sanjay","Lopa","Shivansh","Ruchika","Tarak","Amulya","Vinod","Pari",
-  "Jagat","Ayra","Deepanshu","Kriti","Gopal","Smriti","Hemendra","Nayra","Rajnish","Vedanshi",
-  "Ritesh","Eesha","Ravikant","Aanal","Dushyant","Taashi","Murari","Lakshmi","Bhaskar","Triveni",
-  "Siddhesh","Shailee","Yatindra","Sumedha","Karanveer","Adira","Darshan","Dhara","Satyajeet","Vidhita",
-  "Basudev","Sharvani","Pushkar","Nandika","Anirudh","Sharanya","Chandan","Kairavi","Lalit","Pratyusha",
-  "Mahendra","Tanvika","Devraj","Hansini","Bipin","Vritti","Anup","Anvika","Sandeep","Mahika",
-  "Pritam","Sharvani","Arindam","Akira","Vikrant","Niharika","Bhupesh","Rushali","Subhash","Siyara",
-  "Jagannath","Sanjana","Trilok","Navya","Durgesh","Saavi","Harendra","Miraya","Satish","Anvesha",
-  "Upendra","Vaidehi","Samarjit","Chahat","Niranjan","Elina","Ganesh","Anshika","Shravan","Aavya",
-  "Prem","Yoshita","Ravindra","Shanvika","Nitin","Devanshi","Prashant","Aryahi","Harikrishna","Ayushi",
-  "Girish","Kiana","Raghu","Aasmi","Devashish","Saesha","Gokul","Sharanya","Kamlesh","Avyukta",
-  "Balram","Tanvika","Rajaram","Avniya","Vijay","Ritambhara","Pankaj","Anushri","Hariom","Vedanshi"
-
-];
-
-const actions = [
-
-    {text: "Join This Batch", link: "#shop"},
- 
-
-    {text: "Join Free Test", link: "./Free/Test.html"},
-
-    {text: "Use AveriQ Code", link: "#shop"},
-
-    {text: "Only Join Neet Series", link: "#shop"},
-
-    {text: "On 1st Rank", link: "./Free/Test"},
-
-    {text: "500/500", link: "./Free/Test.html"},
-
-    {text: "Join Whatsapp Group", link: "https://whatsapp.com/channel/0029VaAxrMK3WHTaOACifa3U"},
-
-
-    {text: "Ask A Question", link: "./Free/Test.html"},
-
-    {text: "Start Chat", link: "./Ex/Chat.html"}
-
-];
-const icons = ["✅"];
-
-function showNotification() {
-    const container = document.getElementById('notificationContainer');
-    container.innerHTML = '';
-    
-    const name = names[Math.floor(Math.random() * names.length)];
-    const action = actions[Math.floor(Math.random() * actions.length)];
-
-    const notification = document.createElement('div');
-    notification.className = 'notification';
-    notification.innerHTML = `
-        <span class="notification-message">${icons} ${name} ${action.text}</span>
-        <span class="click-icon">🔗</span>
-    `;
-    
-    notification.onclick = () => window.open(action.link, '_blank');
-    
-    container.appendChild(notification);
-    
-    // Play sound
-    document.getElementById('notificationSound').play().catch(e => {});
-    
-    // Show animation
-    setTimeout(() => notification.classList.add('show'), 10);
-    
-    // Hide after 3 seconds
-    setTimeout(() => {
-        notification.classList.remove('show');
-        setTimeout(() => notification.remove(), 300);
-    }, 3000);
-    
-    // Next notification in 5-15 seconds
-    setTimeout(showNotification, Math.floor(Math.random() * 15000) + 7000);
-}
-
-// Start after first user interaction
-function start() {
-    showNotification();
-}
-
-document.addEventListener('click', start, { once: true });
-document.addEventListener('touchstart', start, { once: true });
-
-
-
-    </script>
-       
-
- 
-    <script>
-
-// Theme Toggle
+        // Theme Toggle
         const themeToggle = document.getElementById('themeToggle');
         
         function applyTheme(isDark) {
@@ -2409,20 +2316,20 @@ document.addEventListener('touchstart', start, { once: true });
             },
             biology: {
                 name: 'Biology',
-                price: 179,
+                price: 149,
                 originalPrice: 299,
                 icon: 'fa-dna'
             },
             neet: {
                 name: 'Neet',
-                price: 179,
-                originalPrice: 499,
+                price: 201,
+                originalPrice: 599,
                 icon: 'fa-medkit'
             },
             jee: {
                 name: 'Jee',
-                price: 179,
-                originalPrice: 499,
+                price: 202,
+                originalPrice: 599,
                 icon: 'fa-rocket'
             }
         };
@@ -2930,13 +2837,6 @@ document.addEventListener('touchstart', start, { once: true });
                 phoneError.classList.add('hidden');
             }
         });
-
-
-
-
-        function shareLink() {
-            window.location.href = './Ex/Referral.html';
-        }
     </script>
     <script src="../JS/Join-Clickdot.js"></script>
 </body>
