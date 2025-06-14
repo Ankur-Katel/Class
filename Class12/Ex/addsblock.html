@@ -462,7 +462,7 @@
                 }).join(',');
             }
             
-            const TextNote = `Class 12 Ads Block | Student: ${name} | Phone: ${phone} | Subjects: ${selectedOptionsText} | Phone: ${phone} | Subjects: ${selectedOptionsText} |Amount: ₹${totalPrice} | Selected IDs: ${selectedIdsText} | Reference: ${refParam || 'N/A'}`;
+            const TextNote = `Class 12 Ads Block | Student: ${name} | Phone: ${phone} | Subjects: ${selectedOptionsText} | Phone: ${phone} | Subjects: ${selectedOptionsText} |Amount: ₹${totalPrice} | Selected IDs: ${selectedIdsText} | R: ${refParam || 'N/A'}`;
             
             // Create UPI payment link
             const upiLink = `upi://pay?pa=education@upi&pn=${encodeURIComponent(name)}&am=${totalPrice}&cu=INR&tn=${encodeURIComponent(textNote)}`;

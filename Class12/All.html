@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class 12 PCMB - NEET & JEE</title>
+    <title>Class 12 Science - AveriQ Batch </title>
     
 
 
@@ -49,7 +49,7 @@
             </label>
             <span id="themeLabel"></span>
         </div>
-        <div class="header-title">Class 12 Science</div>
+        <div class="header-title">Class 12 AveriQ</div>
         <button id="backButton" class="back-button hidden"><i class="fas fa-arrow-left"></i> Back</button>
     </header>
 
@@ -70,10 +70,10 @@
                     <span class="free-badge">FREE</span>
                 </div>
                 <div class="free-content-text">
-                    <span class="strike-text">₹499</span> Get access to our free introductory materials and sample chapters.
+                    <span class="strike-text">₹499</span> Get access to our free introductory materials and Free Tests And Win Gifts🎁.
                 </div>
                 <a href="./Free/Test.html" class="free-content-link">
-                    <i class="fas fa-external-link-alt"></i> Access Free Content
+                    <i class="fas fa-external-link-alt"></i> Apply Free Test
                 </a>
             </div>
         </div>
@@ -148,6 +148,11 @@
             <div id="current-passwords"></div>
         </div>
 
+
+
+
+<br>
+<div class="subject-title" style="text-align: center;"><i class="fas fa-gift"></i> Chapters Covered </div>
         <!-- Subject Sections -->
         <div class="subject-section scroll-target" id="physics">
             <div class="subject-title-container">
@@ -191,7 +196,7 @@
 
         <div class="subject-section scroll-target" id="neet">
             <div class="subject-title-container">
-                <div class="subject-title"><i class="fas fa-medal"></i> NEET Preparation</div>
+                <div class="subject-title"><i class="fas fa-medal"></i> NEET </div>
                 <button id="neet-action" class="subject-status-button locked">
                     <i class="fas fa-eye"></i> View
                 </button>
@@ -201,7 +206,7 @@
 
         <div class="subject-section scroll-target" id="jee">
             <div class="subject-title-container">
-                <div class="subject-title"><i class="fas fa-rocket"></i> JEE Preparation</div>
+                <div class="subject-title"><i class="fas fa-rocket"></i> JEE </div>
                 <button id="jee-action" class="subject-status-button locked">
                     <i class="fas fa-eye"></i> View
                 </button>
@@ -235,44 +240,44 @@
         const subjectPasswords = {
             physics: {
                 formula: (d, t, m, y) => d + t + y + m * t,
-                chapters: ['Live Tests','Electric Charges and Fields', 'Electrostatic Potential and Capacitance', 'Current Electricity', 'Moving Charges and Magnetism', 'Magnetism and Matter', 'Electromagnetic Induction', 'Alternating Current', 'Electromagnetic Waves', 'Ray Optics and Optical Instruments', 'Wave Optics', 'Dual Nature of Matter and Radiation', 'Atoms', 'Nuclei', 'Semiconductor Electronics', 'More Tests'],
+                chapters: ['Live Tests','Electric Charges and Fields', 'Electrostatic Potential and Capacitance', 'Current Electricity', 'Moving Charges and Magnetism', 'Magnetism and Matter', 'Electromagnetic Induction', 'Alternating Current', 'Electromagnetic Waves', 'Ray Optics and Optical Instruments', 'Wave Optics', 'Dual Nature of Matter and Radiation', 'Atoms', 'Nuclei', 'Semiconductor Electronics'],
                 prefix: 'physics',
                 price: 'Just ₹49-₹149',
                 icon: 'atom'
             },
             chemistry: {
                 formula: (d, t, m, y) => d * t + y - m,
-                chapters: ['Live Tests','Solutions', 'Electrochemistry', 'Chemical Kinetics', 'Surface Chemistry', 'The p-Block Elements', 'The p-Block Elements (Contd.)', 'The d- and f-Block Elements', 'The Coordination Compounds', 'Haloalkanes and Haloarenes', 'Alcohols, Phenols and Ethers', 'Aldehydes, Ketones and Carboxylic Acids', 'Organic Compounds Containing Nitrogen', 'Biomolecules', 'Polymers', 'Chemistry in Everyday Life', 'More Tests'],
+                chapters: ['Live Tests','Solutions', 'Electrochemistry', 'Chemical Kinetics', 'Surface Chemistry', 'The p-Block Elements', 'The p-Block Elements (Contd.)', 'The d- and f-Block Elements', 'The Coordination Compounds', 'Haloalkanes and Haloarenes', 'Alcohols, Phenols and Ethers', 'Aldehydes, Ketones and Carboxylic Acids', 'Organic Compounds Containing Nitrogen', 'Biomolecules', 'Polymers', 'Chemistry in Everyday Life'],
                 prefix: 'chemistry',
                 price: 'Just ₹49-₹149',
                 icon: 'flask'
             },
             maths: {
                 formula: (d, t, m, y) => y + d - m * t,
-                chapters: ['Live Tests','Relations and Functions', 'Inverse Trigonometric Functions', 'Matrices', 'Determinants', 'Continuity and Differentiability', 'Application of Derivatives', 'Integrals', 'Application of Integrals', 'Differential Equations', 'Vector Algebra', 'Three Dimensional Geometry', 'Linear Programming', 'Probability', 'More Tests'],
+                chapters: ['Live Tests','Relations and Functions', 'Inverse Trigonometric Functions', 'Matrices', 'Determinants', 'Continuity and Differentiability', 'Application of Derivatives', 'Integrals', 'Application of Integrals', 'Differential Equations', 'Vector Algebra', 'Three Dimensional Geometry', 'Linear Programming', 'Probability'],
                 prefix: 'maths',
                 price: 'Just ₹49-₹149',
                 icon: 'square-root-alt'
             },
             biology: {
                 formula: (d, t, m, y) => y - t + d + m,
-                chapters: ['Live Tests','Sexual Reproduction in Flowering Plants', 'Human Reproduction', 'Reproductive Health', 'Principles of Inheritance and Variation', 'Molecular Basis of Inheritance', 'Evolution', 'Human Health and Disease', 'Strategies for Enhancement in Food Production', 'Microbes in Human Welfare', 'Biotechnology: Principles and Processes', 'Biotechnology and Its Applications', 'Organisms and Populations', 'Ecosystem', 'Biodiversity and Conservation', 'Environmental Issues', 'More Tests'],
+                chapters: ['Live Tests','Sexual Reproduction in Flowering Plants', 'Human Reproduction', 'Reproductive Health', 'Principles of Inheritance and Variation', 'Molecular Basis of Inheritance', 'Evolution', 'Human Health and Disease', 'Strategies for Enhancement in Food Production', 'Microbes in Human Welfare', 'Biotechnology: Principles and Processes', 'Biotechnology and Its Applications', 'Organisms and Populations', 'Ecosystem', 'Biodiversity and Conservation', 'Environmental Issues'],
                 prefix: 'biology',
                 price: 'Just ₹49-₹149',
                 icon: 'dna'
             },
             neet: {
                 formula: (d, t, m, y) => d * t + m * y,
-                chapters: ['Live Tests','NEET Physics', 'NEET Chemistry', 'NEET Biology', 'NEET Series 1', 'NEET Series 2', 'More Tests'],
+                chapters: ['Live Tests','Electric Charges and Fields', 'Electrostatic Potential and Capacitance', 'Current Electricity', 'Moving Charges and Magnetism', 'Magnetism and Matter', 'Electromagnetic Induction', 'Alternating Current', 'Electromagnetic Waves', 'Ray Optics and Optical Instruments', 'Wave Optics', 'Dual Nature of Matter and Radiation', 'Atoms', 'Nuclei', 'Semiconductor Electronics', 'Solutions', 'Electrochemistry', 'Chemical Kinetics', 'Surface Chemistry', 'The p-Block Elements', 'The p-Block Elements (Contd.)', 'The d- and f-Block Elements', 'The Coordination Compounds', 'Haloalkanes and Haloarenes', 'Alcohols, Phenols and Ethers', 'Aldehydes, Ketones and Carboxylic Acids', 'Organic Compounds Containing Nitrogen', 'Biomolecules', 'Polymers', 'Chemistry in Everyday Life','Sexual Reproduction in Flowering Plants', 'Human Reproduction', 'Reproductive Health', 'Principles of Inheritance and Variation', 'Molecular Basis of Inheritance', 'Evolution', 'Human Health and Disease', 'Strategies for Enhancement in Food Production', 'Microbes in Human Welfare', 'Biotechnology: Principles and Processes', 'Biotechnology and Its Applications', 'Organisms and Populations', 'Ecosystem', 'Biodiversity and Conservation', 'Environmental Issues'],
                 prefix: 'neet',
-                price: 'Just ₹99-₹201',
+                price: 'Just ₹179-₹499',
                 icon: 'medal'
             },
             jee: {
                 formula: (d, t, m, y) => d + t * m + y,
-                chapters: ['Live Tests','JEE Physics', 'JEE Chemistry', 'JEE Mathematics', 'JEE Series 1', 'JEE Series 2', 'More Tests'],
+                chapters: ['Live Tests','Electric Charges and Fields', 'Electrostatic Potential and Capacitance', 'Current Electricity', 'Moving Charges and Magnetism', 'Magnetism and Matter', 'Electromagnetic Induction', 'Alternating Current', 'Electromagnetic Waves', 'Ray Optics and Optical Instruments', 'Wave Optics', 'Dual Nature of Matter and Radiation', 'Atoms', 'Nuclei', 'Semiconductor Electronics','Solutions', 'Electrochemistry', 'Chemical Kinetics', 'Surface Chemistry', 'The p-Block Elements', 'The p-Block Elements (Contd.)', 'The d- and f-Block Elements', 'The Coordination Compounds', 'Haloalkanes and Haloarenes', 'Alcohols, Phenols and Ethers', 'Aldehydes, Ketones and Carboxylic Acids', 'Organic Compounds Containing Nitrogen', 'Biomolecules', 'Polymers', 'Chemistry in Everyday Life','Relations and Functions', 'Inverse Trigonometric Functions', 'Matrices', 'Determinants', 'Continuity and Differentiability', 'Application of Derivatives', 'Integrals', 'Application of Integrals', 'Differential Equations', 'Vector Algebra', 'Three Dimensional Geometry', 'Linear Programming', 'Probability'],
                 prefix: 'jee',
-                price: 'Just ₹99-₹203',
+                price: 'Just ₹179-₹499',
                 icon: 'rocket'
             }
         };
@@ -433,7 +438,7 @@
                     button.onclick = () => {
                         showPopup();
                         setTimeout(() => {
-                            openIframe(`./${prefix}/12Schapter${index+1}`);
+                            openIframe(`./${prefix}/${index+1}`);
                         }, 1000);
                     };
                 } else {
