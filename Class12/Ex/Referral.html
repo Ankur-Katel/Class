@@ -6,6 +6,7 @@
     <title>Your Referral Link</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         :root {
             --primary: #4a6bff;
@@ -160,7 +161,7 @@
             background: #f0f2ff;
             color: var(--primary);
             border: none;
-            padding: 0 15px;
+            padding: 0 10px;
             cursor: pointer;
             transition: all 0.3s;
         }
@@ -218,7 +219,7 @@
             color: white;
             padding: 10px 20px;
             border-radius: 50px;
-            font-size: 0.9rem;
+            font-size: 0.5rem;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -473,7 +474,7 @@
                 setTimeout(() => {
                     hideLoader();
                     const encoded = encodePhone(phone);
-                    const link = `https://averiq.netlify.app/Class12/Join?R=${encoded} Join Class 12 Science AveriQ Series`;
+                    const link = `https://AveriQ.netlify.app/Class12/Join?R=${encoded}`;
                     showResult(link);
                     saveData(phone, link);
                 }, 2000);
@@ -495,11 +496,11 @@
                     showToast('Link copied!');
                 });
             });
-            
+
             // Share link
             shareBtn.addEventListener('click', function() {
                 const link = linkText.textContent;
-                const text = "Join using my referral link: " + link;
+                const text = "Join Class 12 Science AveriQ Series" + link;
                 
                 if (navigator.share) {
                     navigator.share({

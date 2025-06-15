@@ -34,9 +34,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@500&display=swap" rel="stylesheet">
 
 
-    <link rel="stylesheet" href="../Css/All.css">
-    <link rel="stylesheet" href="../Css/D.css">
-    <script src="../../JS/D.js"></script>
+    <link rel="stylesheet" href="./Css/All.css">
+    <link rel="stylesheet" href="./Css/D.css">
+    <script src="./JS/D.js"></script>
     <style>
     </style>
 </head>
@@ -274,7 +274,7 @@
                 icon: 'medal'
             },
             jee: {
-                formula: (d, t, m, y) => d + t * m + y,
+                formula: (d, t, m, y) => d + t * m + y - t,
                 chapters: ['Live Tests','Electric Charges and Fields', 'Electrostatic Potential and Capacitance', 'Current Electricity', 'Moving Charges and Magnetism', 'Magnetism and Matter', 'Electromagnetic Induction', 'Alternating Current', 'Electromagnetic Waves', 'Ray Optics and Optical Instruments', 'Wave Optics', 'Dual Nature of Matter and Radiation', 'Atoms', 'Nuclei', 'Semiconductor Electronics','Solutions', 'Electrochemistry', 'Chemical Kinetics', 'Surface Chemistry', 'The p-Block Elements', 'The p-Block Elements (Contd.)', 'The d- and f-Block Elements', 'The Coordination Compounds', 'Haloalkanes and Haloarenes', 'Alcohols, Phenols and Ethers', 'Aldehydes, Ketones and Carboxylic Acids', 'Organic Compounds Containing Nitrogen', 'Biomolecules', 'Polymers', 'Chemistry in Everyday Life','Relations and Functions', 'Inverse Trigonometric Functions', 'Matrices', 'Determinants', 'Continuity and Differentiability', 'Application of Derivatives', 'Integrals', 'Application of Integrals', 'Differential Equations', 'Vector Algebra', 'Three Dimensional Geometry', 'Linear Programming', 'Probability'],
                 prefix: 'jee',
                 price: 'Just ₹179-₹499',
@@ -473,7 +473,7 @@
                         // Already purchased - do nothing
                         return;
                     } else {
-                        window.location.href = `Join.html`;
+                        window.location.href = `./Class12/Join.html`;
                     }
                 });
             });

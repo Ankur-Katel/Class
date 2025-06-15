@@ -34,7 +34,7 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             transition: background-color 0.3s, color 0.3s;
-            padding-bottom: 100px;
+            padding-bottom: 24px;
         }
         
         .container {
@@ -874,6 +874,7 @@ width: 90%;
         .py-8 {
             padding-top: 2rem;
             padding-bottom: 2rem;
+font-family:'Comic Neue', cursive;
         }
         
         .py-12 {
@@ -1567,14 +1568,14 @@ font-size: 0.875rem;
             align-items: center;
             background: linear-gradient(45deg, #6a11cb, #2575fc);
             color: #a4ff00;
-            padding: 8px 15px;
+            padding: 3px 7px;
             border-radius: 6px;
             border: 1px solid #a4ff00;
-            box-shadow: 0 0 10px rgba(164, 255, 0, 0.5);
+            box-shadow: 0 0 5px rgba(164, 255, 0, 0.5);
             opacity: 0;
             transform: translateY(-20px);
             transition: all 0.3s ease;
-            font-size: 13px;
+            font-size: 10px;
             cursor: pointer;
             margin: 0 auto;
         }
@@ -1619,4 +1620,148 @@ font-size: 0.875rem;
             color: white;
             box-shadow: 0 4px 15px rgba(59, 89, 152, 0.4);
 border-color:none;
+        }
+
+
+
+
+
+
+        :root {
+            --jocks-primary-color: #4ecdc4;
+            --jocks-secondary-color: #ff9ff3;
+            --jocks-tertiary-color: #feca57;
+            --jocks-text-color: #333;
+            --jocks-bg-color: #f0f8ff;
+            --jocks-box-bg: white;
+            --jocks-shadow-color: rgba(0,0,0,0.1);
+            --jocks-student-color: #3498db;
+            --jocks-teacher-color: #e74c3c;
+            --jocks-subject-color: #2c3e50;
+            --jocks-chapter-color: #7f8c8d;
+            --jocks-footer-color: #7f8c8d;
+        }
+
+        .dark-mode {
+            --jocks-primary-color: #00b894;
+            --jocks-secondary-color: #fd79a8;
+            --jocks-tertiary-color: #fdcb6e;
+            --jocks-text-color: #f5f6fa;
+            --jocks-bg-color: #2d3436;
+            --jocks-box-bg: #34495e;
+            --jocks-shadow-color: rgba(0,0,0,0.3);
+            --jocks-student-color: #74b9ff;
+            --jocks-teacher-color: #ff7675;
+            --jocks-subject-color: #dfe6e9;
+            --jocks-chapter-color: #b2bec3;
+            --jocks-footer-color: #b2bec3;
+        }
+
+        .jocks-header {
+            font-family: 'Fredoka One', cursive;
+            color: #ff6b6b;
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px var(--jocks-shadow-color);
+        }
+        
+        .jocks-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            padding: 20px;
+        }
+        
+        .jocks-box {
+            font-family: 'Comic Neue', cursive;
+            background: var(--jocks-box-bg);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 8px var(--jocks-shadow-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 5px solid;
+            opacity: 1;
+        }
+        
+        .jocks-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px var(--jocks-shadow-color);
+        }
+        
+        .jocks-box:nth-child(1) {
+            border-color: var(--jocks-primary-color);
+        }
+        
+        .jocks-box:nth-child(2) {
+            border-color: var(--jocks-secondary-color);
+        }
+        
+        .jocks-box:nth-child(3) {
+            border-color: var(--jocks-tertiary-color);
+        }
+        
+        .jocks-box:nth-child(4) {
+            border-color: #a55eea;
+        }
+        
+        .jocks-subject {
+            font-family: 'Pacifico', cursive;
+            font-size: 1.5rem;
+            color: var(--jocks-subject-color);
+            margin-bottom: 5px;
+        }
+        
+        .jocks-chapter {
+            font-weight: bold;
+            color: var(--jocks-chapter-color);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .jocks-dialogue {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        
+        .jocks-student {
+            color: var(--jocks-student-color);
+            font-weight: bold;
+        }
+        
+        .jocks-teacher {
+            color: var(--jocks-teacher-color);
+            font-weight: bold;
+        }
+        
+        .jocks-emoji {
+            font-size: 1.2rem;
+        }
+        
+        .jocks-footer {
+            text-align: center;
+            margin-top: 40px;
+            font-style: italic;
+            color: var(--jocks-footer-color);
+        }
+
+        .jocks-toggle-container {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .jocks-toggle-btn {
+            background: var(--jocks-primary-color);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: 'Comic Neue', cursive;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .jocks-toggle-btn:hover {
+            transform: scale(1.05);
         }
